@@ -1,6 +1,8 @@
 'use strict';
 let IndexController = require('./../controllers/IndexController.js');
 
+// wow such oop in js wowo much wowow
+
 class IndexRoutes {
 
   constructor(app) {
@@ -10,6 +12,7 @@ class IndexRoutes {
   index() {
     this.app.route('/').get(IndexController.index);
   }
+
 
 }
 

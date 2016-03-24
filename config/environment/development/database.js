@@ -1,5 +1,10 @@
 module.exports = {
-  url: 'mongodb://localhost/rb_development',
+  /* since Mongodb sucks on windows, I decided to use clouded stuff
+   site https://mlab.com
+   user uninegov
+   pwd  UnineEgov123
+  */
+  url: 'mongodb://unine:UnineEgov123@ds025239.mlab.com:25239/egov',
   options: {
     server: {
       auto_reconnect: true,
