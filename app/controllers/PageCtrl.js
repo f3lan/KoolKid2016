@@ -11,6 +11,8 @@ router.use(session({
 
 router.get('/', function(req, res, next) {
     res.render('index', { req:req});
+}).get('/index.html', function(req, res, next) {
+    res.render('index', { req:req});
 });
 
 module.exports = router;

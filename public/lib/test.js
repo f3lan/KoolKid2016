@@ -6,15 +6,30 @@ $( document ).ready(function() {
             type : 'GET',
             success : function(data, status){
                 if (data.success)
-                    alert("Usr found!");
+                    location.reload();
                 else
-                    alert("GTFO!");
+                    alert("Login failed!");
             },
-
             error : function(res, status, error){
                 alert(error);
             }
 
+        });
+    });
+
+    $("#logout").bind("click", function(){
+        $.ajax({
+            url : 'api/deco',
+            type : 'GET',
+            success : function(data, status){
+                if (data.status)
+                    window.location.replace("index.html");
+                else
+                    alert("Logout failed!");
+            },
+            error : function(res, status, error){
+                alert(error);
+            }
         });
     });
 });
