@@ -18,10 +18,11 @@
   "homepage": "https://github.com/f3lan/KoolKid2016#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
+    "client-sessions": "^0.7.0",
+    "ejs": "2.4.1",
     "express": "^4.13.4",
     "fs": "0.0.2",
     "jade": "^1.11.0",
-    "ejs": "2.4.1",
     "mongoose": "^4.4.8",
     "morgan": "^1.7.0",
     "serve-favicon": "^2.3.0"

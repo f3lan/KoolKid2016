@@ -1,6 +1,6 @@
 'use strict';
 let IndexController = require('./../controllers/IndexController.js');
-
+var session = require('client-sessions');
 // wow such oop in js wowo much wowow
 
 class IndexRoutes {
