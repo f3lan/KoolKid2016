@@ -6,11 +6,6 @@ var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var session = require('client-sessions');
 
-var rest = require('../app/controllers/RestCtrl.js');
-var page = require('../app/controllers/PageCtrl.js');
-
-//var path = require('path');
-
 module.exports = function() {
   var app = express();
 
@@ -24,51 +19,23 @@ module.exports = function() {
     app.locals.pretty = true;
   }
 
-
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
+
+  // Session
+  app.use(session(config.session));
 
   // View
   app.set('views', './app/views');
   app.set('view engine', 'ejs'); // jade is weird, => ejs instead
 
   // Routes
-  //require('../app/routes/Index.js')(app);
-  // I set stuff here because I'm a peon
-  app.use('/', page);
-  app.use('/api', rest);
+  require('../app/routes/Index.js')(app);
+  require('../app/routes/Users.js')(app);
 
   // Statics
   app.use(express.static('./public'));
   app.use('/assets', express.static('app/assets'));
 
-  // sessions
-  app.use(session({
-    cookieName: 'session',
-    secret: 'My_Little_Poney',
-    duration: 30 * 60 * 1000, //defines how long the session will live in milliseconds
-    activeDuration: 5 * 60 * 1000, //allows users to lengthen their session by interacting with the site
-  }));
-
   return app;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

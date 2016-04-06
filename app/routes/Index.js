@@ -13,12 +13,9 @@ class IndexRoutes {
     this.app.route('/').get(IndexController.index);
   }
 
-
 }
 
 module.exports = function(app) {
-
   const indexRoutes = new IndexRoutes(app);
   indexRoutes.index();
-
 };
