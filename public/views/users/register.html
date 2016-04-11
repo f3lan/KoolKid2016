@@ -1,13 +1,20 @@
 <div class="row">
   <div class="col-xs-12">
 
-    {{usersController.result}}
-
-    <form class="form-signin"
-          data-ng-submit="usersController.login(usersController.user)">
+    <form data-ng-submit="usersController.register(usersController.user)">
       <h2 class="form-signin-heading">
-        Please sign in
+        Registration
       </h2>
+
+      <br>
+      <label for="inputName" class="sr-only">name</label>
+      <input type="text"
+             id="inputName"
+             ng-model='usersController.user.name'
+             class="form-control"
+             placeholder="Name"
+             required autofocus>
+
 
       <br>
       <label for="inputUsername" class="sr-only">Username</label>
@@ -15,7 +22,7 @@
              id="inputUsername"
              ng-model='usersController.user.username'
              class="form-control"
-             placeholder="Email address"
+             placeholder="Username"
              required autofocus>
 
       <br>
@@ -26,9 +33,8 @@
              class="form-control"
              placeholder="Password"
              required>
-
       <br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
     </form>
   </div>
 </div>

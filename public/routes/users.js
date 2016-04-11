@@ -27,9 +27,9 @@
         controller: 'UsersController',
         controllerAs: 'usersController'
       })
-      .state('signup', {
-        url: '/users/sign-up',
-        templateUrl: 'views/users/signup.html',
+      .state('register', {
+        url: '/users/register',
+        templateUrl: 'views/users/register.html',
         controller: 'UsersController',
         controllerAs: 'usersController'
       });

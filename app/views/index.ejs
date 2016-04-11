@@ -16,6 +16,7 @@
 
     <!-- endbuild -->
 </head>
+
 <body data-ng-app="MedEx">
   <% include partials/header %>
   <% include partials/main %>
@@ -34,11 +35,12 @@
 
 
 <!-- build:js -->
-  <script src="app.config.js"></script>
+  <script src="config.js"></script>
   <script src="application.js"></script>
   <script src="routes/index.js"></script>
   <script src="routes/users.js"></script>
-  <script src="services/users.js"></script>
+  <script src="services/ApiService.js"></script>
+  <script src="services/AuthService.js"></script>
   <script src="controllers/UsersController.js"></script>
 <!-- endbuild -->
 

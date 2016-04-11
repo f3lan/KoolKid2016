@@ -8,42 +8,40 @@ class UsersController {
     res.header("Content-Type", "application/json; charset=utf-8");
 
     User.find({}, function(err, users) {
-        if (err) {
-          throw err;
-        } else {
-          res.json(users);
-        }
+      if (err) {
+        throw err;
+      } else {
+        res.json(users);
+      }
     });
   }
 
+
   login(req, res) {
-    console.log('session:', req.session);
-
-    res.header("Content-Type", "application/json; charset=utf-8");
-
-    var usr = decodeURIComponent(req.params.user);
-    var pwd = decodeURIComponent(req.params.pwd);
-
-    User.find({user:usr, pwd:pwd}, function(err, users) {
-        if (err) {
-            res.json({status:false, err:err});
-            throw err;
-        }
-
-        var login = users.length > 0 ? true : false;
-
-        if (login > 0) {
-          req.session.user = usr;
-        }
-
-        res.json({status:true, success:login, err:''});
-    });
+    console.log(req.body);
   }
 
   logout(req, res) {
-    res.header("Content-Type", "application/json; charset=utf-8");
-    req.session.reset();
-    res.json({status:true});
+    console.log(req.body);
+  }
+
+
+  register(req, res) {
+    User.register(new User({
+        username: req.body.username
+      }),
+      req.body.password, function(err, account) {
+        if (err) {
+          return res.status(500).json({
+            err: err
+          });
+        }
+        passport.authenticate('local')(req, res, function() {
+          return res.status(200).json({
+            status: 'Registration successful!'
+          });
+        });
+      });
   }
 
 }

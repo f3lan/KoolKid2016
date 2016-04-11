@@ -5,7 +5,7 @@
     var AppName = 'MedEx';
     var app = angular.module(AppName, [
         'ui.router',
-        'app.config'
+        'MedEx.config'
       ]);
   }
 )();

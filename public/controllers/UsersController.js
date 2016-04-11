@@ -4,29 +4,26 @@
 
   angular.module('MedEx').controller('UsersController', [
     '$scope',
-    'UserService',
+    'AuthService',
     UsersController
   ]);
 
   function UsersController(
     $scope,
-    UserService
+    AuthService
   ) {
 
-    var that = this;
-
-    this.login = function() {
-      UserService.login();
+    this.login = function(user) {
+      this.result = AuthService.login(user);
     }
 
-    this.logout = function() {
-      UserService.logout();
+    this.logout = function(user) {
+      AuthService.logout(user);
     }
 
-    this.signup = function() {
-      UserService.signup();
+    this.register = function(user) {
+      AuthService.register(user);
     }
-
   }
 
 })();
