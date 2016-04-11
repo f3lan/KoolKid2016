@@ -14,20 +14,24 @@
     $urlRouterProvider
   ) {
 
-    $urlRouterProvider.otherwise("/users/login");
-
     $stateProvider
       .state('login', {
         url: '/users/login',
-        templateUrl: 'views/users/login.html'
+        templateUrl: 'views/users/login.html',
+        controller: 'UsersController',
+        controllerAs: 'usersController'
       })
       .state('logout', {
         url: '/users/logout',
-        templateUrl: 'views/users/logout.html'
+        templateUrl: 'views/users/logout.html',
+        controller: 'UsersController',
+        controllerAs: 'usersController'
       })
       .state('signup', {
         url: '/users/sign-up',
-        templateUrl: 'views/users/signup.html'
+        templateUrl: 'views/users/signup.html',
+        controller: 'UsersController',
+        controllerAs: 'usersController'
       });
   }
 })();
