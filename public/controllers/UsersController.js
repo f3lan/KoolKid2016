@@ -19,6 +19,14 @@
       UserService.login();
     }
 
+    this.logout = function() {
+      UserService.logout();
+    }
+
+    this.signup = function() {
+      UserService.signup();
+    }
+
   }
 
 })();
