@@ -9,7 +9,6 @@ var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
 var MongoStore = require('connect-mongo')(session);
 
-
 module.exports = function() {
   var app = express();
 
