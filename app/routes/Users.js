@@ -1,5 +1,6 @@
 'use strict';
 let UsersController = require('./../controllers/UsersController.js');
+let passport = require('passport');
 
 class UsersRoutes {
 
@@ -12,7 +13,8 @@ class UsersRoutes {
   }
 
   login() {
-    this.app.route('/users/login').post(UsersController.login);
+    this.app.route('/users/login')
+      .post(passport.authenticate('local'), UsersController.login);
   }
 
   logout() {

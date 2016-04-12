@@ -16,10 +16,9 @@
   ) {
 
     var post = function(url, params, options) {
-      console.log(url);
       var deferred = $q.defer();
-      $http.post(url, params, options).
-      success(function(data) {
+      $http.post(url, params, options)
+        .success(function(data) {
           deferred.resolve(data);
         })
         .error(function(data) {
@@ -29,10 +28,9 @@
     }
 
     var get = function(url, params, options) {
-      console.log(url);
       var deferred = $q.defer();
-      $http.get(url, params).
-      success(function(data, options) {
+      $http.get(url, params)
+        .success(function(data, options) {
           deferred.resolve(data);
         })
         .error(function(data) {

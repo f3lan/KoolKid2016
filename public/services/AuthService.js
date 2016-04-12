@@ -10,23 +10,42 @@
     ApiService
   ) {
 
-    return {
+    var user = null;
 
-      login: function(user) {
-        var url = 'users/login';
-        return ApiService.post(url, user);
-      },
+    var login = function(user) {
+      var url = 'users/login';
+      return ApiService.post(url, user);
+    }
 
-      logout: function(user) {
-        var url = 'users/logout';
-        return ApiService.post(url, user);
-      },
+    var logout = function(user) {
+      var url = 'users/logout';
+      return ApiService.post(url, user);
+    }
 
-      register: function(user) {
-        var url = 'users/register';
-        return ApiService.post(url, user);
+    var register = function(user) {
+      var url = 'users/register';
+      return ApiService.post(url, user);
+    }
+
+    var isLoggedIn = function() {
+      if(user) {
+        return true;
+      } else {
+        return false;
       }
     }
+
+    var getUser = function() {
+      return user;
+    }
+
+    return {
+      login: login,
+      logout: logout,
+      register: register,
+      isLoggedIn: isLoggedIn,
+      getUser: getUser
+    };
   }
 
 })();
