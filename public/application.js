@@ -7,5 +7,16 @@
         'ui.router',
         'MedEx.config'
       ]);
+
+    app.run(function($rootScope, $state, AuthService) {
+      $rootScope.$on(
+        '$stateChangeSuccess',
+        function(event, toState, toParams, fromState, fromParams) {
+          if (!AuthService.isLoggedIn() && toState.authorization && toState.redirectTo) {
+            $state.go(toState.redirectTo);
+          }
+      });
+    });
+
   }
 )();

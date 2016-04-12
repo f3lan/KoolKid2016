@@ -19,7 +19,9 @@
     $stateProvider
       .state('index', {
         url: '/',
-        templateUrl: 'views/index.html'
+        templateUrl: 'views/index.html',
+        authorization: true,
+        redirectTo: 'login',
       });
   }
 })();
