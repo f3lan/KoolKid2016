@@ -19,6 +19,7 @@
       const that = this;
       AuthService.login(user).then(function(data) {
         if(data.status) {
+          AuthService.setUser(true);
           $state.go('index');
           that.result = "Login successful";
         } else {

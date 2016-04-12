@@ -12,7 +12,11 @@
       $rootScope.$on(
         '$stateChangeSuccess',
         function(event, toState, toParams, fromState, fromParams) {
-          if (!AuthService.isLoggedIn() && toState.authorization && toState.redirectTo) {
+          AuthService.getStatus();
+
+          if (!AuthService.isLoggedIn() &&
+              toState.authorization &&
+              toState.redirectTo) {
             $state.go(toState.redirectTo);
           }
       });

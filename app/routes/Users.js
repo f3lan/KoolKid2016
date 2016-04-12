@@ -1,6 +1,5 @@
 'use strict';
 let UsersController = require('./../controllers/UsersController.js');
-let passport = require('passport');
 
 class UsersRoutes {
 
@@ -13,8 +12,7 @@ class UsersRoutes {
   }
 
   login() {
-    this.app.route('/users/login')
-      .post(passport.authenticate('local'), UsersController.login);
+    this.app.route('/users/login').post(UsersController.login);
   }
 
   logout() {
@@ -25,6 +23,10 @@ class UsersRoutes {
     this.app.route('/users/register').post(UsersController.register);
   }
 
+  getStatus() {
+    this.app.route('/users/status').get(UsersController.getStatus);
+  }
+
 }
 
 module.exports = function(app) {
@@ -33,4 +35,5 @@ module.exports = function(app) {
   usersRoutes.login();
   usersRoutes.logout();
   usersRoutes.register();
+  usersRoutes.getStatus();
 };

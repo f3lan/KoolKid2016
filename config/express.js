@@ -5,7 +5,10 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
 var passport = require('passport');
+var session = require('express-session');
 var LocalStrategy = require('passport-local').Strategy;
+var MongoStore = require('connect-mongo')(session);
+
 
 module.exports = function() {
   var app = express();
@@ -20,6 +23,16 @@ module.exports = function() {
     app.locals.pretty = true;
   }
 
+  app.use(session({
+    secret: 'secrettexthere',
+    saveUninitialized: true,
+    resave: true,
+    store: new MongoStore({
+      url: config.database.url,
+      collection: 'sessions'
+    })
+  }));
+
   // Passport
   app.use(passport.initialize());
 
@@ -27,6 +40,8 @@ module.exports = function() {
   passport.use(new LocalStrategy(User.authenticate()));
   passport.serializeUser(User.serializeUser());
   passport.deserializeUser(User.deserializeUser());
+
+  app.use(passport.session());
 
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());

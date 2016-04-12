@@ -10,7 +10,17 @@
     ApiService
   ) {
 
-    var user = null;
+    var that = this;
+
+    var getStatus = function() {
+      var url = 'users/status';
+      ApiService.get(url).then(function(data) {
+        that.user = data.status;
+      });
+    }
+
+    // check the current state
+    getStatus();
 
     var login = function(user) {
       var url = 'users/login';
@@ -28,15 +38,15 @@
     }
 
     var isLoggedIn = function() {
-      if(user) {
-        return true;
-      } else {
-        return false;
-      }
+      return that.user;
     }
 
     var getUser = function() {
       return user;
+    }
+
+    var setUser = function(user) {
+      that.user = user;
     }
 
     return {
@@ -44,7 +54,9 @@
       logout: logout,
       register: register,
       isLoggedIn: isLoggedIn,
-      getUser: getUser
+      getUser: getUser,
+      setUser: setUser,
+      getStatus: getStatus
     };
   }
 

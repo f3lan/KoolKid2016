@@ -62,6 +62,19 @@ class UsersController {
       }
     });
   }
+
+  getStatus(req, res) {
+    if (!req.isAuthenticated()) {
+      const message = {status: false};
+      console.log(message);
+      res.status(200).json(message);
+    } else {
+      const message = {status: true};
+      console.log(message);
+      res.status(200).json(message);
+    }
+  }
+
 }
 
 module.exports = new UsersController();
