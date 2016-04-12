@@ -4,7 +4,8 @@ var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
-var session = require('client-sessions');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 module.exports = function() {
   var app = express();
@@ -19,11 +20,16 @@ module.exports = function() {
     app.locals.pretty = true;
   }
 
+  // Passport
+  app.use(passport.initialize());
+
+  var User = require('../app/models/user');
+  passport.use(new LocalStrategy(User.authenticate()));
+  passport.serializeUser(User.serializeUser());
+  passport.deserializeUser(User.deserializeUser());
+
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
-
-  // Session
-  app.use(session(config.session));
 
   // View
   app.set('views', './app/views');

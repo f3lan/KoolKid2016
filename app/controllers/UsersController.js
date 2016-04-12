@@ -26,22 +26,21 @@ class UsersController {
   }
 
 
-  register(req, res) {
-    User.register(new User({
-        username: req.body.username
-      }),
-      req.body.password, function(err, account) {
-        if (err) {
-          return res.status(500).json({
-            err: err
-          });
-        }
-        passport.authenticate('local')(req, res, function() {
-          return res.status(200).json({
-            status: 'Registration successful!'
-          });
-        });
+  register(req, res, next) {
+    const user = new User({
+        username: req.body.username,
+        name: req.body.name
       });
+    const password = req.body.password;
+    User.register(user, password, function(error) {
+      if(error) {
+        console.log(error);
+        const message = {error: error};
+        res.status(500).json(message);
+      } else {
+        res.redirect('/');
+      }
+    });
   }
 
 }
