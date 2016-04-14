@@ -5,23 +5,23 @@
   angular.module('MedEx').config(
     [
       '$stateProvider',
-      '$urlRouterProvider',
       IndexRoutes
     ]);
 
   function IndexRoutes(
-    $stateProvider,
-    $urlRouterProvider
+    $stateProvider
   ) {
 
-    $urlRouterProvider.otherwise("/");
-
     $stateProvider
-      .state('index', {
-        url: '/',
-        templateUrl: 'views/index.html',
+      .state('app.index', {
+        url: 'index',
+        views: {
+          'content@' : {
+            templateUrl: 'views/index.html',
+          }
+        },
         authorization: true,
-        redirectTo: 'login',
+        redirectTo: 'app.login',
       });
   }
 })();
