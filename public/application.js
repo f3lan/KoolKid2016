@@ -7,6 +7,7 @@
     var app = angular.module(AppName, [
         'ui.router',
         'pascalprecht.translate',
+        'ngCookies',
         'MedEx.config'
       ]);
 
@@ -33,6 +34,7 @@
         $translateProvider.fallbackLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');
         $translateProvider.determinePreferredLanguage();
+        $translateProvider.useLocalStorage();
       }
     ]);
 

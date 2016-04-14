@@ -1,33 +1,43 @@
-<div data-ng-if="applicationController.isLoggedIn()">
-  <ul class="nav navbar-nav navbar-right">
-    <li>
-      <a data-ui-sref="app.user">
-        <span class="glyphicon glyphicon-user"></span>
-        {{applicationController.getUser().username}}
-      </a>
-    </li>
-    <li>
-      <a data-ui-sref="app.logout">
-        <span class="glyphicon glyphicon-log-in"></span>
-        {{'global.account.logout' | translate}}
-      </a>
-    </li>
-  </ul>
-</div>
-
-<div data-ng-if="!applicationController.isLoggedIn()">
-  <ul class="nav navbar-nav navbar-right">
-    <li>
-      <a data-ui-sref="app.register">
-        <span class="glyphicon glyphicon-user"></span>
-        {{'global.account.register' | translate}}
-      </a>
-    </li>
-    <li>
-      <a data-ui-sref="app.login">
-        <span class="glyphicon glyphicon-log-in"></span>
-        {{'global.account.login' | translate}}
-      </a>
-    </li>
-  </ul>
-</div>
+<ul class="nav navbar-nav navbar-right">
+  <li class="dropdown">
+    <a href="#"
+      class="dropdown-toggle"
+      data-toggle="dropdown"
+      role="button"
+      aria-haspopup="true"
+      aria-expanded="false">
+      {{applicationController.language()}}
+      <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li data-ng-repeat="lang in applicationController.languages">
+          <a href="#" data-ng-click="applicationController.setLanguage(lang)">
+            {{lang}}
+          </a>
+        </li>
+      </ul>
+  </li>
+  <li data-ng-if="applicationController.isLoggedIn()">
+    <a data-ui-sref="app.user">
+      <span class="glyphicon glyphicon-user"></span>
+      {{applicationController.getUser().username}}
+    </a>
+  </li>
+  <li data-ng-if="applicationController.isLoggedIn()">
+    <a data-ui-sref="app.logout">
+      <span class="glyphicon glyphicon-log-in"></span>
+      {{'global.account.logout' | translate}}
+    </a>
+  </li>
+  <li data-ng-if="!applicationController.isLoggedIn()">
+    <a data-ui-sref="app.register">
+      <span class="glyphicon glyphicon-user"></span>
+      {{'global.account.register' | translate}}
+    </a>
+  </li>
+  <li data-ng-if="!applicationController.isLoggedIn()">
+    <a data-ui-sref="app.login">
+      <span class="glyphicon glyphicon-log-in"></span>
+      {{'global.account.login' | translate}}
+    </a>
+  </li>
+</ul>
