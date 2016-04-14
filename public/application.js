@@ -3,10 +3,38 @@
   function() {
 
     var AppName = 'MedEx';
+
     var app = angular.module(AppName, [
         'ui.router',
+        'pascalprecht.translate',
         'MedEx.config'
       ]);
+
+    app.config([
+      '$translateProvider',
+
+      function($translateProvider) {
+        $translateProvider.useStaticFilesLoader({
+          prefix: '/assets/i18n/',
+          suffix: '.json'
+        });
+
+        $translateProvider.registerAvailableLanguageKeys(
+          ['en', 'de', 'fr', 'it', 'rm'],{
+           'en_*': 'en',
+           'de_*': 'de',
+           'fr_*': 'fr',
+           'it_*': 'it',
+           'rm_*': 'rm',
+           '*': 'en'
+          }
+        );
+
+        $translateProvider.fallbackLanguage('en');
+        $translateProvider.useSanitizeValueStrategy('escape');
+        $translateProvider.determinePreferredLanguage();
+      }
+    ]);
 
     app.run(function($rootScope, $state, AuthService) {
       $rootScope.$on(
