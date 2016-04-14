@@ -8,7 +8,7 @@
   },
   "user": {
     "account" : {
-      "setting": "Account Settings",
+      "settings": "Account Settings",
       "signIn": "Please Sign in",
       "logout": "Do you really want to log out?",
       "registration": "Registration",
