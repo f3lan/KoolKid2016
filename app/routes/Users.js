@@ -16,7 +16,7 @@ class UsersRoutes {
   }
 
   logout() {
-    this.app.route('/users/logout').post(UsersController.logout);
+    this.app.route('/users/logout').get(UsersController.logout);
   }
 
   register() {

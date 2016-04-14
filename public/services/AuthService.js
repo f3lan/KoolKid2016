@@ -15,7 +15,10 @@
     var getStatus = function() {
       var url = 'users/status';
       ApiService.get(url).then(function(data) {
-        that.user = data.status;
+        that.loggedIn = data.status;
+        if(data.status) {
+          that.user = data.user;
+        }
       });
     }
 
@@ -27,9 +30,11 @@
       return ApiService.post(url, user);
     }
 
-    var logout = function(user) {
+    var logout = function() {
       var url = 'users/logout';
-      return ApiService.post(url, user);
+      ApiService.get(url).then(function() {
+        getStatus();
+      });
     }
 
     var register = function(user) {
@@ -38,11 +43,11 @@
     }
 
     var isLoggedIn = function() {
-      return that.user;
+      return that.loggedIn;
     }
 
     var getUser = function() {
-      return user;
+      return that.user;
     }
 
     var setUser = function(user) {

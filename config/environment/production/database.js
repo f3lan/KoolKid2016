@@ -1,5 +1,5 @@
 module.exports = {
-  url: 'mongodb://localhost/rb_production',
+  url: 'mongodb://localhost/medex_production',
   options: {
     server: {
       auto_reconnect: true,
