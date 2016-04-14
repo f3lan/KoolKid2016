@@ -12,12 +12,19 @@ class UsersRoutes {
   }
 
   login() {
-    this.app.route('/users/:user/:pwd').get(UsersController.login);
+    this.app.route('/users/login').post(UsersController.login);
   }
 
   logout() {
-    console.log('logout');
-    this.app.route('/logout').get(UsersController.logout);
+    this.app.route('/users/logout').get(UsersController.logout);
+  }
+
+  register() {
+    this.app.route('/users/register').post(UsersController.register);
+  }
+
+  getStatus() {
+    this.app.route('/users/status').get(UsersController.getStatus);
   }
 
 }
@@ -27,4 +34,6 @@ module.exports = function(app) {
   usersRoutes.index();
   usersRoutes.login();
   usersRoutes.logout();
+  usersRoutes.register();
+  usersRoutes.getStatus();
 };

@@ -5,33 +5,55 @@
   angular.module('MedEx').config(
     [
       '$stateProvider',
-      '$urlRouterProvider',
       UserRoutes
     ]);
 
   function UserRoutes(
-    $stateProvider,
-    $urlRouterProvider
+    $stateProvider
   ) {
 
-    $urlRouterProvider.otherwise("/users/login");
-
     $stateProvider
-      .state('login', {
-        url: '/users/login',
-        templateUrl: 'views/users/login.html'
+      .state('app.login', {
+        url: 'users/login',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/login.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        }
       })
-      .state('logout', {
-        url: '/users/logout',
-        templateUrl: 'views/users/logout.html'
+      .state('app.logout', {
+        url: 'users/logout',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/logout.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        }
       })
-        .state('signup', {
-            url: '/users/sign-up',
-            templateUrl: 'views/users/signup.html'
-        })
-         .state('posts', {
-        url: '/users/posts',
-        templateUrl: 'views/users/posts.html'
-    });
+      .state('app.register', {
+        url: 'users/register',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/register.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        }
+      })
+      .state('app.user', {
+        url: 'users/edit',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/edit.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        },
+        authorization: true,
+        redirectTo: 'app.login',
+      });
   }
 })();

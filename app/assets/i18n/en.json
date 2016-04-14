@@ -1,0 +1,37 @@
+{
+  "global": {
+    "account": {
+      "login": "Login",
+      "logout": "Logout",
+      "register": "Register"
+    }
+  },
+  "user": {
+    "account" : {
+      "settings": "Account Settings",
+      "signIn": "Please Sign in",
+      "logout": "Do you really want to log out?",
+      "registration": "Registration",
+      "button" : {
+        "logout": "Logout",
+        "cancel": "Cancel"
+      },
+      "form" : {
+        "label" : {
+          "username": "Name",
+          "username": "Username",
+          "password": "Password"
+        },
+        "placeholder" : {
+          "name": "Name",
+          "username": "Username",
+          "password": "Password"
+        },
+        "button" : {
+          "login": "Login",
+          "register": "Register"
+        }
+      }
+    }
+  }
+}

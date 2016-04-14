@@ -1,5 +1,7 @@
 'use strict';
 
+let passport = require('passport');
+
 const User = require('../models/user');
 
 class UsersController {
@@ -8,42 +10,74 @@ class UsersController {
     res.header("Content-Type", "application/json; charset=utf-8");
 
     User.find({}, function(err, users) {
-        if (err) {
-          throw err;
-        } else {
-          res.json(users);
-        }
+      if (err) {
+        throw err;
+      } else {
+        res.json(users);
+      }
     });
   }
 
-  login(req, res) {
-    console.log('session:', req.session);
 
-    res.header("Content-Type", "application/json; charset=utf-8");
+  login(req, res, next) {
+    passport.authenticate('local', function(error, user, info) {
+      if(error) {
+        return next(error);
+      }
 
-    var usr = decodeURIComponent(req.params.user);
-    var pwd = decodeURIComponent(req.params.pwd);
+      if(!user) {
+        const message = {status: false, message: info};
+        return res.status(401).json(message);
+      }
 
-    User.find({user:usr, pwd:pwd}, function(err, users) {
-        if (err) {
-            res.json({status:false, err:err});
-            throw err;
+      req.logIn(user, function(error) {
+        if(error) {
+          const message = {status: false, message: 'Could not log in.'};
+          return res.status(500).json(message);
         }
+        const message = {status: true, message: 'Login successful.'};
+        res.status(200).json(message);
+      });
 
-        var login = users.length > 0 ? true : false;
+    })(req, res, next);
+  }
 
-        if (login > 0) {
-          req.session.user = usr;
-        }
+  logout(req, res, next) {
+    req.logout();
+    req.session.destroy(function (error) {
+      if (error) {
+        return next(error);
+      }
+      const message = {
+        status: req.isAuthenticated()
+      };
+      return res.status(200).json(message);
+    });
+  };
 
-        res.json({status:true, success:login, err:''});
+  register(req, res, next) {
+    const user = new User({
+        username: req.body.username,
+        name: req.body.name
+      });
+    const password = req.body.password;
+    User.register(user, password, function(error) {
+      if(error) {
+        const message = {status: false, message: error};
+        res.status(500).json(message);
+      } else {
+        const message = {status: true, message: 'Registration successful.'};
+        res.status(200).json(message);
+      }
     });
   }
 
-  logout(req, res) {
-    res.header("Content-Type", "application/json; charset=utf-8");
-    req.session.reset();
-    res.json({status:true});
+  getStatus(req, res) {
+    const message = {
+      status: req.isAuthenticated(),
+      user: req.user
+    };
+    return res.status(200).json(message);
   }
 
 }
