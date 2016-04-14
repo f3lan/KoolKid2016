@@ -7,7 +7,10 @@ var postSchema = new Schema({
     image: String,
     question: String,
     name: String,
-    rating: {type:Number, default : 0}
+    rating: {
+      type: Number,
+      default : 0
+    }
 });
 
 var Post = mongoose.model('posts', postSchema);

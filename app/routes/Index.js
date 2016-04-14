@@ -12,14 +12,9 @@ class IndexRoutes {
   index() {
     this.app.route('/').get(IndexController.index);
   }
-
-  post() {
-    this.app.route('/post/:title/:category/:image/:question').get(IndexController.post);
-  }
 }
 
 module.exports = function(app) {
   const indexRoutes = new IndexRoutes(app);
   indexRoutes.index();
-  indexRoutes.post();
 };
