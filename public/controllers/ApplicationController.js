@@ -3,14 +3,14 @@
 (function() {
 
   angular.module('MedEx').controller('ApplicationController', [
-    '$scope',
     'AuthService',
+    'LanguageService',
     ApplicationController
   ]);
 
   function ApplicationController(
-    $scope,
-    AuthService
+    AuthService,
+    LanguageService
   ) {
 
     var that = this;
@@ -27,9 +27,20 @@
       return AuthService.isLoggedIn();
     }
 
+    var setLanguage = function(lang) {
+      LanguageService.setLanguage(lang)
+    }
+
+    var currentLanguage = function() {
+      return LanguageService.currentLanguage();
+    }
+
     return {
       getUser: getUser,
-      isLoggedIn: isLoggedIn
+      isLoggedIn: isLoggedIn,
+      language: currentLanguage,
+      setLanguage: setLanguage,
+      languages: LanguageService.availableLanguages()
     }
 
   }

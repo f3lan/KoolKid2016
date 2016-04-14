@@ -10,10 +10,7 @@
     <!-- build:css -->
     <link rel="stylesheet" href="/assets/stylesheets/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/assets/stylesheets/bootstrap.min.css">
-    <!-- endbuild -->
-
-    <!-- build:fonts -->
-
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
     <!-- endbuild -->
 </head>
 
@@ -24,7 +21,15 @@
 </body>
 
 <!-- build:vendor-js -->
+  <script src="/assets/javascript/jquery-2.2.3.min.js"></script>
+  <script src="/assets/javascript/bootstrap.min.js"></script>
+
   <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-cookies/angular-cookies.js"></script>
+  <script src="lib/angular-translate/angular-translate.js"></script>
+  <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="lib/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+  <script src="lib/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
   <script src="lib/angular-resource/angular-resource.js"></script>
   <script src="lib/angular-ui/build/angular-ui.min.js"></script>
@@ -45,6 +50,7 @@
 
   <script src="services/ApiService.js"></script>
   <script src="services/AuthService.js"></script>
+  <script src="services/LanguageService.js"></script>
 
   <script src="controllers/UsersController.js"></script>
   <script src="controllers/ApplicationController.js"></script>
