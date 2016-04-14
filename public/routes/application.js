@@ -16,7 +16,7 @@
 
     $stateProvider
       .state('app', {
-        url:'',
+        url:'/',
         views: {
           'header': {
             templateUrl: 'views/application/header.html',

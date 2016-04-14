@@ -27,13 +27,13 @@ class UsersController {
 
       if(!user) {
         const message = {status: false, message: info};
-        res.status(401).json(message);
+        return res.status(401).json(message);
       }
 
       req.logIn(user, function(error) {
         if(error) {
           const message = {status: false, message: 'Could not log in.'};
-          res.status(500).json(message);
+          return res.status(500).json(message);
         }
         const message = {status: true, message: 'Login successful.'};
         res.status(200).json(message);
@@ -42,9 +42,18 @@ class UsersController {
     })(req, res, next);
   }
 
-  logout(req, res) {
+  logout(req, res, next) {
     req.logout();
-  }
+    req.session.destroy(function (error) {
+      if (error) {
+        return next(error);
+      }
+      const message = {
+        status: req.isAuthenticated()
+      };
+      return res.status(200).json(message);
+    });
+  };
 
   register(req, res, next) {
     const user = new User({
@@ -64,13 +73,11 @@ class UsersController {
   }
 
   getStatus(req, res) {
-    if (!req.isAuthenticated()) {
-      const message = {status: false};
-      res.status(200).json(message);
-    } else {
-      const message = {status: true};
-      res.status(200).json(message);
-    }
+    const message = {
+      status: req.isAuthenticated(),
+      user: req.user
+    };
+    return res.status(200).json(message);
   }
 
 }

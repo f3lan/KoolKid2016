@@ -1,1 +1,33 @@
-Hello, I am a header.
+<div data-ng-if="applicationController.isLoggedIn()">
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a data-ui-sref="app.user">
+        <span class="glyphicon glyphicon-user"></span>
+        {{applicationController.getUser().username}}
+      </a>
+    </li>
+    <li>
+      <a data-ui-sref="app.logout">
+        <span class="glyphicon glyphicon-log-in"></span>
+        {{'global.logout'}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div data-ng-if="!applicationController.isLoggedIn()">
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+      <a data-ui-sref="app.register">
+        <span class="glyphicon glyphicon-user"></span>
+        {{'global.regiseter'}}
+      </a>
+    </li>
+    <li>
+      <a data-ui-sref="app.login">
+        <span class="glyphicon glyphicon-log-in"></span>
+        {{'global.login'}}
+      </a>
+    </li>
+  </ul>
+</div>

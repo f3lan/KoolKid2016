@@ -33,7 +33,7 @@
           }
         }
       })
-      .state('register', {
+      .state('app.register', {
         url: 'users/register',
         views: {
           'content@' : {
@@ -42,6 +42,18 @@
             controllerAs: 'usersController'
           }
         }
+      })
+      .state('app.user', {
+        url: 'users/edit',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        },
+        authorization: true,
+        redirectTo: 'app.login',
       });
   }
 })();
