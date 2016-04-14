@@ -22,6 +22,16 @@
             templateUrl: 'views/application/header.html',
             controller: 'ApplicationController',
             controllerAs: 'applicationController'
+          },
+          'right': {
+            templateUrl: 'views/application/right.html',
+            controller: 'ApplicationController',
+            controllerAs: 'applicationController'
+          },
+          'footer': {
+            templateUrl: 'views/application/footer.html',
+            controller: 'ApplicationController',
+            controllerAs: 'applicationController'
           }
         }
       });
