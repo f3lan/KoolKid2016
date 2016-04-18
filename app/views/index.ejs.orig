@@ -54,7 +54,11 @@
 
   <script src="controllers/UsersController.js"></script>
   <script src="controllers/ApplicationController.js"></script>
+<<<<<<< HEAD
+  <script src="controllers/PostsController.js"></script>
+=======
   <script src="controllers/PostController.js"></script>
+>>>>>>> develop
 <!-- endbuild -->
 
 </html>
