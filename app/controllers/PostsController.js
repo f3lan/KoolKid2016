@@ -25,7 +25,7 @@ class PostsController {
   }
 
   create(req, res) {
-    const post = new Post(req.body.post);
+    const post = new Post(req.body);
     post.save(function(error) {
       if(error) {
         const message = {status: false, message: error};

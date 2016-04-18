@@ -1,1 +1,19 @@
-Show one Post
+<div class="row"
+     data-ng-init="postsController.getPost()">
+  <div class="col-xs-12">
+
+    <h2 class="">
+      {{'posts.show.title' | translate}}
+    </h2>
+
+    Title:
+    {{postsController.post.title}}
+    <br>
+    Content:
+    {{postsController.post.content}}
+    <br>
+    Author:
+    {{postsController.post.author}}
+    <br>
+  </div>
+</div>

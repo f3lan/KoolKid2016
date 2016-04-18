@@ -1,1 +1,54 @@
-Show all Posts
+<div class="row"
+     data-ng-init="postsController.getPosts()">
+  <div class="col-xs-12">
+
+    <a href="#/posts/create" type="button" class="btn btn-primary">
+      {{'posts.form.button.new' | translate}}
+    </a>
+    <hr/>
+
+    <h2 class="">
+      {{'posts.index.title' | translate}}
+    </h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Category</th>
+          <th>Hidden</th>
+          <th>Date</th>
+          <th>
+            <!--<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat="post in postsController.posts">
+          <td>{{$index+1}}</td>
+          <td>{{post.author}}</td>
+          <td>
+            <a href="#/posts/{{post._id}}/">
+                    {{post.title}}
+                  </a>
+          </td>
+          <td>{{post.status}}</td>
+          <td>{{post.category}}</td>
+          <td>{{post.hidden}}</td>
+          <td>{{post.date}}</td>
+          <td>
+            <a ng-click="postController.delete(post._id)" href="#">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true">
+                    </span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
