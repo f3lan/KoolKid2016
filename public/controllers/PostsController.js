@@ -4,8 +4,7 @@
 
   angular.module('MedEx').controller('PostsController', [
     'ApiService',
-    'AuthService',
-    '$state',
+    'AuthService', '$state',
     '$stateParams',
     PostsController
   ]);
@@ -46,10 +45,37 @@
       });
     }
 
+    var edit = function(post) {
+      this.post = post;
+      $state.go('app.posts#edit', {id: post._id});
+    }
+
+    var update = function() {
+      var id = $stateParams.id;
+      var url = 'posts/' + id;
+      var post = this.post;
+      post.author = AuthService.getUser().username;
+
+      ApiService.put(url, post).then(function(post) {
+        $state.go('app.posts#show', {id: post._id});
+      });
+    }
+
+    var del = function(post) {
+      var url = 'posts/' + post._id;
+      ApiService.del(url, post).then(function(data) {
+        $state.reload();
+      });
+
+    }
+
     return {
       getPosts: getPosts,
       getPost: getPost,
-      create: create
+      create: create,
+      edit, edit,
+      update, update,
+      del: del
     }
 
   }

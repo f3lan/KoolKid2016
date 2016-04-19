@@ -20,7 +20,7 @@ class PostsRoutes {
   }
 
   update() {
-    this.app.route('/posts/:id').post(PostsController.update);
+    this.app.route('/posts/:id').put(PostsController.update);
   }
 
   delete() {

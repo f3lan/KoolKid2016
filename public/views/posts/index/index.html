@@ -2,14 +2,11 @@
      data-ng-init="postsController.getPosts()">
   <div class="col-xs-12">
 
-    <a href="#/posts/create" type="button" class="btn btn-primary">
-      {{'posts.form.button.new' | translate}}
-    </a>
-    <hr/>
-
     <h2 class="">
       {{'posts.index.title' | translate}}
     </h2>
+
+    <hr/>
 
     <table class="table table-striped">
       <thead>
@@ -22,8 +19,9 @@
           <th>Hidden</th>
           <th>Date</th>
           <th>
-            <!--<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>-->
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </th>
+          <th></th>
         </tr>
       </thead>
 
@@ -41,9 +39,13 @@
           <td>{{post.hidden}}</td>
           <td>{{post.date}}</td>
           <td>
-            <a ng-click="postController.delete(post._id)" href="#">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true">
-                    </span>
+            <a ng-click="postsController.del(post)" href="">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </a>
+          </td>
+          <td>
+            <a ng-click="postsController.edit(post)" href="">
+              edit
             </a>
           </td>
         </tr>

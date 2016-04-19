@@ -1,9 +1,11 @@
-<div class="row">
+<div class="row"
+     data-ng-init="postsController.getPost()">
   <div class="col-xs-12">
+    {{post}}
 
-    <form data-ng-submit="postsController.create()">
+    <form data-ng-submit="postsController.update()">
       <h2 class="form-signin-heading">
-        {{'posts.create' | translate}}
+        {{'posts.edit.title' | translate}}
       </h2>
 
       <br>
@@ -49,4 +51,4 @@
         {{'post.form.button.save' | translate}}
       </button>
     </form>
-  </div>
+  <dit Post

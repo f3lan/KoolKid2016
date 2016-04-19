@@ -4,9 +4,9 @@ const Post = require('../models/post');
 class PostsController {
 
   index(req, res) {
-    Post.find({}, function(err, posts) {
-      if (err) {
-        throw err;
+    Post.find({}, function(error, posts) {
+      if (error) {
+        throw error;
       } else {
         res.json(posts);
       }
@@ -31,7 +31,7 @@ class PostsController {
         const message = {status: false, message: error};
         return res.json(message);
       } else {
-        const message = {status: true, message: 'Post reated'};
+        const message = {status: true, message: 'Post created'};
         return res.json(message);
       }
     });
@@ -39,11 +39,27 @@ class PostsController {
 
 
   update(req, res) {
-    //TODO
+    Post.findByIdAndUpdate(req.params.id,
+                          {$set: req.body},
+                          function (error, post) {
+      if (error) {
+        throw error;
+      } else {
+        res.json(post);
+      }
+    });
   }
 
   delete(req, res) {
-    //TODO
+    Post.remove({"_id": req.params.id}, function(error, post) {
+      if(error) {
+        const message = {status: false, message: error};
+        return res.json(message);
+      } else {
+        const message = {status: true, message: 'Post deleted'};
+        return res.json(message);
+      }
+    })
   }
 
 }

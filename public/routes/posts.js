@@ -17,17 +17,22 @@
         url: 'posts',
         views: {
           'content@' : {
-            templateUrl: 'views/posts/index.html',
+            templateUrl: 'views/posts/index/index.html',
             controller: 'PostsController',
             controllerAs: 'postsController'
-          }
+          },
+          'right@': {
+            templateUrl: 'views/posts/index/right.html',
+            controller: 'PostsController',
+            controllerAs: 'postsController'
+          },
         }
       })
       .state('app.posts#create', {
         url: 'posts/create',
         views: {
           'content@' : {
-            templateUrl: 'views/posts/create.html',
+            templateUrl: 'views/posts/create/create.html',
             controller: 'PostsController',
             controllerAs: 'postsController'
           }
@@ -37,7 +42,7 @@
         url: 'posts/:id/',
         views: {
           'content@' : {
-            templateUrl: 'views/posts/show.html',
+            templateUrl: 'views/posts/show/show.html',
             controller: 'PostsController',
             controllerAs: 'postsController'
           }
@@ -47,7 +52,7 @@
         url: 'posts/:id/edit',
         views: {
           'content@' : {
-            templateUrl: 'views/posts/edit.html',
+            templateUrl: 'views/posts/edit/edit.html',
             controller: 'PostsController',
             controllerAs: 'postsController'
           }
