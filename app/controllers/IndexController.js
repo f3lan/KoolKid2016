@@ -1,5 +1,5 @@
 'use strict';
-
+const Post = require('../models/post');
 class IndexController {
 
   index(req, res) {
@@ -8,6 +8,7 @@ class IndexController {
       session: req.session
     });
   }
+
 }
 
 module.exports = new IndexController();

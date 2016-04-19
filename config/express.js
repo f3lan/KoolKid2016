@@ -52,7 +52,7 @@ module.exports = function() {
   // Routes
   require('../app/routes/Index.js')(app);
   require('../app/routes/Users.js')(app);
-  require('../app/routes/Post.js')(app);
+  require('../app/routes/Posts.js')(app);
 
   // Statics
   app.use(express.static('./public'));

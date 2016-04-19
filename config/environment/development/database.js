@@ -5,8 +5,8 @@ module.exports = {
    pwd  UnineEgov123
   */
 
-  url: 'mongodb://unine:UnineEgov123@ds025239.mlab.com:25239/egov',
-  //url: 'mongodb://localhost/medex_development',
+ // url: 'mongodb://unine:UnineEgov123@ds025239.mlab.com:25239/egov',
+  url: 'mongodb://localhost/medex_development',
   options: {
     server: {
       auto_reconnect: true,

@@ -12,7 +12,6 @@ class IndexRoutes {
   index() {
     this.app.route('/').get(IndexController.index);
   }
-
 }
 
 module.exports = function(app) {
