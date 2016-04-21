@@ -1,2 +1,2 @@
-# KoolKid2016
+# MedEx
 Project for eGovernment
