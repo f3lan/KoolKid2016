@@ -1,0 +1,32 @@
+<div class="row"
+     data-ng-init="postsController.getPost()">
+  <div class="col-xs-12">
+
+    <form data-ng-submit="postsController.createComment()">
+      <h2 class="form-signin-heading">
+        {{'posts.show.commentTitle' | translate}}
+      </h2>
+
+      <br>
+
+      <label for="inputCommentContent" class="sr-only">
+        {{'posts.form.comment.content' | translate}}
+      </label>
+
+      <textarea class="form-control"
+                ng-model='postsController.post.comment'
+                rows="5"
+                placeholder="{{'posts.form.placeholders.comment.content' | translate}}"
+                id="inputCommentContent"
+                required autofocus>
+      </textarea>
+
+      <br>
+
+      <button class="btn btn-lg btn-primary btn-block" 
+              type="submit">
+        {{'post.form.comment.button.save' | translate}}
+      </button>
+    </form>
+  </div>
+</div>

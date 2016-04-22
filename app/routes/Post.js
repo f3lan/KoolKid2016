@@ -24,6 +24,10 @@ class PostRoutes {
     this.app.route('/post/new/:author').get(PostController.newpost);
   }
 
+  newPostComment() {
+    this.app.route('/post/newComment/:id').get(PostController.newcomment);
+  }
+
   deleteById() {
     this.app.route('/post/deletebyid/:id').get(PostController.deleteById);
   }

@@ -52,6 +52,22 @@ class PostController {
     });
   }
 
+  newcomment(req, res) {
+    res.header("Content-Type", "application/json; charset=utf-8");
+    var postForComment;
+    Post.find({_id:req.params.id}, function(err, post) {
+      if (err) {
+        console.log(err);
+      }
+      postForComment = post;
+    });
+    
+    postForComment.save(function(err) {
+      if (err) throw err;
+      res.json({status:true});
+    });
+  }
+
   deleteById(req, res) {
     res.header("Content-Type", "application/json; charset=utf-8");
     Post.findOneAndRemove({_id:req.params.id}, function(err, posts) {

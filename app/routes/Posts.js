@@ -15,6 +15,10 @@ class PostsRoutes {
     this.app.route('/posts').post(PostsController.create);
   }
 
+  createComment() {
+    this.app.route('/posts/createComment').post(PostsController.createComment);
+  }
+
   show() {
     this.app.route('/posts/:id').get(PostsController.show);
   }
