@@ -38,21 +38,15 @@ class PostsController {
   }
 
   createComment(req, res) {
-    const post = Post.find({"_id": req.params.id}, function(error, post) {
-      if(error) {
-        throw error;
-      }
-    });
-
-    post.save(function(error) {
-      if(error) {
-        const message = {status: false, message: error};
-        return res.json(message);
-      } else {
-        const message = {status: true, message: 'Comment created'};
-        return res.json(message);
-      }
-    });
+    Post.findByIdAndUpdate(req.params.id,
+        {$set: req.body},
+        function (error, post) {
+          if (error) {
+            throw error;
+          } else {
+            res.json(post);
+          }
+        });
   }
   
   update(req, res) {

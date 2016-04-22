@@ -57,7 +57,7 @@
             url: 'posts/:id/createComment',
             views: {
                 'content@' : {
-                    templateUrl: 'views/posts/createComment/create.html',
+                    templateUrl: 'views/posts/createComment/createComment.html',
                     controller: 'PostsController',
                     controllerAs: 'postsController'
                 }

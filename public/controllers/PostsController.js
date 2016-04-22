@@ -49,6 +49,7 @@
       var id = $stateParams.id;
       var url = 'posts/' + id + '/createComment';
       var post = this.post;
+      post.comment.author = AuthService.getUser().username;
 
       ApiService.post(url, post).then(function(data) {
         if(data.status) {
