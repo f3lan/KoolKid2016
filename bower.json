@@ -3,7 +3,9 @@
   "description": "Question and Answers for Medical Doctors",
   "main": "server.js",
   "authors": [
-    "Felix Langenegger <felix.langenegger@gmail.com>"
+    "Felix Langenegger <felix.langenegger@gmail.com>",
+    "Lukas von Rotz <>",
+    "Marcel Grosjean <>"
   ],
   "license": "MIT",
   "homepage": "https://github.com/f3lan/MedEx",
