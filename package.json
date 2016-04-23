@@ -1,5 +1,5 @@
 {
-  "name": "koolkid2016",
+  "name": "MedEx",
   "version": "1.0.0",
   "description": "Project for eGovernment",
   "main": "server.js",
@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/f3lan/KoolKid2016/issues"
+    "url": "https://github.com/f3lan/MedEx/issues"
   },
-  "homepage": "https://github.com/f3lan/KoolKid2016#readme",
+  "homepage": "https://github.com/f3lan/MedEx#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
     "client-sessions": "^0.7.0",
