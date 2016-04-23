@@ -5,9 +5,8 @@ Project for eGovernment
 
 Run this command to install the node dependencies:
 
-   npm install
+    npm install
 
 Run this command to install the bower dependencies:
 
-   bower install
-
+    bower install
