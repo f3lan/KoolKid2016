@@ -46,23 +46,23 @@
             controller: 'PostsController',
             controllerAs: 'postsController'
           },
-            'right@': {
-                templateUrl: 'views/posts/show/right.html',
-                controller: 'PostsController',
-                controllerAs: 'postsController'
-            },
+          'right@': {
+              templateUrl: 'views/posts/show/right.html',
+              controller: 'PostsController',
+              controllerAs: 'postsController'
+          },
         }
       })
-        .state('app.posts#createComment', {
-            url: 'posts/:id/createComment',
-            views: {
-                'content@' : {
-                    templateUrl: 'views/posts/createComment/createComment.html',
-                    controller: 'PostsController',
-                    controllerAs: 'postsController'
-                }
-            }
-        })
+      .state('app.posts#createComment', {
+          url: 'posts/:id/createComment',
+          views: {
+              'content@' : {
+                  templateUrl: 'views/posts/createComment/createComment.html',
+                  controller: 'PostsController',
+                  controllerAs: 'postsController'
+              }
+          }
+      })
       .state('app.posts#edit', {
         url: 'posts/:id/edit',
         views: {

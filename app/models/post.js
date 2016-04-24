@@ -26,10 +26,10 @@ var Post = new Schema({
       type: Boolean,
       default: true
     },
-    comments: [
-      { body: String,
-        author:String,
-        date: Date
+    comments : [
+      {
+        type: Schema.ObjectId,
+        ref: 'Comment'
       }
     ]
 });

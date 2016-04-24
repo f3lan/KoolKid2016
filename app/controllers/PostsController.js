@@ -48,7 +48,7 @@ class PostsController {
           }
         });
   }
-  
+
   update(req, res) {
     Post.findByIdAndUpdate(req.params.id,
                           {$set: req.body},

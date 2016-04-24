@@ -45,13 +45,12 @@
       });
     }
 
-    var createComment = function() {
+    var createComment = function(comment) {
       var id = $stateParams.id;
-      var url = 'posts/' + id + '/createComment';
-      var post = this.post;
-      post.comment.author = AuthService.getUser().username;
+      var url = 'posts/' + id + '/comments';
+      comment.author = AuthService.getUser().username;
 
-      ApiService.post(url, post).then(function(data) {
+      ApiService.post(url, comment).then(function(data) {
         if(data.status) {
           $state.go('app.posts#show', {id: post._id});
         }

@@ -15,10 +15,6 @@ class PostsRoutes {
     this.app.route('/posts').post(PostsController.create);
   }
 
-  createComment() {
-    this.app.route('/posts/:id/createComment').put(PostsController.createComment);
-  }
-
   show() {
     this.app.route('/posts/:id').get(PostsController.show);
   }
@@ -39,7 +35,6 @@ module.exports = function(app) {
   postsRoutes.index();
   postsRoutes.show();
   postsRoutes.create();
-  postsRoutes.createComment();
   postsRoutes.update();
   postsRoutes.delete();
 }

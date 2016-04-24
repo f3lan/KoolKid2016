@@ -2,7 +2,7 @@
      data-ng-init="postsController.getPost()">
   <div class="col-xs-12">
 
-    <form data-ng-submit="postsController.createComment()">
+    <form data-ng-submit="postsController.createComment(postsController.comment)">
       <h2 class="form-signin-heading">
         {{'posts.show.commentTitle' | translate}}
       </h2>
@@ -14,7 +14,7 @@
       </label>
 
       <textarea class="form-control"
-                ng-model='postsController.post.comment'
+                ng-model='postsController.comment.text'
                 rows="5"
                 placeholder="{{'posts.form.placeholders.comment.content' | translate}}"
                 id="inputCommentContent"
