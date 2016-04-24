@@ -4,19 +4,19 @@
 
     <form data-ng-submit="postsController.createComment(postsController.comment)">
       <h2 class="form-signin-heading">
-        {{'posts.show.commentTitle' | translate}}
+        {{'posts.comments.title' | translate}}
       </h2>
 
       <br>
 
       <label for="inputCommentContent" class="sr-only">
-        {{'posts.form.comment.content' | translate}}
+        {{'posts.comments.content' | translate}}
       </label>
 
       <textarea class="form-control"
                 ng-model='postsController.comment.text'
                 rows="5"
-                placeholder="{{'posts.form.placeholders.comment.content' | translate}}"
+                placeholder="{{'posts.comments.form.placeholders.content' | translate}}"
                 id="inputCommentContent"
                 required autofocus>
       </textarea>
@@ -25,7 +25,7 @@
 
       <button class="btn btn-lg btn-primary btn-block" 
               type="submit">
-        {{'post.form.comment.button.save' | translate}}
+        {{'posts.comments.form.button.save' | translate}}
       </button>
     </form>
   </div>

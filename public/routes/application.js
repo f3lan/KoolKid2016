@@ -16,8 +16,16 @@
 
     $stateProvider
       .state('app', {
-        url:'/',
+        url: '',
         views: {
+          'content@' : {
+            templateUrl: 'views/index.html',
+          },
+          'navigation': {
+            templateUrl: 'views/application/navigation.html',
+            controller: 'ApplicationController',
+            controllerAs: 'applicationController'
+          },
           'header': {
             templateUrl: 'views/application/header.html',
             controller: 'ApplicationController',
@@ -35,5 +43,7 @@
           }
         }
       });
+
+    $urlRouterProvider.when('', '/index');
   }
 })();

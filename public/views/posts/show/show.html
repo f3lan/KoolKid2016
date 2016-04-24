@@ -1,18 +1,71 @@
 <div class="row" data-ng-init="postsController.getPost()">
   <div class="col-xs-12">
-
-    <h2 class="">
-      {{'posts.show.title' | translate}}
+    <div class="col-xs-12">
+    <h2>
+      {{postsController.post.title}}
     </h2>
-
-    Title:
-    {{postsController.post.title}}
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <i>
+        {{postsController.post.author}} - {{postsController.post.date | date: format:
+        'dd.mm.yyyy'}}
+        </i>
+      </div>
+    </div>
     <br>
-    Content:
-    {{postsController.post.content}}
+    <div class="row question">
+      <div class="col-xs-2">
+        <b>
+        Rating
+        </b>
+        <br>
+        <br>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+        <span class="glyphicon glyphicon-star-empty"></span>
+      </div>
+      <div class="col-xs-10">
+        {{postsController.post.content}}
+      </div>
+    </div>
     <br>
-    Author:
-    {{postsController.post.author}}
-
+    <br>
+    <div class="row">
+      <div class="col-xs-2">
+        <h4>
+          {{'posts.category' | translate}}
+        </h3>
+        <ul class="list-inline">
+          <li class="category">
+            {{postsController.post.category}}
+          </li>
+        <ul>
+      </div>
+    </div>
+    <hr>
+    <div class="row"
+         ng-init="postsController.getComments()">
+      <div class="col-xs-12">
+        <h4>
+          Comments
+        </h4>
+        <div ng-repeat="comment in postsController.post.comments">
+          {{comment.text}} - {{comment.author}}
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h3>
+          {{'posts.answers' | translate}}
+        </h3>
+        <br>
+        ...
+      </div>
+    </div>
   </div>
 </div>

@@ -1,3 +1,22 @@
 html, body {
   margin: 0 auto;
 }
+
+.content {
+  min-height: 400px;
+}
+
+.imprint {
+  text-align:right;
+}
+
+.category {
+  background: #00BFFF;
+  padding: 4px;
+  margin: 2px;
+}
+
+.question{
+  background: #ccc;
+  padding: 10px 0;
+}

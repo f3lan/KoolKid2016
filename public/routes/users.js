@@ -14,7 +14,7 @@
 
     $stateProvider
       .state('app.login', {
-        url: 'users/login',
+        url: '/users/login',
         views: {
           'content@' : {
             templateUrl: 'views/users/login.html',
@@ -24,7 +24,7 @@
         }
       })
       .state('app.logout', {
-        url: 'users/logout',
+        url: '/users/logout',
         views: {
           'content@' : {
             templateUrl: 'views/users/logout.html',
@@ -34,7 +34,7 @@
         }
       })
       .state('app.register', {
-        url: 'users/register',
+        url: '/users/register',
         views: {
           'content@' : {
             templateUrl: 'views/users/register.html',
@@ -44,7 +44,7 @@
         }
       })
       .state('app.user', {
-        url: 'users/edit',
+        url: '/users/edit',
         views: {
           'content@' : {
             templateUrl: 'views/users/edit.html',
