@@ -45,6 +45,18 @@
       });
     }
 
+    var createComment = function(comment) {
+      var id = $stateParams.id;
+      var url = 'posts/' + id + '/comments';
+      comment.author = AuthService.getUser().username;
+
+      ApiService.post(url, comment).then(function(data) {
+        if(data.status) {
+          $state.go('app.posts#show', {id: post._id});
+        }
+      });
+    }
+
     var edit = function(post) {
       this.post = post;
       $state.go('app.posts#edit', {id: post._id});
@@ -73,6 +85,7 @@
       getPosts: getPosts,
       getPost: getPost,
       create: create,
+      createComment: createComment,
       edit, edit,
       update, update,
       del: del

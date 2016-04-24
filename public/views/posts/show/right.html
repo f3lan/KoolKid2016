@@ -1,0 +1,9 @@
+<div class="row" data-ng-init="postsController.getPost()">
+  <h2 class="">
+      {{'posts.show.commentTitle' | translate}}
+  </h2>
+  <hr/>
+  <a href="#/posts/{{postsController.post._id}}/createComment" type="button" class="btn btn-primary">
+      {{'posts.show.button.new' | translate}}
+  </a>
+</div>

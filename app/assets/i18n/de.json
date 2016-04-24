@@ -6,6 +6,17 @@
       "register": "Register"
     }
   },
+  "posts": {
+    "index": {
+      "title": "Alle Posts"
+    },
+    "show" : {
+      "title": "Post Details",
+      "button" : {
+        "new": "New comment"
+      }
+    }
+  },
   "user": {
     "account" : {
       "settings": "Account Settings",

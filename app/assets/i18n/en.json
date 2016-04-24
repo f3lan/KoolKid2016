@@ -6,6 +6,24 @@
       "register": "Register"
     }
   },
+  "posts": {
+    "form": {
+      "commentContent": "Comment"
+    },
+    "index": {
+      "title": "All Posts",
+      "button": {
+        "new": "New Post"
+      }
+    },
+    "show" : {
+      "title": "Post Details",
+      "commentTitle" : "Create comment",
+      "button" : {
+        "new": "New comment"
+      }
+    }
+  },
   "user": {
     "account" : {
       "settings": "Account Settings",
@@ -18,7 +36,7 @@
       },
       "form" : {
         "label" : {
-          "username": "Name",
+          "name": "Name",
           "username": "Username",
           "password": "Password"
         },
