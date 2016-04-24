@@ -4,6 +4,20 @@ const Post = require('../models/post');
 
 class CommentsController {
 
+  show(req, res) {
+    var id = req.params.id;
+
+    Post.findOne({"_id": id})
+      .populate('comments')
+      .exec(function(error, post) {
+        if(error) {
+          throw error;
+        } else {
+          res.json(post.comments);
+        }
+      });
+  }
+
   create(req, res) {
     var comment = new Comment(req.body);
     var id = req.params.id;
