@@ -35,8 +35,9 @@ class CommentsController {
           }
           post.comments.push(comment._id);
           post.save();
-          console.log('post', post);
-          console.log('comment', post.comments[0]);
+
+          const message = {status: true, message: 'Comment created'};
+          return res.json(message);
         });
     });
   }

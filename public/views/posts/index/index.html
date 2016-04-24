@@ -11,42 +11,44 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Author</th>
           <th>Title</th>
           <th>Status</th>
           <th>Category</th>
-          <th>Hidden</th>
+          <th>Author</th>
           <th>Date</th>
           <th>
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </th>
-          <th></th>
+          <th>
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+          </th>
         </tr>
       </thead>
 
       <tbody>
         <tr ng-repeat="post in postsController.posts">
-          <td>{{$index+1}}</td>
-          <td>{{post.author}}</td>
           <td>
             <a href="#/posts/{{post._id}}/">
-                    {{post.title}}
-                  </a>
+              {{post.title}}
+            </a>
           </td>
           <td>{{post.status}}</td>
           <td>{{post.category}}</td>
-          <td>{{post.hidden}}</td>
-          <td>{{post.date}}</td>
+          <td>{{post.author}}</td>
+          <td>{{post.date | date: format: 'dd.MM.yyyy'}}</td>
           <td>
-            <a ng-click="postsController.del(post)" href="">
-              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-            </a>
+            <div ng-if="postsController.canEdit(post)">
+              <a ng-click="postsController.del(post)" href="">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+              </a>
+            </div>
           </td>
           <td>
-            <a ng-click="postsController.edit(post)" href="">
-              edit
-            </a>
+            <div ng-if="postsController.canEdit(post)">
+              <a ng-click="postsController.edit(post)" href="">
+                edit
+              </a>
+            </div>
           </td>
         </tr>
       </tbody>

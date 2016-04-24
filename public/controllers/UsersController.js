@@ -20,7 +20,7 @@
       AuthService.login(user).then(function(data) {
         if(data.status) {
           AuthService.setUser(true);
-          $state.go('app.index');
+          $state.go('app.posts#index');
           that.result = "Login successful";
         } else {
           that.result = "Login not successful";

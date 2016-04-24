@@ -33,6 +33,15 @@
       });
     }
 
+    var getComments = function(post) {
+      var id = $stateParams.id;
+      var url = 'posts/' + id + '/comments';
+      var that = this;
+      ApiService.get(url).then(function(data) {
+        that.post.comments = data;
+      });
+    }
+
     var create = function() {
       var url = 'posts';
       var post = this.post;
@@ -49,10 +58,12 @@
       var id = $stateParams.id;
       var url = 'posts/' + id + '/comments';
       comment.author = AuthService.getUser().username;
-
+      var that = this;
+      that.id = id;
       ApiService.post(url, comment).then(function(data) {
+        debugger;
         if(data.status) {
-          $state.go('app.posts#show', {id: post._id});
+          $state.go('app.posts#show', {id: that.id});
         }
       });
     }
@@ -81,12 +92,19 @@
 
     }
 
+    var canEdit = function(post) {
+      var username = AuthService.getUser().username;
+      return (username === post.author);
+    }
+
     return {
       getPosts: getPosts,
       getPost: getPost,
       create: create,
       createComment: createComment,
-      edit, edit,
+      getComments: getComments,
+      edit: edit,
+      canEdit: canEdit,
       update, update,
       del: del
     }

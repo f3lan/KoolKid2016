@@ -4,11 +4,38 @@
       "login": "Login",
       "logout": "Logout",
       "register": "Register"
-    }
+    },
+    "posts":"Questions"
   },
+  "index": {
+    "title" : "MedEx",
+    "subtitle": "Questions and Answers for Doctors of Medicine",
+    "introduction": "Welcome to the MedEx. MedEx Switzerlands first questions and answers application for doctors of medicine. If you have a difficulte medical case or if you want to discuse some specific phenomena MedEx is the right place.",
+    "introduction2":"MedEx is only for experts and is not public for anyone else. Register today to discuss and share."
+  },
+  "imprint": "Legal Notice",
   "posts": {
+    "comments": {
+      "title" : "Create comment",
+      "form": {
+        "placeholders": {
+          "content" : "Content"
+        },
+        "button": {
+          "save": "Save"
+        }
+      }
+    },
     "form": {
-      "commentContent": "Comment"
+      "placeholders": {
+        "title": "Title",
+        "content": "Content",
+        "category": "Category"
+      },
+      "button" : {
+        "save": "Save"
+      }
+
     },
     "index": {
       "title": "All Posts",
@@ -18,11 +45,19 @@
     },
     "show" : {
       "title": "Post Details",
-      "commentTitle" : "Create comment",
+      "comment": "Create Comment",
       "button" : {
         "new": "New comment"
       }
-    }
+    },
+    "create": {
+      "title": "Ask"
+    },
+    "edit": {
+      "title": "Edit Post"
+    },
+    "category": "Categories",
+    "answers": "Answers"
   },
   "user": {
     "account" : {
