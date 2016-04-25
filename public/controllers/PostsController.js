@@ -84,6 +84,12 @@
       });
     }
 
+
+    var updateRating = function(value) {
+      this.post.rating += value;
+      this.update();
+    }
+
     var del = function(post) {
       var url = 'posts/' + post._id;
       ApiService.del(url, post).then(function(data) {
