@@ -31,7 +31,11 @@ var Post = new Schema({
         type: Schema.ObjectId,
         ref: 'Comment'
       }
-    ]
+    ],
+    rating: {
+        type: Number,
+        default:5
+    }
 });
 
 module.exports = mongoose.model('Post', Post);

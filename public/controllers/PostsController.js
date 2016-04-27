@@ -109,6 +109,7 @@
       create: create,
       createComment: createComment,
       getComments: getComments,
+      updateRating: updateRating,
       edit: edit,
       canEdit: canEdit,
       update, update,
