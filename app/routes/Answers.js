@@ -19,7 +19,7 @@ class AnswersRoutes {
 }
 
 module.exports = function(app) {
-  const AnswersRoutes = new AnswersRoutes(app);
-  AnswersRoutes.show();
-  AnswersRoutes.create();
+  const answersRoutes = new AnswersRoutes(app);
+  answersRoutes.show();
+  answersRoutes.create();
 }
