@@ -32,6 +32,12 @@ var Post = new Schema({
         ref: 'Comment'
       }
     ],
+    answers : [
+        {
+            type: Schema.ObjectId,
+            ref: 'Answer'
+        }
+    ],
     rating: {
         type: Number,
         default:5

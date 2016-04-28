@@ -49,6 +49,18 @@ class PostsController {
         });
   }
 
+  createAnswer(req, res) {
+    Post.findByIdAndUpdate(req.params.id,
+        {$set: req.body},
+        function (error, post) {
+          if (error) {
+            throw error;
+          } else {
+            res.json(post);
+          }
+        });
+  }
+
   update(req, res) {
     Post.findByIdAndUpdate(req.params.id,
                           {$set: req.body},

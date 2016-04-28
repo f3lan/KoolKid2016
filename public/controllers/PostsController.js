@@ -42,6 +42,15 @@
       });
     }
 
+    var getAnswers = function(post) {
+      var id = $stateParams.id;
+      var url = 'posts/' + id + '/answers';
+      var that = this;
+      ApiService.get(url).then(function(data) {
+        that.post.answers = data;
+      });
+    }
+
     var create = function() {
       var url = 'posts';
       var post = this.post;
@@ -61,6 +70,20 @@
       var that = this;
       that.id = id;
       ApiService.post(url, comment).then(function(data) {
+        debugger;
+        if(data.status) {
+          $state.go('app.posts#show', {id: that.id});
+        }
+      });
+    }
+
+    var createAnswer = function(answer) {
+      var id = $stateParams.id;
+      var url = 'posts/' + id + '/answers';
+      answer.author = AuthService.getUser().username;
+      var that = this;
+      that.id = id;
+      ApiService.post(url, answer).then(function(data) {
         debugger;
         if(data.status) {
           $state.go('app.posts#show', {id: that.id});
@@ -114,6 +137,8 @@
       create: create,
       createComment: createComment,
       getComments: getComments,
+      createAnswer: createAnswer,
+      getAnswers: getAnswers,
       updateRating: updateRating,
       markSolved: markSolved,
       edit: edit,
