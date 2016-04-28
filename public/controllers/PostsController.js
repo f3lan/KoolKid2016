@@ -84,6 +84,12 @@
       });
     }
 
+
+    var updateRating = function(value) {
+      this.post.rating += value;
+      this.update();
+    }
+
     var del = function(post) {
       var url = 'posts/' + post._id;
       ApiService.del(url, post).then(function(data) {
@@ -103,6 +109,7 @@
       create: create,
       createComment: createComment,
       getComments: getComments,
+      updateRating: updateRating,
       edit: edit,
       canEdit: canEdit,
       update, update,
