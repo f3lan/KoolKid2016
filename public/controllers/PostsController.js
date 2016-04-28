@@ -90,6 +90,11 @@
       this.update();
     }
 
+    var markSolved = function(solved) {
+      this.post.solved = solved;
+      this.update();
+    }
+
     var del = function(post) {
       var url = 'posts/' + post._id;
       ApiService.del(url, post).then(function(data) {
@@ -110,6 +115,7 @@
       createComment: createComment,
       getComments: getComments,
       updateRating: updateRating,
+      markSolved: markSolved,
       edit: edit,
       canEdit: canEdit,
       update, update,
