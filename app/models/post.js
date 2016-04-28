@@ -35,6 +35,10 @@ var Post = new Schema({
     rating: {
         type: Number,
         default:5
+    },
+    solved: {
+        type: Boolean,
+        default: false
     }
 });
 
