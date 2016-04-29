@@ -87,7 +87,7 @@
         url: '/posts/:id/edit',
         views: {
           'content@' : {
-            templateUrl: 'views/posts/edit/edit.html',
+            templateUrl: 'views/posts/edit/editComment.html',
             controller: 'PostsController',
             controllerAs: 'postsController'
           }

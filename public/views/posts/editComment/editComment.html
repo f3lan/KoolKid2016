@@ -1,0 +1,33 @@
+<div class="row"
+     data-ng-init="postsController.getPost()">
+  <div class="col-xs-12">
+    {{post}}
+
+    <form data-ng-submit="postsController.update()">
+      <h2 class="form-signin-heading">
+        {{'posts.edit.title' | translate}}
+      </h2>
+
+      <br>
+
+      <label for="inputComment" class="sr-only">
+        {{'posts.form.content' | translate}}
+      </label>
+
+      <textarea class="form-control"
+                ng-model='postsController.comment.text'
+                rows="5"
+                placeholder="{{'posts.form.placeholders.content' | translate}}"
+                id="inputComment"
+                required autofocus>
+      </textarea>
+
+      <br>
+
+      <button class="btn btn-lg btn-primary btn-block" 
+              type="submit">
+        {{'posts.form.button.save' | translate}}
+      </button>
+    </form>
+  </div>
+</div>

@@ -47,7 +47,7 @@
         url: '/users/edit',
         views: {
           'content@' : {
-            templateUrl: 'views/users/edit.html',
+            templateUrl: 'views/users/editComment.html',
             controller: 'UsersController',
             controllerAs: 'usersController'
           }
