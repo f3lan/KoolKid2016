@@ -7,7 +7,7 @@ class AnswersController {
   show(req, res) {
     var id = req.params.id;
 
-    Answer.findOne({"_id": id})
+    Post.findOne({"_id": id})
       .populate('answers')
       .exec(function(error, post) {
         if(error) {
@@ -27,7 +27,7 @@ class AnswersController {
         throw error;
       }
 
-      Answer.findOne({"_id": id})
+      Post.findOne({"_id": id})
         .populate('answers')
         .exec(function(error, post) {
           if(error) {

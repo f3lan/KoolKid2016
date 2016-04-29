@@ -143,7 +143,7 @@
       markSolved: markSolved,
       edit: edit,
       canEdit: canEdit,
-      update, update,
+      update: update,
       del: del
     }
 
