@@ -87,13 +87,25 @@
         url: '/posts/:id/edit',
         views: {
           'content@' : {
-            templateUrl: 'views/posts/edit/editComment.html',
+            templateUrl: 'views/posts/edit/edit.html',
             controller: 'PostsController',
             controllerAs: 'postsController'
           }
         },
         authorization: true,
         redirectTo: 'app.login',
-      });
+      })
+    .state('app.posts#editComment', {
+        url: '/posts/:id/editComment',
+        views: {
+            'content@' : {
+                templateUrl: 'views/posts/editComment/editComment.html',
+                controller: 'PostsController',
+                controllerAs: 'postsController'
+            }
+        },
+        authorization: true,
+        redirectTo: 'app.login',
+    });
   }
 })();

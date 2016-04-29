@@ -147,6 +147,7 @@
       updateRating: updateRating,
       markSolved: markSolved,
       edit: edit,
+      editComment: editComment,
       canEdit: canEdit,
       update: update,
       del: del
