@@ -3,14 +3,14 @@
   <div class="col-xs-12">
     {{post}}
 
-    <form data-ng-submit="postsController.update()">
+    <form data-ng-submit="postsController.updateComment(postsController.comment)">
       <h2 class="form-signin-heading">
-        {{'posts.edit.title' | translate}}
+        {{'posts.editComment.title' | translate}}
       </h2>
 
       <br>
 
-      <label for="inputComment" class="sr-only">
+      <label for="inputCommentText" class="sr-only">
         {{'posts.form.content' | translate}}
       </label>
 
@@ -18,7 +18,7 @@
                 ng-model='postsController.comment.text'
                 rows="5"
                 placeholder="{{'posts.form.placeholders.content' | translate}}"
-                id="inputComment"
+                id="inputCommentText"
                 required autofocus>
       </textarea>
 

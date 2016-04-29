@@ -96,8 +96,8 @@
       $state.go('app.posts#edit', {id: post._id});
     }
 
-    var editComment = function(post) {
-      this.post = post;
+    var editComment = function(post,comment) {
+      this.comment = comment;
       $state.go('app.posts#editComment', {id: post._id});
     }
 
@@ -109,6 +109,19 @@
 
       ApiService.put(url, post).then(function(post) {
         $state.go('app.posts#show', {id: post._id});
+      });
+    }
+
+    var updateComment = function(comment) {
+      var id = $stateParams.id;
+      var url = 'posts/' + id + '/comments';
+      var that = this;
+      that.id = id;
+      ApiService.put(url, comment).then(function(data) {
+        debugger;
+        if(data.status) {
+          $state.go('app.posts#show', {id: that.id});
+        }
       });
     }
 
@@ -148,6 +161,7 @@
       markSolved: markSolved,
       edit: edit,
       editComment: editComment,
+      updateComment: updateComment,
       canEdit: canEdit,
       update: update,
       del: del

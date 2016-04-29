@@ -69,13 +69,8 @@
           Comments
         </h4>
         <div ng-repeat="comment in postsController.post.comments">
-          {{comment.text}} - {{comment.author}}  <a ng-click="postsController.edit(post)" href="">edit</a>
+          {{comment.text}} - {{comment.author}}  <a ng-click="postsController.editComment(postsController.post,comment)" href="">edit</a>
           <hr>
-        </div>
-        <div ng-if="postsController.canEdit(post)">
-          <a ng-click="postsController.edit(post)" href="">
-            edit
-          </a>
         </div>
       </div>
     </div>
