@@ -14,6 +14,10 @@ class CommentsRoutes {
   create() {
     this.app.route('/posts/:id/comments').post(CommentsController.create);
   }
+  
+  update() {
+    this.app.route('/posts/:id/comments').put(CommentsController.update);
+  }
 
 
 }
@@ -22,4 +26,5 @@ module.exports = function(app) {
   const commentsRoutes = new CommentsRoutes(app);
   commentsRoutes.show();
   commentsRoutes.create();
+  commentsRoutes.update();
 }
