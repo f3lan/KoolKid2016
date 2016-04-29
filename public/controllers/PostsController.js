@@ -96,6 +96,11 @@
       $state.go('app.posts#edit', {id: post._id});
     }
 
+    var editComment = function(post) {
+      this.post = post;
+      $state.go('app.posts#editComment', {id: post._id});
+    }
+
     var update = function() {
       var id = $stateParams.id;
       var url = 'posts/' + id;
