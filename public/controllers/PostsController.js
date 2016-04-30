@@ -127,8 +127,14 @@
     }
 
     var canEdit = function(post) {
-      var username = AuthService.getUser().username;
-      return (username === post.author);
+      var user = AuthService.getUser();
+      if(!post) {
+        return false;
+      } else if(!user) {
+        return false;
+      } else {
+        return (user.username === post.author);
+      }
     }
 
     return {
