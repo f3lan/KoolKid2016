@@ -26,6 +26,17 @@
         }
       }
     },
+    "answers": {
+      "title" : "Create answer",
+      "form": {
+        "placeholders": {
+          "content" : "Content"
+        },
+        "button": {
+          "save": "Save"
+        }
+      }
+    },
     "form": {
       "placeholders": {
         "title": "Title",
