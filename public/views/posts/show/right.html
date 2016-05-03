@@ -1,17 +1,19 @@
-<div class="row" data-ng-init="postsController.getPost()">
+<div class="row" data-ng-init="postsController.show()">
   <h2 class="">
       {{'posts.show.comment' | translate}}
   </h2>
   <hr/>
-  <a href="#/posts/{{postsController.post._id}}/createComment" type="button" class="btn btn-primary">
-      {{'posts.show.button.newComment' | translate}}
-  </a>
+    <a ui-sref="app.comments#create({id: postsController.post._id})" href="" 
+      type="button" class="btn btn-primary">
+        {{'posts.show.button.newComment' | translate}}
+    </a>
 
     <h2 class="">
         {{'posts.show.answer' | translate}}
     </h2>
     <hr/>
-    <a href="#/posts/{{postsController.post._id}}/createAnswer" type="button" class="btn btn-primary">
+    <a ui-sref="app.answers#create({id: postsController.post._id})" href="" 
+      type="button" class="btn btn-primary">
         {{'posts.show.button.newAnswer' | translate}}
     </a>
 </div>

@@ -59,30 +59,6 @@
         authorization: true,
         redirectTo: 'app.login',
       })
-      .state('app.posts#createComment', {
-          url: '/posts/:id/createComment',
-          views: {
-              'content@' : {
-                  templateUrl: 'views/posts/createComment/createComment.html',
-                  controller: 'PostsController',
-                  controllerAs: 'postsController'
-              }
-          },
-          authorization: true,
-          redirectTo: 'app.login',
-      })
-        .state('app.posts#createAnswer', {
-            url: '/posts/:id/createAnswer',
-            views: {
-                'content@' : {
-                    templateUrl: 'views/posts/createAnswer/createAnswer.html',
-                    controller: 'PostsController',
-                    controllerAs: 'postsController'
-                }
-            },
-            authorization: true,
-            redirectTo: 'app.login',
-        })
       .state('app.posts#edit', {
         url: '/posts/:id/edit',
         views: {
@@ -94,18 +70,6 @@
         },
         authorization: true,
         redirectTo: 'app.login',
-      })
-    .state('app.posts#editComment', {
-        url: '/posts/:id/editComment',
-        views: {
-            'content@' : {
-                templateUrl: 'views/posts/editComment/editComment.html',
-                controller: 'PostsController',
-                controllerAs: 'postsController'
-            }
-        },
-        authorization: true,
-        redirectTo: 'app.login',
-    });
+      });
   }
 })();
