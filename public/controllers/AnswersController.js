@@ -29,7 +29,6 @@
 
     var create = function() {
       var id = $stateParams.id;
-      var answerId = $stateParams.answerId;
       this.answer.author = AuthService.getUser().username;
       var url = 'posts/' + id + '/answers';
       ApiService.post(url, this.answer).then(function(data) {
