@@ -7,19 +7,28 @@ class CommentsRoutes {
     this.app = app;
   }
 
+  index() {
+    this.app.route('/posts/:postId/comments').get(CommentsController.index);
+  }
+
   show() {
-    this.app.route('/posts/:id/comments').get(CommentsController.show);
+    this.app.route('/posts/:postId/comments/:id').get(CommentsController.show);
   }
 
   create() {
-    this.app.route('/posts/:id/comments').post(CommentsController.create);
+    this.app.route('/posts/:postId/comments').post(CommentsController.create);
   }
 
+  update() {
+    this.app.route('/posts/:postId/comments/:id').put(CommentsController.update);
+  }
 
 }
 
 module.exports = function(app) {
   const commentsRoutes = new CommentsRoutes(app);
+  commentsRoutes.index();
   commentsRoutes.show();
   commentsRoutes.create();
+  commentsRoutes.update();
 }

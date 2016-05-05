@@ -8,6 +8,10 @@ var Answer = new Schema({
   text: String,
   date: Date,
   rating: Number,
+  post : {
+    type: Schema.ObjectId,
+    ref: 'Post'
+  }
 });
 
 module.exports = mongoose.model('Answer', Answer);

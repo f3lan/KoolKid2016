@@ -1,10 +1,14 @@
-<div class="row" data-ng-init="postsController.getPost()">
+<div class="row" data-ng-init="postsController.show()">
   <div class="col-xs-12">
     <div class="col-xs-12">
     <h2>
       <span>
         {{postsController.post.title}}
-        <span ng-if="postsController.post.solved" style="margin-left: 10px;" class="label label-success">Solved</span>
+        <span ng-if="postsController.post.solved"
+          style="margin-left: 10px;"
+          class="label label-success">
+          Solved
+        </span>
       </span>
     </h2>
     <hr>
@@ -17,35 +21,40 @@
       </div>
     </div>
     <br>
-    <button ng-if="!postsController.post.solved && postsController.canEdit(postsController.post)" ng-click="postsController.markSolved(true)" class="btn btn-sm btn-success">{{'posts.show.button.markSolved' | translate}}</button>
-    <button ng-if="postsController.post.solved && postsController.canEdit(postsController.post)" ng-click="postsController.markSolved(false)" class="btn btn-sm btn-info">{{'posts.show.button.markNotSolved' | translate}}</button>
+    <div ng-if="postsController.canEdit(postsController.post)">
+      <button ng-if="!postsController.post.solved"
+        ng-click="postsController.solve(true)" class="btn btn-sm btn-success">
+        {{'posts.show.button.markSolved' | translate}}
+      </button>
+      <button ng-if="postsController.post.solved"
+        ng-click="postsController.solve(false)"
+        class="btn btn-sm btn-info">
+        {{'posts.show.button.markNotSolved' | translate}}
+      </button>
+    </div>
     <br>
     <br>
+
     <div class="row question">
       <div class="col-xs-2">
         <b>
           Rating
         </b>
+        {{postsController.post.rating}}
         </br>
-        <button ng-click="postsController.updateRating(-1)">
+        <button ng-click="postsController.rate(-1)">
           -1
         </button>
-        <button ng-click="postsController.updateRating(1)">
+        <button ng-click="postsController.rate(1)">
           +1
         </button>
-
         <br>
-        <br>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star"></span>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        <span class="glyphicon glyphicon-star-empty"></span>
-        {{postsController.post.rating}}
       </div>
+
       <div class="col-xs-10">
         {{postsController.post.content}}
       </div>
+
     </div>
     <br>
     <br>
@@ -62,20 +71,26 @@
       </div>
     </div>
     <hr>
-    <div class="row"
-         ng-init="postsController.getComments()">
+
+    <div class="row">
       <div class="col-xs-12">
         <h4>
           Comments
         </h4>
         <div ng-repeat="comment in postsController.post.comments">
           {{comment.text}} - {{comment.author}}
+          <div class="pull-right">
+            <a ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})"
+              href="">
+              edit
+            </a>
+          </div>
           <hr>
         </div>
       </div>
     </div>
-    <div class="row"
-         ng-init="postsController.getAnswers()">
+
+    <div class="row">
       <div class="col-xs-12">
         <h3>
           {{'posts.answers' | translate}}
@@ -83,6 +98,11 @@
         <br>
         <div ng-repeat="answer in postsController.post.answers">
           {{answer.text}} - {{answer.author}}
+          <div class="pull-right">
+            <a ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})"
+              href="">
+              edit
+            </a>
           <hr>
         </div>
       </div>

@@ -1,8 +1,8 @@
 <div class="row"
-     data-ng-init="postsController.getPost()">
+     data-ng-init="answersController.show()">
   <div class="col-xs-12">
 
-    <form data-ng-submit="postsController.createAnswer(postsController.answer)">
+    <form data-ng-submit="answersController.update()">
       <h2 class="form-signin-heading">
         {{'posts.answers.title' | translate}}
       </h2>
@@ -14,7 +14,7 @@
       </label>
 
       <textarea class="form-control"
-                ng-model='postsController.answer.text'
+                ng-model='answersController.answer.text'
                 rows="5"
                 placeholder="{{'posts.answers.form.placeholders.content' | translate}}"
                 id="inputAnswerContent"
@@ -23,7 +23,7 @@
 
       <br>
 
-      <button class="btn btn-lg btn-primary btn-block" 
+      <button class="btn btn-lg btn-primary btn-block"
               type="submit">
         {{'posts.answers.form.button.save' | translate}}
       </button>
