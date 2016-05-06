@@ -109,6 +109,38 @@
       }
     }
 
+    //http://stackoverflow.com/questions/25019134/how-to-upload-an-image-file-to-mongoose-database-using-mean-js
+    var onFileSelect = function(image) {
+      if (angular.isArray(image)) {
+        image = image[0];
+      }
+
+      // This is how I handle file types in client side
+      if (image.type !== 'image/png' && image.type !== 'image/jpeg') {
+        alert('Only PNG and JPEG are accepted.');
+        return;
+      }
+
+      var uploadInProgress = true;
+      var uploadProgress = 0;
+
+      $scope.upload = $upload.upload({
+        url: '/upload/image',
+        method: 'POST',
+        file: image
+      }).progress(function(event) {
+        uploadProgress = Math.floor(event.loaded / event.total);
+        $scope.$apply();
+      }).success(function(data, status, headers, config) {
+        uploadInProgress = false;
+        // If you need uploaded file immediately
+        $scope.uploadedImage = JSON.parse(data);
+      }).error(function(err) {
+        uploadInProgress = false;
+        console.log('Error uploading file: ' + err.message || err);
+      });
+    };
+
     return {
       index,
       show,
@@ -118,7 +150,8 @@
       del,
       solve,
       rate,
-      canEdit
+      canEdit,
+      onFileSelect
     }
   }
 

@@ -53,6 +53,11 @@
     var setUser = function(user) {
       that.user = user;
     }
+    
+    var update = function(user) {
+      var url = 'users/login';
+      return ApiService.post(url, user);
+    }
 
     return {
       login: login,

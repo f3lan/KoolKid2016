@@ -27,6 +27,11 @@ class PostsRoutes {
     this.app.route('/posts/:id').delete(PostsController.delete);
   }
 
+  upload() {
+    this.app.route('/upload/image')
+        .post(PostsController.postImage);
+  }
+
 }
 
 module.exports = function(app) {
