@@ -109,15 +109,6 @@
       }
     }
 
-    var getPost = function() {
-      var id = $stateParams.id;
-      var url = 'posts/' + id;
-      var that = this;
-      ApiService.get(url).then(function(data) {
-        that.post = data[0];
-      });
-    }
-
     return {
       index,
       show,
@@ -127,8 +118,7 @@
       del,
       solve,
       rate,
-      canEdit,
-      getPost
+      canEdit
     }
   }
 

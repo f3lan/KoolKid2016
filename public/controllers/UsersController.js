@@ -42,6 +42,14 @@
         $state.go('app.index');
       });
     }
+
+    this.show = function() {
+      const that = this;
+      that.user = AuthService.getUser();
+      console.log(user.username);
+
+    }
+
   }
 
 })();

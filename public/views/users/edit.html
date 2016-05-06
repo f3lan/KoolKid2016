@@ -1,15 +1,11 @@
 <div class="row">
-  <div class="col-xs-12" data-ng-init="usersController.get">
+  <div class="col-xs-12" data-ng-init="usersController.show()">
     <h2 class="">
       {{'user.account.settings' | translate}}
     </h2>
 
-    <form data-ng-submit="usersController.register(usersController.user)">
-      <h2 class="form-signin-heading">
-        {{'user.account.registration' | translate}}
-      </h2>
+    <form data-ng-submit="usersController.update()">
 
-      <br>
       <label for="inputName" class="sr-only">
         {{'user.account.form.label.name' | translate}}
       </label>
@@ -44,7 +40,7 @@
              required>
       <br>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
-        {{'user.account.form.button.register' | translate}}
+        {{'user.account.form.button.save' | translate}}
       </button>
     </form>
 
