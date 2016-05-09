@@ -7,6 +7,7 @@
     'AuthService',
     '$state',
     '$stateParams',
+    '$upload',
     PostsController
   ]);
 
@@ -14,7 +15,8 @@
     ApiService,
     AuthService,
     $state,
-    $stateParams
+    $stateParams,
+    $upload
   ) {
 
     var index = function() {
@@ -124,17 +126,17 @@
       var uploadInProgress = true;
       var uploadProgress = 0;
 
-      $scope.upload = $upload.upload({
-        url: '/upload/image',
+      this.upload = $upload.upload({
+        url: 'post//upload/image',
         method: 'POST',
         file: image
       }).progress(function(event) {
         uploadProgress = Math.floor(event.loaded / event.total);
-        $scope.$apply();
+        this.$apply();
       }).success(function(data, status, headers, config) {
         uploadInProgress = false;
         // If you need uploaded file immediately
-        $scope.uploadedImage = JSON.parse(data);
+        this.uploadedImage = JSON.parse(data);
       }).error(function(err) {
         uploadInProgress = false;
         console.log('Error uploading file: ' + err.message || err);

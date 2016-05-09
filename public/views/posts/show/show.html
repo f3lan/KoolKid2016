@@ -24,7 +24,7 @@
     <div ng-if="postsController.canEdit(postsController.post)">
       <button ng-if="!postsController.post.solved"
         ng-click="postsController.solve(true)" class="btn btn-sm btn-success">
-        {{'posts.show.button.markSolved' | translate}}
+        Mark as solved
       </button>
       <button ng-if="postsController.post.solved"
         ng-click="postsController.solve(false)"
@@ -38,7 +38,7 @@
     <div class="row question">
       <div class="col-xs-2">
         <b>
-          Rating
+          Rating:
         </b>
         {{postsController.post.rating}}
         </br>
