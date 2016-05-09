@@ -1,5 +1,8 @@
 'use strict';
+const uuid = require('node-uuid');
 const Post = require('../models/post');
+const multiparty = require('multiparty');
+const fs = require('fs');
 
 class PostsController {
 
@@ -85,9 +88,6 @@ class PostsController {
     })
   }
 
-  var uuid = require('node-uuid'),
-  multiparty = require('multiparty'),
-  fs = require('fs');
 
 
   postImage(req, res) {
