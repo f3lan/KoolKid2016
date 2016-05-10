@@ -46,8 +46,18 @@
     this.show = function() {
       const that = this;
       that.user = AuthService.getUser();
-      console.log(user.username);
+    }
 
+    this.edit = function() {
+      this.user = AuthService.getUser();
+      $state.go('app.users#edit', {id: user._id});
+    }
+
+    this.update = function() {
+      const that = this;
+      that.user = AuthService.getUser();
+      console.log(that.user.id);
+      $state.go('app.posts#index');
     }
 
   }

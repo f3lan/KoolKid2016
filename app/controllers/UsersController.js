@@ -80,6 +80,18 @@ class UsersController {
     return res.status(200).json(message);
   }
 
+  update(req, res) {
+    User.findByIdAndUpdate(req.params.id,
+        {$set: req.body},
+        function (error, user) {
+          if (error) {
+            throw error;
+          } else {
+            res.json(user);
+          }
+        });
+  }
+
 }
 
 module.exports = new UsersController();

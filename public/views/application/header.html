@@ -17,13 +17,13 @@
       </ul>
   </li>
   <li data-ng-if="applicationController.isLoggedIn()">
-    <a data-ui-sref="app.user">
+    <a ng-click="usersController.edit()" href="">
       <span class="glyphicon glyphicon-user"></span>
       {{applicationController.getUser().username}}
     </a>
   </li>
   <li data-ng-if="applicationController.isLoggedIn()">
-    <a data-ui-sref="app.logout">
+    <a href="">
       <span class="glyphicon glyphicon-log-in"></span>
       {{'global.account.logout' | translate}}
     </a>
