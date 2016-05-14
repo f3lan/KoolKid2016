@@ -38,3 +38,5 @@ public/lib
 
 *.orig
 *.swap
+
+app/assets/uploads/

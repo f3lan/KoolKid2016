@@ -28,8 +28,7 @@ class PostsRoutes {
   }
 
   upload() {
-    this.app.route('/upload/image')
-        .post(PostsController.postImage);
+    this.app.route('/posts/:id/upload').post(PostsController.upload);
   }
 
 }
@@ -42,4 +41,5 @@ module.exports = function(app) {
   postsRoutes.create();
   postsRoutes.update();
   postsRoutes.delete();
-}
+  postsRoutes.upload();
+};

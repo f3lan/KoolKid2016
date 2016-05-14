@@ -1,27 +1,27 @@
 <div class="row">
-  <div class="col-xs-12">
+    <div class="col-xs-12">
 
-    <form data-ng-submit="postsController.create()">
-      <h2 class="form-signin-heading">
-        {{'posts.create.title' | translate}}
-      </h2>
+        <form data-ng-submit="postsController.create()" name="newPost">
+            <h2 class="form-signin-heading">
+                {{'posts.create.title' | translate}}
+            </h2>
 
-      <br>
+            <br>
 
-      <label for="inputTitle" class="sr-only">
-        {{'posts.form.title' | translate}}
-      </label>
-      <input type="text"
-             id="inputTitle"
-             ng-model='postsController.post.title'
-             class="form-control"
-             placeholder="{{'posts.form.placeholders.title' | translate}}"
-             required autofocus>
-      <br>
+            <label for="inputTitle" class="sr-only">
+                {{'posts.form.title' | translate}}
+            </label>
+            <input type="text"
+                   id="inputTitle"
+                   ng-model='postsController.post.title'
+                   class="form-control"
+                   placeholder="{{'posts.form.placeholders.title' | translate}}"
+                   required autofocus>
+            <br>
 
-      <label for="inputContent" class="sr-only">
-        {{'posts.form.content' | translate}}
-      </label>
+            <label for="inputContent" class="sr-only">
+                {{'posts.form.content' | translate}}
+            </label>
 
       <textarea class="form-control"
                 ng-model='postsController.post.content'
@@ -30,29 +30,46 @@
                 id="inputContent">
       </textarea>
 
-      <br>
+            <br>
 
-      <label for="inputCategory" class="sr-only">
-        {{'posts.form.category' | translate}}
-      </label>
-      <input type="text"
-             id="inputCategory"
-             ng-model='postsController.post.category'
-             class="form-control"
-             placeholder="{{'posts.form.placeholders.category' | translate}}">
+            <label for="inputCategory" class="sr-only">
+                {{'posts.form.category' | translate}}
+            </label>
+            <input type="text"
+                   id="inputCategory"
+                   ng-model='postsController.post.category'
+                   class="form-control"
+                   placeholder="{{'posts.form.placeholders.category' | translate}}">
 
 
-      <br>
-      <label for="inputCategory" class="sr-only">
-        {{'posts.form.category' | translate}}
-      </label>
-      <input type="file" data-ng-file-select="postsController.onFileSelect($files)" accept="image/png, image/jpeg">
-      <img data-ng-src="postsController.uploadedImage" data-ng-if="postsController.uploadedImage">
-      <br>
-      <button class="btn btn-lg btn-primary btn-block" 
-              type="submit">
-        {{'posts.form.button.save' | translate}}
-      </button>
-    </form>
-  </div>
+            <br>
+            <label for="inputCategory" class="sr-only">
+                {{'posts.form.category' | translate}}
+            </label>
+
+            <input type="file" ngf-select ng-model="postsController.post.file" name="file"
+                   accept="image/png" ngf-max-size="2MB" required
+                   ngf-model-invalid="errorFile">
+
+            <br>
+
+            <img ng-show="newPost.file.$valid" ngf-thumbnail="postsController.post.file" class="thumb">
+
+            <br>
+
+
+            <button class="btn btn-danger" ng-click="postsController.post.file = null"
+                    ng-show="postsController.post.file">
+                {{'posts.form.delete' | translate}}
+            </button>
+
+            <br>
+            <br>
+
+            <button class="btn btn-lg btn-primary btn-block"
+                    type="submit">
+                {{'posts.form.button.save' | translate}}
+            </button>
+        </form>
+    </div>
 </div>

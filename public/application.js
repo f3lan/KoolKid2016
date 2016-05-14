@@ -8,7 +8,8 @@
         'ui.router',
         'pascalprecht.translate',
         'ngCookies',
-        'MedEx.config'
+        'MedEx.config',
+        'ngFileUpload'
       ]);
 
     app.config([
