@@ -39,4 +39,4 @@ public/lib
 *.orig
 *.swap
 
-app/assets/uploads/
+app/assets/uploads/*.png
