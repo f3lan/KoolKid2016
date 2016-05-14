@@ -58,11 +58,27 @@ class UsersController {
   register(req, res, next) {
     const user = new User({
         username: req.body.username,
-        name: req.body.name
+        title: req.body.title,
+        name: req.body.name,
+        middlename: req.body.middlename,
+        surname: req.body.surname,
+        birthdate: req.body.birthdate,
+        practiceinfo: req.body.practiceinfo,
+        practicename: req.body.practicename,
+        street: req.body.street,
+        streetno: req.body.streetno,
+        postal: req.body.postal,
+        city: req.body.city,
+        phone: req.body.phone,
+        mobile: req.body.mobile,
+        mail: req.body.mail,
+        function: req.body.function,
+        password: req.body.password
       });
     const password = req.body.password;
     User.register(user, password, function(error) {
       if(error) {
+        debugger;
         const message = {status: false, message: error};
         res.status(500).json(message);
       } else {
@@ -80,6 +96,30 @@ class UsersController {
     return res.status(200).json(message);
   }
 
+    show(req, res) {
+        User.find({"_id": req.params.id}, function(error, user) {
+            if(error) {
+                throw error;
+            } else {
+                res.json(user);
+            }
+        })
+
+    }
+
+  update(req, res) {
+    User.findByIdAndUpdate(req.params.id,
+        {$set: req.body},
+        function (error, user) {
+            if(error) {
+                const message = {status: false, message: error};
+                return res.json(message);
+            } else {
+                const message = {status: true, message: 'User updated'};
+                return res.json(message);
+            }
+        });
+  }
 }
 
 module.exports = new UsersController();

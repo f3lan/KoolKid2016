@@ -1,0 +1,24 @@
+<div class="row" data-ng-init="usersController.show()">
+  <div class="col-xs-12">
+    <h2>
+        {{'users.show.title' | translate}}
+    </h2>
+    <hr>
+    username: {{usersController.user.username}}<br>
+    name: {{usersController.user.name}}<br>
+    middlename: {{usersController.user.middlename}}<br>
+    surname: {{usersController.user.surname}}<br>
+    birthdate: {{usersController.user.birthdate}}<br>
+    practice info: {{usersController.user.practiceinfo}}<br>
+    practice name: {{usersController.user.practicename}}<br>
+    street: {{usersController.user.street}}<br>
+    street no: {{usersController.user.streetno}}<br>
+    city: {{usersController.user.city}}<br>
+    postal code: {{usersController.user.postal}}<br>
+    phone number: {{usersController.user.phone}}<br>
+    mobile phone: {{usersController.user.mobile}}<br>
+    email: {{usersController.user.mail}}<br>
+    function: {{usersController.user.function}}<br>
+    <a ui-sref="app.users#edit( {id: usersController.user._id})" href="">edit</a>
+  </div>
+</div>

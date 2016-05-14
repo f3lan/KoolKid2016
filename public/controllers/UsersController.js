@@ -5,14 +5,18 @@
   angular.module('MedEx').controller('UsersController', [
     '$scope',
     '$state',
+    '$stateParams',
     'AuthService',
+    'ApiService',
     UsersController
   ]);
 
   function UsersController(
     $scope,
     $state,
-    AuthService
+    $stateParams,
+    AuthService,
+    ApiService
   ) {
 
     this.login = function(user) {
@@ -34,14 +38,30 @@
     }
 
     this.cancel = function() {
-      $state.go('app.index');
+      $state.go('app');
     }
 
     this.register = function(user) {
       AuthService.register(user).then(function() {
-        $state.go('app.index');
+        $state.go('app');
       });
     }
+
+    this.show = function() {
+      const that = this;
+      that.user = AuthService.getUser();
+    }
+
+    this.update = function() {
+      var id = $stateParams.id;
+      var url = 'users/' + id;
+      ApiService.put(url, this.user).then(function (data) {
+        if (data.status) {
+          $state.go('app.posts#index');
+        }
+      });
+    }
+
   }
 
 })();

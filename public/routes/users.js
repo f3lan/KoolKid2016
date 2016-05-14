@@ -44,7 +44,31 @@
         }
       })
       .state('app.user', {
-        url: '/users/edit',
+        url: '/users/:id/edit',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/edit.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        },
+        authorization: true,
+        redirectTo: 'app.login',
+      })
+      .state('app.users#show', {
+        url: '/users/:id',
+        views: {
+          'content@' : {
+            templateUrl: 'views/users/show.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          }
+        },
+        authorization: true,
+        redirectTo: 'app.login',
+      })
+      .state('app.users#edit', {
+        url: '/users/:id/edit',
         views: {
           'content@' : {
             templateUrl: 'views/users/edit.html',

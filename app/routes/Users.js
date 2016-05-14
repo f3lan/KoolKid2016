@@ -27,6 +27,14 @@ class UsersRoutes {
     this.app.route('/users/status').get(UsersController.getStatus);
   }
 
+  show() {
+    this.app.route('/users/:id').get(UsersController.show);
+  }
+
+  update() {
+    this.app.route('/users/:id').put(UsersController.update);
+  }
+
 }
 
 module.exports = function(app) {
@@ -36,4 +44,5 @@ module.exports = function(app) {
   usersRoutes.logout();
   usersRoutes.register();
   usersRoutes.getStatus();
+  usersRoutes.update();
 };
