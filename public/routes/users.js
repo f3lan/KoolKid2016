@@ -44,7 +44,7 @@
         }
       })
       .state('app.user', {
-        url: '/users/edit',
+        url: '/users/:id/edit',
         views: {
           'content@' : {
             templateUrl: 'views/users/edit.html',

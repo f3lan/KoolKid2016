@@ -6,18 +6,6 @@
 
     <form data-ng-submit="usersController.update()">
 
-      <label for="inputName" class="sr-only">
-        {{'user.account.form.label.name' | translate}}
-      </label>
-      <input type="text"
-             id="inputName"
-             ng-model='usersController.user.name'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.name' | translate}}"
-             required autofocus>
-
-
-      <br>
       <label for="inputUsername" class="sr-only">
         {{'user.account.form.label.username' | translate}}
       </label>
@@ -28,6 +16,172 @@
              placeholder="{{'user.account.form.placeholder.username' | translate}}"
              required autofocus>
 
+      <br>
+
+      <label for="inputTitle" class="sr-only">
+        {{'user.account.form.label.name' | translate}}
+      </label>
+      <input type="text"
+             id="inputTitle"
+             ng-model='usersController.user.title'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.title' | translate}}"
+             required>
+      <br>
+
+      <label for="inputName" class="sr-only">
+        {{'user.account.form.label.name' | translate}}
+      </label>
+      <input type="text"
+             id="inputName"
+             ng-model='usersController.user.name'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.name' | translate}}"
+             required>
+      <br>
+
+      <label for="inputMiddlename" class="sr-only">
+        {{'user.account.form.label.middlename' | translate}}
+      </label>
+      <input type="text"
+             id="inputMiddlename"
+             ng-model='usersController.user.middlename'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.middlename' | translate}}"
+             required>
+      <br>
+
+      <label for="inputSurame" class="sr-only">
+        {{'user.account.form.label.surname' | translate}}
+      </label>
+      <input type="text"
+             id="inputSurame"
+             ng-model='usersController.user.surname'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.surname' | translate}}"
+             required>
+      <br>
+
+      <label for="inputBirthdate" class="sr-only">
+        {{'user.account.form.label.birthdate' | translate}}
+      </label>
+      {{usersController.user.birthdate | date: format: 'dd.mm.YYYY'}}
+      <input type="datetime"
+             id="inputBirthdate"
+             ng-model='usersController.user.birthdate'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.birthdate' | translate}}"
+             required>
+      <br>
+
+      <label for="inputPracticeinfo" class="sr-only">
+        {{'user.account.form.label.practiceinfo' | translate}}
+      </label>
+      <input type="text"
+             id="inputPracticeinfo"
+             ng-model='usersController.user.practiceinfo'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.practiceinfo' | translate}}"
+             required>
+      <br>
+
+      <label for="practiceName" class="sr-only">
+        {{'user.account.form.label.practicename' | translate}}
+      </label>
+      <input type="text"
+             id="practiceName"
+             ng-model='usersController.user.practicename'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.practicename' | translate}}"
+             required>
+      <br>
+
+      <label for="inputStreet" class="sr-only">
+        {{'user.account.form.label.street' | translate}}
+      </label>
+      <input type="text"
+             id="inputStreet"
+             ng-model='usersController.user.street'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.street' | translate}}"
+             required>
+      <br>
+
+      <label for="inputStreetNo" class="sr-only">
+        {{'user.account.form.label.streetno' | translate}}
+      </label>
+      <input type="text"
+             id="inputStreetNo"
+             ng-model='usersController.user.streetno'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.streetno' | translate}}"
+             required>
+      <br>
+
+      <label for="inputCity" class="sr-only">
+        {{'user.account.form.label.city' | translate}}
+      </label>
+      <input type="text"
+             id="inputCity"
+             ng-model='usersController.user.city'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.city' | translate}}"
+             required>
+      <br>
+
+      <label for="inputPostal" class="sr-only">
+        {{'user.account.form.label.postal' | translate}}
+      </label>
+      <input type="text"
+             id="inputPostal"
+             ng-model='usersController.user.postal'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.postal' | translate}}"
+             required>
+      <br>
+
+      <label for="inputPhone" class="sr-only">
+        {{'user.account.form.label.phone' | translate}}
+      </label>
+      <input type="text"
+             id="inputPhone"
+             ng-model='usersController.user.phone'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.phone' | translate}}"
+             required>
+      <br>
+
+      <label for="inputMobile" class="sr-only">
+        {{'user.account.form.label.mobile' | translate}}
+      </label>
+      <input type="text"
+             id="inputMobile"
+             ng-model='usersController.user.mobile'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.mobile' | translate}}"
+             required>
+      <br>
+
+      <label for="inputMail" class="sr-only">
+        {{'user.account.form.label.mail' | translate}}
+      </label>
+      <input type="text"
+             id="inputMail"
+             ng-model='usersController.user.mail'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.mail' | translate}}"
+             required>
+      <br>
+
+      <label for="inputFunction" class="sr-only">
+        {{'user.account.form.label.function' | translate}}
+      </label>
+      <input type="text"
+             id="inputFunction"
+             ng-model='usersController.user.function'
+             class="form-control"
+             placeholder="{{'user.account.form.placeholder.function' | translate}}"
+             required>
       <br>
       <label for="inputPassword" class="sr-only">
         {{'user.account.form.label.password' | translate}}
