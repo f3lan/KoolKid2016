@@ -17,8 +17,7 @@
                              $stateParams,
                              AuthService,
                              ApiService,
-                             Expertises
-    ) {
+                             Expertises) {
 
         this.login = function (user) {
             const that = this;
@@ -26,7 +25,6 @@
                 if (data.status) {
                     AuthService.setUser(true);
                     $state.go('app.posts#index');
-                    that.result = "Login successful";
                 } else {
                     that.result = "Login not successful";
                 }
@@ -62,11 +60,9 @@
                 }
             });
         };
-        
-        
-        return {
-            expertises: Expertises.all()
-        }
+
+        this.expertises = Expertises.all()
+
 
     }
 
