@@ -63,9 +63,10 @@
             });
         };
         
-        this.getExpertises = function() {
+        this.querySearch = function() {
+            return expertises;
         };
-
+        
         this.transformChip = function(chip) {
             // If it is an object, it's already a known chip
             if (angular.isObject(chip)) {
@@ -73,11 +74,8 @@
             }
             // Otherwise, create a new one
             return { name: chip, type: 'new' }
-        }
+        };
 
-        this.querySearch = function(query) {
-            return this.expertises;
-        }
 
     }
 

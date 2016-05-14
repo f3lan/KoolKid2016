@@ -195,7 +195,6 @@
                    required>
             <br>
 
-
             <div layout="column" ng-cloak>
                 <md-content class="md-padding" layout="column">
                     <md-chips ng-model="usersController.expertise" md-autocomplete-snap
@@ -203,10 +202,10 @@
                               md-require-match="true">
                         <md-autocomplete
                                 md-selected-item="null"
-                                md-search-text="usersController.searchText"
-                                md-items="item in ctrl.querySearch(usersController.searchText)"
-                                md-item-text="item.name"
-                                placeholder="Search for a vegetable">
+                                md-search-text="test"
+                                md-items="item in usersController.querySearch()"
+                                md-item-text="item"
+                                placeholder="Expertises">
                         </md-autocomplete>
                         <span>
                           <strong>{{$chip.name}}</strong>
