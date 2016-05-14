@@ -5,6 +5,7 @@
     var AppName = 'MedEx';
 
     var app = angular.module(AppName, [
+        'ngMaterial',
         'ui.router',
         'pascalprecht.translate',
         'ngCookies',
