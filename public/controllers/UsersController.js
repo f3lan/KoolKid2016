@@ -51,7 +51,7 @@
       const that = this;
       that.user = AuthService.getUser();
     }
-    
+
     this.update = function() {
       var id = $stateParams.id;
       var url = 'users/' + id;

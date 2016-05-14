@@ -1,111 +1,24 @@
-<div class="row" data-ng-init="postsController.show()">
+<div class="row" data-ng-init="usersController.show()">
   <div class="col-xs-12">
-    <div class="col-xs-12">
     <h2>
-      <span>
-        {{postsController.post.title}}
-        <span ng-if="postsController.post.solved"
-          style="margin-left: 10px;"
-          class="label label-success">
-          Solved
-        </span>
-      </span>
+        {{'users.show.title' | translate}}
     </h2>
     <hr>
-    <div class="row">
-      <div class="col-xs-12">
-        <i>
-        {{postsController.post.author}} - {{postsController.post.date | date: format:
-        'dd.mm.yyyy'}}
-        </i>
-      </div>
-    </div>
-    <br>
-    <div ng-if="postsController.canEdit(postsController.post)">
-      <button ng-if="!postsController.post.solved"
-        ng-click="postsController.solve(true)" class="btn btn-sm btn-success">
-        {{'posts.show.button.markSolved' | translate}}
-      </button>
-      <button ng-if="postsController.post.solved"
-        ng-click="postsController.solve(false)"
-        class="btn btn-sm btn-info">
-        {{'posts.show.button.markNotSolved' | translate}}
-      </button>
-    </div>
-    <br>
-    <br>
-
-    <div class="row question">
-      <div class="col-xs-2">
-        <b>
-          Rating
-        </b>
-        {{postsController.post.rating}}
-        </br>
-        <button ng-click="postsController.rate(-1)">
-          -1
-        </button>
-        <button ng-click="postsController.rate(1)">
-          +1
-        </button>
-        <br>
-      </div>
-
-      <div class="col-xs-10">
-        {{postsController.post.content}}
-      </div>
-
-    </div>
-    <br>
-    <br>
-    <div class="row">
-      <div class="col-xs-2">
-        <h4>
-          {{'posts.category' | translate}}
-        </h4>
-        <ul class="list-inline">
-          <li class="category">
-            {{postsController.post.category}}
-          </li>
-        <ul>
-      </div>
-    </div>
-    <hr>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <h4>
-          Comments
-        </h4>
-        <div ng-repeat="comment in postsController.post.comments">
-          {{comment.text}} - {{comment.author}}
-          <div class="pull-right">
-            <a ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})"
-              href="">
-              edit
-            </a>
-          </div>
-          <hr>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <h3>
-          {{'posts.answers' | translate}}
-        </h3>
-        <br>
-        <div ng-repeat="answer in postsController.post.answers">
-          {{answer.text}} - {{answer.author}}
-          <div class="pull-right">
-            <a ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})"
-              href="">
-              edit
-            </a>
-          <hr>
-        </div>
-      </div>
-    </div>
+    username: {{usersController.user.username}}<br>
+    name: {{usersController.user.name}}<br>
+    middlename: {{usersController.user.middlename}}<br>
+    surname: {{usersController.user.surname}}<br>
+    birthdate: {{usersController.user.birthdate}}<br>
+    practice info: {{usersController.user.practiceinfo}}<br>
+    practice name: {{usersController.user.practicename}}<br>
+    street: {{usersController.user.street}}<br>
+    street no: {{usersController.user.streetno}}<br>
+    city: {{usersController.user.city}}<br>
+    postal code: {{usersController.user.postal}}<br>
+    phone number: {{usersController.user.phone}}<br>
+    mobile phone: {{usersController.user.mobile}}<br>
+    email: {{usersController.user.mail}}<br>
+    function: {{usersController.user.function}}<br>
+    <a ui-sref="app.users#edit( {id: applicationController.getUser()._id})" href="">edit</a>
   </div>
 </div>

@@ -17,7 +17,7 @@
       </ul>
   </li>
   <li data-ng-if="applicationController.isLoggedIn()">
-    <a ui-sref="app.users#edit( {id: applicationController.getUser()._id})" href="">
+    <a ui-sref="app.users#show( {id: applicationController.getUser()._id})" href="">
       <span class="glyphicon glyphicon-user"></span>
       {{applicationController.getUser().username}}
     </a>

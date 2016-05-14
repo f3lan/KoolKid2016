@@ -27,6 +27,10 @@ class UsersRoutes {
     this.app.route('/users/status').get(UsersController.getStatus);
   }
 
+  show() {
+    this.app.route('/users/:id').get(UsersController.show);
+  }
+
   update() {
     this.app.route('/users/:id').put(UsersController.update);
   }

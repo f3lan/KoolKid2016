@@ -96,6 +96,17 @@ class UsersController {
     return res.status(200).json(message);
   }
 
+    show(req, res) {
+        User.find({"_id": req.params.id}, function(error, user) {
+            if(error) {
+                throw error;
+            } else {
+                res.json(user);
+            }
+        })
+
+    }
+
   update(req, res) {
     User.findByIdAndUpdate(req.params.id,
         {$set: req.body},
