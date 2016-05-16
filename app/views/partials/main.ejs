@@ -1,11 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-8 content">
-      <div data-ui-view='content'></div>
+<div class="main_container" layout="row" layout-align="center">
+  <div class="col-sm-8">
+    <div flex data-ui-view='content'></div>
     </div>
-
-    <div class="col-xs-12 col-md-4">
-      <% include right %>
+  <div class="col-sm-4">
+    <div flex><% include right %></div>
     </div>
-  </div>
 </div>

@@ -20,3 +20,8 @@ html, body {
   background: #ccc;
   padding: 10px 0;
 }
+
+.main_container{
+  margin-left: 125px;
+  margin-right: 125px;
+}
