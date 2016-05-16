@@ -104,6 +104,19 @@
                 </h3>
                 <br>
                 <div ng-repeat="answer in postsController.post.answers">
+                    <div class="col-xs-2">
+                        <b>
+                            Rating: {{answer.rating}}
+                        </b>
+                        </br>
+                        <button ng-click="postsController.rateAnswer(answer,-1)">
+                            -1
+                        </button>
+                        <button ng-click="postsController.rateAnswer(answer,1)">
+                            +1
+                        </button>
+                        <br>
+                    </div>
                     {{answer.text}} - {{answer.author}}
                     <div class="pull-right">
                         <a ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})"
@@ -116,3 +129,4 @@
             </div>
         </div>
     </div>
+</div>

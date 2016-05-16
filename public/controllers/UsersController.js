@@ -62,8 +62,7 @@
         };
 
         this.expertises = Expertises.all()
-
-
+        
     }
 
 })();

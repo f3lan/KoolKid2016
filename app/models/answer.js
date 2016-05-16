@@ -7,7 +7,10 @@ var Answer = new Schema({
   author: String,
   text: String,
   date: Date,
-  rating: Number,
+  rating: {
+    type: Number,
+    default:5
+  },
   post : {
     type: Schema.ObjectId,
     ref: 'Post'
