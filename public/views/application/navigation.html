@@ -1,8 +1,32 @@
-<ul class="nav navbar-nav">
-  <li class="nav-item active"
-      data-ng-if="applicationController.isLoggedIn()">
-    <a class="nav-link" data-ui-sref="app.posts#index">
-      {{'global.posts' | translate}}
-    </a>
-  </li>
-</ul>
+<md-menu>
+  <md-button md-menu-origin ng-click="$mdOpenMenu()">{{applicationController.language()}}</md-button>
+  <md-menu-content width="2">
+    <md-menu-item data-ng-repeat="lang in applicationController.languages">
+      <md-button><a href="#" data-ng-click="applicationController.setLanguage(lang)">
+        {{lang}}
+      </a></md-button>
+    </md-menu-item>
+  </md-menu-content>
+</md-menu>
+<md-button data-ng-if="applicationController.isLoggedIn()">
+  <a ui-sref="app.users#show( {id: applicationController.getUser()._id})" href="">
+  <span class="glyphicon glyphicon-user"></span>
+  {{applicationController.getUser().username}}
+  </a>
+</md-button>
+<span data-ui-sref="app.register">
+<md-button data-ng-if="!applicationController.isLoggedIn()">
+  {{'global.account.register' | translate}}
+</md-button>
+</span>
+<span data-ui-sref="app.logout">
+<md-button class="md-raised md-warn" data-ng-if="applicationController.isLoggedIn()" >
+  <span class="glyphicon glyphicon-log-in"></span>
+  {{'global.account.logout' | translate}}
+</md-button>
+</span>
+<span data-ui-sref="app.login">
+<md-button class="md-raised md-primary" data-ng-if="!applicationController.isLoggedIn()" >
+  <span class="glyphicon glyphicon-log-in"></span>
+  {{'global.account.login' | translate}}
+</span>
