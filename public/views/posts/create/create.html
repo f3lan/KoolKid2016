@@ -29,21 +29,20 @@
     <input type="file" ngf-select ng-model="postsController.post.file" name="file"
            accept="image/png" ngf-max-size="2MB" required
            ngf-model-invalid="errorFile">
-
     </md-input-container>
     <br>
     <img ng-show="newPost.file.$valid" ngf-thumbnail="postsController.post.file" class="thumb">
-    <md-button class="md-raised md-warn" ng-click="postsController.post.file = null"
+    <md-button class="md-raised" ng-click="postsController.post.file = null"
             ng-show="postsController.post.file">{{'posts.form.delete' | translate}}
     </md-button>
     <br><br>
 
-    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" class="checkbox">
         {{'posts.form.accept' | translate}}
     </md-checkbox>
     <br><br>
-    <md-button class="md-raised md-primary"
-            type="submit">
+    <md-button class="btn btn-lg btn-block"
+               type="submit">
         {{'posts.form.button.save' | translate}}
     </md-button>
 </form>

@@ -32,4 +32,19 @@ html, body {
 .label-success{
   width: 70px;
 }
-table
+input:focus {
+  border-bottom: 1px solid #64b5f6 !important;
+}
+textarea:focus {
+  border-bottom: 1px solid #64b5f6 !important;
+}
+a{
+  color: #64b5f6 !important;
+}
+.btn{
+  background-color: #64b5f6 !important;
+  color: white !important;
+}
+md-checkbox.md-checked.checkbox .md-icon {
+  background-color: rgba(100, 181, 246, 0.87);
+}
