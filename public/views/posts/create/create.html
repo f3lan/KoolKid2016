@@ -1,82 +1,49 @@
-<div class="row">
-    <div class="col-xs-12">
+<form data-ng-submit="postsController.create()" name="newPost">
+    <h2 class="form-signin-heading">
+        {{'posts.create.title' | translate}}
+    </h2>
+    <hr/>
+    <br>
+    <md-input-container class="md-block">
+        <label>{{'posts.form.title' | translate}}</label>
+        <input name="title" ng-model="postsController.post.title"
+               placeholder="{{'posts.form.placeholders.title' | translate}}"
+               type="text">
+    </md-input-container>
 
-        <form data-ng-submit="postsController.create()" name="newPost">
-            <h2 class="form-signin-heading">
-                {{'posts.create.title' | translate}}
-            </h2>
+    <md-input-container class="md-block">
+        <label>{{'posts.form.content' | translate}}</label>
+        <textarea name="content" ng-model="postsController.post.content"
+               placeholder="{{'posts.form.placeholders.content' | translate}}"
+               type="text" md-maxlength="500" rows="8" md-select-on-focus></textarea>
+    </md-input-container>
 
-            <br>
+    <md-input-container class="md-block">
+        <label>{{'posts.form.category' | translate}}</label>
+        <input name="category" ng-model="postsController.post.category"
+               placeholder="{{'posts.form.placeholders.category' | translate}}"
+               type="text">
+    </md-input-container>
 
-            <label for="inputTitle" class="sr-only">
-                {{'posts.form.title' | translate}}
-            </label>
-            <input type="text"
-                   id="inputTitle"
-                   ng-model='postsController.post.title'
-                   class="form-control"
-                   placeholder="{{'posts.form.placeholders.title' | translate}}"
-                   required autofocus>
-            <br>
+    <md-input-container class="md-block">
+    <input type="file" ngf-select ng-model="postsController.post.file" name="file"
+           accept="image/png" ngf-max-size="2MB" required
+           ngf-model-invalid="errorFile">
 
-            <label for="inputContent" class="sr-only">
-                {{'posts.form.content' | translate}}
-            </label>
+    </md-input-container>
+    <br>
+    <img ng-show="newPost.file.$valid" ngf-thumbnail="postsController.post.file" class="thumb">
+    <md-button class="md-raised md-warn" ng-click="postsController.post.file = null"
+            ng-show="postsController.post.file">{{'posts.form.delete' | translate}}
+    </md-button>
+    <br><br>
 
-      <textarea class="form-control"
-                ng-model='postsController.post.content'
-                rows="5"
-                placeholder="{{'posts.form.placeholders.content' | translate}}"
-                id="inputContent">
-      </textarea>
-
-            <br>
-
-            <label for="inputCategory" class="sr-only">
-                {{'posts.form.category' | translate}}
-            </label>
-            <input type="text"
-                   id="inputCategory"
-                   ng-model='postsController.post.category'
-                   class="form-control"
-                   placeholder="{{'posts.form.placeholders.category' | translate}}">
-
-
-            <br>
-            <label for="inputCategory" class="sr-only">
-                {{'posts.form.category' | translate}}
-            </label>
-
-            <input type="file" ngf-select ng-model="postsController.post.file" name="file"
-                   accept="image/png" ngf-max-size="2MB" required
-                   ngf-model-invalid="errorFile">
-
-            <br>
-
-            <img ng-show="newPost.file.$valid" ngf-thumbnail="postsController.post.file" class="thumb">
-
-            <br>
-
-
-            <button class="btn btn-danger" ng-click="postsController.post.file = null"
-                    ng-show="postsController.post.file">
-                {{'posts.form.delete' | translate}}
-            </button>
-
-            <br>
-            <br>
-
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> {{'posts.form.accept' | translate}}
-                </label>
-            </div>
-
-
-            <button class="btn btn-lg btn-primary btn-block"
-                    type="submit">
-                {{'posts.form.button.save' | translate}}
-            </button>
-        </form>
-    </div>
-</div>
+    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+        {{'posts.form.accept' | translate}}
+    </md-checkbox>
+    <br><br>
+    <md-button class="md-raised md-primary"
+            type="submit">
+        {{'posts.form.button.save' | translate}}
+    </md-button>
+</form>

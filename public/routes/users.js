@@ -62,7 +62,12 @@
             templateUrl: 'views/users/show.html',
             controller: 'UsersController',
             controllerAs: 'usersController'
-          }
+          },
+          'right@': {
+            templateUrl: 'views/users/show_right.html',
+            controller: 'UsersController',
+            controllerAs: 'usersController'
+          },
         },
         authorization: true,
         redirectTo: 'app.login',
