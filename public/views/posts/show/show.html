@@ -14,7 +14,7 @@
           Solved
         </span>
         </md-card-header>
-        <img ng-src="/assets/uploads/{{postsController.post._id}}.png" class="md-card-image">
+        <img ng-src="/assets/uploads/{{postsController.post._id}}.png" class="md-card-image" alt="">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">{{postsController.post.title}}</span>
@@ -28,9 +28,10 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center">
-            <md-button class="btn btn-lg" ng-if="!postsController.post.solved"
+            <md-button class="btn btn-xs" ng-click="postsController.edit(postsController.post)">Edit Post</md-button>
+            <md-button class="btn btn-xs" ng-if="!postsController.post.solved"
                        ng-click="postsController.solve(true)">{{'posts.show.button.markSolved' | translate}}</md-button>
-            <md-button class="btn btn-lg" ng-if="postsController.post.solved"
+            <md-button class="btn btn-xs" ng-if="postsController.post.solved"
                        ng-click="postsController.solve(false)">{{'posts.show.button.markNotSolved' | translate}}</md-button>
             <md-card-icon-actions>
             <span>

@@ -1,8 +1,5 @@
 <div class="row"
      data-ng-init="postsController.show()">
-  <div class="col-xs-12">
-    {{post}}
-
     <form data-ng-submit="postsController.update()">
       <h2 class="form-signin-heading">
         {{'posts.edit.title' | translate}}
@@ -10,40 +7,34 @@
 
       <br>
 
-      <label for="inputTitle" class="sr-only">
-        {{'posts.form.title' | translate}}
-      </label>
-      <input type="text"
+      <md-input-container class="md-block">
+        <label>{{'posts.form.content' | translate}}</label>
+        <input type="text"
              id="inputTitle"
              ng-model='postsController.post.title'
              class="form-control"
              placeholder="{{'posts.form.placeholders.title' | translate}}"
              required autofocus>
+      </md-input-container>
+      <br>
+
+      <md-input-container class="md-block">
+        <label>{{'posts.form.content' | translate}}</label>
+        <textarea name="content" ng-model="postsController.post.content"
+                  placeholder="{{'posts.form.placeholders.content' | translate}}"
+                  type="text" md-maxlength="500" rows="8" md-select-on-focus></textarea>
+      </md-input-container>
 
       <br>
 
-      <label for="inputContent" class="sr-only">
-        {{'posts.form.content' | translate}}
-      </label>
-
-      <textarea class="form-control"
-                ng-model='postsController.post.content'
-                rows="5"
-                placeholder="{{'posts.form.placeholders.content' | translate}}"
-                id="inputContent">
-      </textarea>
-
-      <br>
-
-      <label for="inputCategory" class="sr-only">
-        {{'posts.form.category' | translate}}
-      </label>
-      <input type="text"
+      <md-input-container class="md-block">
+        <label>{{'posts.form.category' | translate}}</label>
+        <input type="text"
              id="inputCategory"
              ng-model='postsController.post.category'
              class="form-control"
              placeholder="{{'posts.form.placeholders.category' | translate}}">
-
+      </md-input-container>
 
       <br>
       <button class="btn btn-lg btn-primary btn-block" 
@@ -51,4 +42,4 @@
         {{'posts.form.button.save' | translate}}
       </button>
     </form>
-  <dit Post
+</div>

@@ -22,8 +22,7 @@ html, body {
 }
 
 .main_container{
-  margin-left: 122px;
-  margin-right: 122px;
+  min-height: 600px;
 }
 
 .glyphicon-thumbs-up{
@@ -56,4 +55,13 @@ h2{
 }
 .text-answer{
   margin-top: -25px;
+}
+.btn-logout{
+  margin-top: -5px !important;
+}
+footer img{
+  height: 50px; margin-top: -8px;
+}
+#footer_logo{
+  font-size: 58px;
 }

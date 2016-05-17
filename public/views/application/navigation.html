@@ -8,19 +8,17 @@
     </md-menu-item>
   </md-menu-content>
 </md-menu>
-<md-button data-ng-if="applicationController.isLoggedIn()">
-  <a ui-sref="app.users#show( {id: applicationController.getUser()._id})" href="">
-  <span class="glyphicon glyphicon-user"></span>
-  {{applicationController.getUser().username}}
-  </a>
-</md-button>
+<a data-ng-if="applicationController.isLoggedIn()" ui-sref="app.users#show( {id: applicationController.getUser()._id})" href="" style="margin-right: 20px;">
+    <span class="glyphicon glyphicon-user"></span>
+    {{applicationController.getUser().username}}
+</a>
 <span data-ui-sref="app.register">
 <md-button class="btn btn-xs btn-primary" data-ng-if="!applicationController.isLoggedIn()">
   {{'global.account.register' | translate}}
 </md-button>
 </span>
 <span data-ui-sref="app.logout">
-<md-button class="btn btn-xs btn-primary" data-ng-if="applicationController.isLoggedIn()" >
+<md-button class="btn btn-xs btn-primary btn-logout" data-ng-if="applicationController.isLoggedIn()" >
   <span class="glyphicon glyphicon-log-in"></span>
   {{'global.account.logout' | translate}}
 </md-button>

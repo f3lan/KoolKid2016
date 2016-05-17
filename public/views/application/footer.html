@@ -1,16 +1,25 @@
 <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <hr>
-        <div class="col-xs-8">
-        &copy; 2016 by MedEx
+  <div style="background-color: #ececec; height: 200px; margin-top: 100px;">
+    <div layout="row" layout-align="center">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-10">
+        <div style="height: 50px;"></div>
+        <div>
+          <span id="footer_logo">
+          <img ng-src="/assets/images/logo_transparent.png">
+          <I><span style="color: red;">Med</span><span style="color: #9CC2E5;">Ex</span></I>
+          </span>
         </div>
-        <div class="col-xs-2 pull-right imprint">
+
+        <div class="pull-right imprint">
+          &copy; 2016 by MedEx |
           <a data-ui-sref="app.imprint">
             {{'imprint' | translate}}
           </a>
         </div>
+      </div>
+      <div class="col-sm-1">
       </div>
     </div>
   </div>

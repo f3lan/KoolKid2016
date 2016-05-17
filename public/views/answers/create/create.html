@@ -8,21 +8,16 @@
 
       <br>
 
-      <label for="inputAnswerContent" class="sr-only">
-        {{'posts.answers.content' | translate}}
-      </label>
+      <md-input-container class="md-block">
+        <label>{{'posts.answers.form.content' | translate}}</label>
+        <textarea name="content" ng-model="answersController.answer.text"
+                  placeholder="{{'posts.answers.form.placeholders.content' | translate}}"
+                  type="text" md-maxlength="500" rows="5" md-select-on-focus required>
+                  required
+        </textarea>
+      </md-input-container>
 
-      <textarea class="form-control"
-                ng-model='answersController.answer.text'
-                rows="5"
-                placeholder="{{'posts.answers.form.placeholders.content' | translate}}"
-                id="inputAnswerContent"
-                required autofocus>
-      </textarea>
-
-      <br>
-
-      <button class="btn btn-lg btn-primary btn-block" 
+      <button class="btn btn-lg btn-block"
               type="submit">
         Save
       </button>

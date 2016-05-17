@@ -1,6 +1,4 @@
 <div class="row">
-  <div class="col-xs-12">
-
     <form data-ng-submit="commentsController.create()">
       <h2 class="form-signin-heading">
         Comment this question
@@ -8,24 +6,18 @@
 
       <br>
 
-      <label for="inputCommentText" class="sr-only">
-        {{'posts.form.content' | translate}}
-      </label>
+      <md-input-container class="md-block">
+        <label>{{'posts.form.content' | translate}}</label>
+        <textarea name="content" ng-model="commentsController.comment.text"
+                  placeholder="{{'posts.form.placeholders.content' | translate}}"
+                  type="text" md-maxlength="500" rows="5" md-select-on-focus required>
+                  required
+        </textarea>
+      </md-input-container>
 
-      <textarea class="form-control"
-                ng-model='commentsController.comment.text'
-                rows="5"
-                placeholder="{{'posts.form.placeholders.content' | translate}}"
-                id="inputCommentText"
-                required autofocus>
-      </textarea>
-
-      <br>
-
-      <button class="btn btn-lg btn-primary btn-block" 
+      <button class="btn btn-lg btn-block"
               type="submit">
         {{'posts.form.button.save' | translate}}
       </button>
     </form>
-  </div>
 </div>
