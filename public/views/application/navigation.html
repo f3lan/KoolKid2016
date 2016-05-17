@@ -15,18 +15,18 @@
   </a>
 </md-button>
 <span data-ui-sref="app.register">
-<md-button data-ng-if="!applicationController.isLoggedIn()">
+<md-button class="btn btn-xs btn-primary" data-ng-if="!applicationController.isLoggedIn()">
   {{'global.account.register' | translate}}
 </md-button>
 </span>
 <span data-ui-sref="app.logout">
-<md-button class="md-raised red lighten-2" data-ng-if="applicationController.isLoggedIn()" >
+<md-button class="btn btn-xs btn-primary" data-ng-if="applicationController.isLoggedIn()" >
   <span class="glyphicon glyphicon-log-in"></span>
   {{'global.account.logout' | translate}}
 </md-button>
 </span>
 <span data-ui-sref="app.login">
-<md-button class="md-raised md-primary" data-ng-if="!applicationController.isLoggedIn()" >
+<md-button class="btn btn-xs btn-primary" data-ng-if="!applicationController.isLoggedIn()" >
   <span class="glyphicon glyphicon-log-in"></span>
   {{'global.account.login' | translate}}
 </span>

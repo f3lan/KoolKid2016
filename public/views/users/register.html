@@ -1,5 +1,5 @@
 <div ng-cloak>
-    <md-content>
+
         <h2 class="form-signin-heading">
             {{'user.account.registration' | translate}}
         </h2>
@@ -22,11 +22,8 @@
 
             <md-input-container class="md-block">
                 <label>{{'user.account.form.label.name' | translate}}</label>
-                <input required name="name" ng-model="usersController.user.name"
+                <input name="name" ng-model="usersController.user.name"
                        type="text">
-                <div ng-messages="registerForm.name.$error">
-                    <div ng-message="required">This is required.</div>
-                </div>
             </md-input-container>
 
             <md-input-container class="md-block">
@@ -38,14 +35,11 @@
 
             <md-input-container class="md-block">
                 <label>{{'user.account.form.label.surname' | translate}}</label>
-                <input required name="surname" ng-model="usersController.user.surname"
+                <input name="surname" ng-model="usersController.user.surname"
                        type="text">
-                <div ng-messages="registerForm.surname.$error">
-                    <div ng-message="required">This is required.</div>
-                </div>
             </md-input-container>
 
-            <md-datepicker ng-model="usersController.user.birthdate" md-placeholder="{{'user.account.form.label.birthdate' | translate}}"></md-datepicker>
+            <input type="date" class="datepicker" ng-model="usersController.user.birthdate">
 
 
             <md-input-container class="md-block">
@@ -111,7 +105,7 @@
             <md-input-container class="md-block">
                 <label>{{'user.account.form.label.password' | translate}}</label>
                 <input required name="password" ng-model="usersController.user.password"
-                       type="text">
+                       type="password">
                 <div ng-messages="registerForm.password.$error">
                     <div ng-message="required">This is required.</div>
                 </div>
@@ -142,9 +136,10 @@
 
             <br>
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
+            <md-button class="btn btn-lg" type="submit">
                 {{'user.account.form.button.register' | translate}}
-            </button>
+            </md-button>
+            <br>
         </form>
-    </md-content>
+
 </div>
