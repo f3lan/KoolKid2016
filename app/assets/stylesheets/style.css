@@ -48,3 +48,12 @@ a{
 md-checkbox.md-checked.checkbox .md-icon {
   background-color: rgba(100, 181, 246, 0.87);
 }
+h2{
+  font-size: 25px !important;
+}
+.text-comment{
+  margin-top: -25px;
+}
+.text-answer{
+  margin-top: -25px;
+}

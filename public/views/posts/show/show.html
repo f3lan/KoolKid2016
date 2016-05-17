@@ -1,119 +1,103 @@
 <div class="row" data-ng-init="postsController.show()">
-    <div class="col-xs-12">
-        <div class="col-xs-12">
-            <h2>
-      <span>
-        {{postsController.post.title}}
+    <md-card>
+        <md-card-header>
+            <md-card-avatar>
+                <img class="md-user-avatar" src="/assets/images/default-user-image.png"/>
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">{{postsController.post.author}}</span>
+                <span class="md-subhead">{{postsController.post.date | date: format: 'dd.mm.yyyy'}}</span>
+            </md-card-header-text>
         <span ng-if="postsController.post.solved"
-              style="margin-left: 10px;"
-              class="label label-success">
+              class="label label-success"
+              style="line-height:40px; vertical-align: middle; display: inline-block;">
           Solved
         </span>
-      </span>
-            </h2>
-            <hr>
-            <div class="row">
-                <div class="col-xs-12">
-                    <i>
-                        {{postsController.post.author}} - {{postsController.post.date | date: format:
-                        'dd.mm.yyyy'}}
-                    </i>
-                </div>
-            </div>
-            <br>
-            <div ng-if="postsController.canEdit(postsController.post)">
-                <button ng-if="!postsController.post.solved"
-                        ng-click="postsController.solve(true)" class="btn btn-sm btn-success">
-                    Mark as solved
-                </button>
-                <button ng-if="postsController.post.solved"
-                        ng-click="postsController.solve(false)"
-                        class="btn btn-sm btn-info">
-                    {{'posts.show.button.markNotSolved' | translate}}
-                </button>
-            </div>
-            <br>
-            <br>
-
-            <div class="row question">
-                <div class="col-xs-2">
-                    <b>
-                        Rating:
-                    </b>
-                    {{postsController.post.rating}}
-                    </br>
-                    <button ng-click="postsController.rate(-1)">
-                        -1
-                    </button>
-                    <button ng-click="postsController.rate(1)">
-                        +1
-                    </button>
-                    <br>
-                </div>
-
-                <div class="col-xs-10">
-                    {{postsController.post.content}}
-                </div>
-
-
-            </div>
-
-            <div class="row">
-                <div class="col-xs-10">
-                    <img ng-src="/assets/uploads/{{postsController.post._id}}.png" onerror="this.src='/assets/images/noimage.png'">
-                </div>
-            </div>
-
-            <br>
-            <br>
-            <div class="col-xs-2">
-                <h4>
-                    {{'posts.category' | translate}}
-                </h4>
+        </md-card-header>
+        <img ng-src="/assets/uploads/{{postsController.post._id}}.png" class="md-card-image">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{postsController.post.title}}</span>
+            <span class="md-subhead">
                 <ul class="list-inline">
                     <li class="category">
                         {{postsController.post.category}}
                     </li>
-                    <ul>
-            </div>
-        </div>
-        <hr>
+                </ul>
+            </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center">
+            <md-button class="btn btn-lg" ng-if="!postsController.post.solved"
+                       ng-click="postsController.solve(true)">{{'posts.show.button.markSolved' | translate}}</md-button>
+            <md-button class="btn btn-lg" ng-if="postsController.post.solved"
+                       ng-click="postsController.solve(false)">{{'posts.show.button.markNotSolved' | translate}}</md-button>
+            <md-card-icon-actions>
+            <span>
+                Rating: {{postsController.post.rating}}
+            <a ng-click="postsController.rate(1)" href="">
+              <span class="glyphicon glyphicon-thumbs-up"></span></a> | <a ng-click="postsController.rate(-1)" href="">
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+            </a>
+            </span>
+            </md-card-icon-actions>
+        </md-card-actions>
+        <md-card-content>
+            <span class="md-subhead">Description</span>
+            <p>{{postsController.post.content}}</p>
+        </md-card-content>
+    </md-card>
+</div>
+<div class="row">
+    <h4>
+        {{'posts.comments' | translate}}
+    </h4>
+    <hr/>
+    <md-card ng-repeat="comment in postsController.post.comments">
+        <md-card-header>
+            <md-card-avatar>
+                <img class="md-user-avatar" src="/assets/images/default-user-image.png"/>
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">{{comment.author}}</span>
+                <span class="md-subhead">{{comment.date | date: format: 'dd.mm.yyyy'}}</span>
+            </md-card-header-text>
+        </md-card-header>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h4>
-                    Comments
-                </h4>
-                <div ng-repeat="comment in postsController.post.comments">
-                    {{comment.text}} - {{comment.author}}
-                    <div class="pull-right">
-                        <a ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})"
-                           href="">
-                            edit
-                        </a>
-                    </div>
-                    <hr>
-                </div>
-            </div>
-        </div>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-subhead text-comment">{{comment.text}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center" ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})">
+            <md-button class="btn btn-xs">Edit Comment</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <h3>
-                    {{'posts.answers' | translate}}
-                </h3>
-                <br>
-                <div ng-repeat="answer in postsController.post.answers">
-                    {{answer.text}} - {{answer.author}}
-                    <div class="pull-right">
-                        <a ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})"
-                           href="">
-                            edit
-                        </a>
-                        <hr>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="row">
+    <h3>
+        {{'posts.answers' | translate}}
+    </h3>
+    <hr/>
+    <md-card ng-repeat="answer in postsController.post.answers">
+        <md-card-header>
+            <md-card-avatar>
+                <img class="md-user-avatar" src="/assets/images/default-user-image.png"/>
+            </md-card-avatar>
+            <md-card-header-text>
+                <span class="md-title">{{answer.author}}</span>
+                <span class="md-subhead">{{answer.date | date: format: 'dd.mm.yyyy'}}</span>
+            </md-card-header-text>
+        </md-card-header>
+
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-subhead text-answer">{{answer.text}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="start center" ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})">
+            <md-button class="btn btn-xs">Edit Answer</md-button>
+        </md-card-actions>
+    </md-card>
 </div>
