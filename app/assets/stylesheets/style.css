@@ -22,6 +22,16 @@ html, body {
 }
 
 .main_container{
-  margin-left: 125px;
-  margin-right: 125px;
+  margin-left: 122px;
+  margin-right: 122px;
+}
+.glyphicon-thumbs-up{
+  margin-left: 15px;
+}
+.label-success{
+  width: 70px;
+}
+
+h2{
+  margin-left: 5px;
 }

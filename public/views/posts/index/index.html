@@ -1,61 +1,47 @@
-<div class="row"
-     data-ng-init="postsController.index()">
-  <div class="col-xs-12">
+<div data-ng-init="postsController.index()">
 
-    <h2 class="">
-      {{'posts.index.title' | translate}}
-    </h2>
+  <h2 class="">
+    {{'posts.index.title' | translate}}
+  </h2>
 
-    <hr/>
-
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Status</th>
-          <th>Rating</th>
-          <th>Category</th>
-          <th>Author</th>
-          <th>Date</th>
-          <th>
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </th>
-          <th>
-            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-          </th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr ng-repeat="post in postsController.posts">
-          <td>
-            <a href="#/posts/{{post._id}}/">
-              {{post.title}}
+  <hr/>
+  <md-content>
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="post in postsController.posts">
+        <img ng-src="/assets/uploads/{{post._id}}.png" onerror="this.src='/assets/images/noimage.png'" class="md-avatar" alt="{{item.who}}" />
+        <div class="md-list-item-text" layout="column">
+          <a href="#/posts/{{post._id}}/">{{post.title}}</a>
+          <h4>{{post.author}} - {{post.date | date: format: 'dd.MM.yyyy'}}</h4>
+          <p ng-if="postsController.canEdit(post)">
+            <a ng-click="postsController.edit(post)" href="">
+              Edit
+            </a>|
+            <a ng-click="postsController.del(post)" href="">
+              Delete
             </a>
-            <span ng-if="post.solved"  style="margin-left: 10px;" class="label label-success">Solved</span>
-          </td>
-          <td>{{post.status}}</td>
-          <td>{{post.rating}}</td>
-          <td>{{post.category}}</td>
-          <td>{{post.author}}</td>
-          <td>{{post.date | date: format: 'dd.MM.yyyy'}}</td>
-          <td>
-            <div ng-if="postsController.canEdit(post)">
-              <a ng-click="postsController.del(post)" href="">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-              </a>
-            </div>
-          </td>
-          <td>
-            <div ng-if="postsController.canEdit(post)">
-              <a ng-click="postsController.edit(post)" href="">
-                edit
-              </a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
+          </p>
+          <p ng-if="!postsController.canEdit(post)"><br></p>
+        </div>
+        <div class="md-list-item-text" layout="column">
+          <br>
+          <span>{{post.category}}</span>
+          <br>
+        </div>
+        <div class="md-list-item-text" layout="column">
+          <br>
+          <span>Rating: {{post.rating}}
+            <a ng-click="post.rate(1)" href="">
+              <span class="glyphicon glyphicon-thumbs-up"></span></a> | <a ng-click="post.rate(-1)" href="">
+              <span class="glyphicon glyphicon-thumbs-down"></span></a>
+          </span>
+          <br>
+        </div>
+        <div class="md-list-item-text" layout="column">
+          <br>
+          <span ng-if="post.solved"  style="margin-left: 10px;" class="label label-success">Solved</span>
+          <br>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
 </div>

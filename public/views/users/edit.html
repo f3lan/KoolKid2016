@@ -1,202 +1,147 @@
-<div class="row">
-  <div class="col-xs-12" data-ng-init="usersController.show()">
+<div ng-cloak>
+  <md-content>
     <h2 class="">
       {{'user.account.settings' | translate}}
     </h2>
-
-    <form data-ng-submit="usersController.update()">
-
-      <label for="inputUsername" class="sr-only">
-        {{'user.account.form.label.username' | translate}}
-      </label>
-      <input type="text"
-             id="inputUsername"
-             ng-model='usersController.user.username'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.username' | translate}}"
-             required autofocus>
+    <form name="editForm" data-ng-submit="usersController.update()">
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.username' | translate}}</label>
+        <input required name="username" ng-model="usersController.user.username"
+               type="text">
+        <div ng-messages="editForm.username.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.title' | translate}}</label>
+        <input name="title" ng-model="usersController.user.title"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.name' | translate}}</label>
+        <input required name="name" ng-model="usersController.user.name"
+               type="text">
+        <div ng-messages="editForm.name.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.middlename' | translate}}</label>
+        <input name="middlename" ng-model="usersController.user.middlename"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.surname' | translate}}</label>
+        <input required name="surname" ng-model="usersController.user.surname"
+               type="text">
+        <div ng-messages="editForm.surname.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <br>
+      <md-datepicker ng-model="usersController.user.birthdate" md-placeholder="{{'user.account.form.label.birthdate' | translate}}"></md-datepicker>
+      <br><br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.practiceinfo' | translate}}</label>
+        <input name="practiceinfo" ng-model="usersController.user.practiceinfo"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.practicename' | translate}}</label>
+        <input name="practicename" ng-model="usersController.user.practicename"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.street' | translate}}</label>
+        <input name="street" ng-model="usersController.user.street"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.streetno' | translate}}</label>
+        <input name="streetno" ng-model="usersController.user.streetno"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.city' | translate}}</label>
+        <input name="city" ng-model="usersController.user.city"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.postal' | translate}}</label>
+        <input name="postal" ng-model="usersController.user.postal"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.phone' | translate}}</label>
+        <input name="phone" ng-model="usersController.user.phone"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.mobile' | translate}}</label>
+        <input name="mobile" ng-model="usersController.user.mobile"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.mail' | translate}}</label>
+        <input name="mail" ng-model="usersController.user.mail"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.function' | translate}}</label>
+        <input name="function" ng-model="usersController.user.function"
+               type="text">
+      </md-input-container>
+      <br>
+      <md-input-container class="md-block">
+        <label>{{'user.account.form.label.password' | translate}}</label>
+        <input required name="password" ng-model="usersController.user.password"
+               type="text">
+        <div ng-messages="editForm.password.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <br>
+      <div layout="column" ng-cloak>
+        <md-content class="md-padding" layout="column">
+          <md-chips ng-model="usersController.expertise" md-autocomplete-snap
+                    md-transform-chip="ctrl.transformChip($chip)"
+                    md-require-match="true">
+            <md-autocomplete
+                    md-selected-item="null"
+                    md-search-text="test"
+                    md-items="item in usersController.querySearch()"
+                    md-item-text="item"
+                    placeholder="Expertises">
+            </md-autocomplete>
+                      <span>
+                        <strong>{{$chip.name}}</strong>
+                        <em>({{$chip.type}})</em>
+                      </span>
+            </md-chip-template>
+          </md-chips>
+        </md-content>
+        </md-chip-template>
+      </div>
 
       <br>
 
-      <label for="inputTitle" class="sr-only">
-        {{'user.account.form.label.name' | translate}}
-      </label>
-      <input type="text"
-             id="inputTitle"
-             ng-model='usersController.user.title'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.title' | translate}}"
-             required>
-      <br>
-
-      <label for="inputName" class="sr-only">
-        {{'user.account.form.label.name' | translate}}
-      </label>
-      <input type="text"
-             id="inputName"
-             ng-model='usersController.user.name'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.name' | translate}}"
-             required>
-      <br>
-
-      <label for="inputMiddlename" class="sr-only">
-        {{'user.account.form.label.middlename' | translate}}
-      </label>
-      <input type="text"
-             id="inputMiddlename"
-             ng-model='usersController.user.middlename'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.middlename' | translate}}"
-             required>
-      <br>
-
-      <label for="inputSurame" class="sr-only">
-        {{'user.account.form.label.surname' | translate}}
-      </label>
-      <input type="text"
-             id="inputSurame"
-             ng-model='usersController.user.surname'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.surname' | translate}}"
-             required>
-      <br>
-
-      <label for="inputBirthdate" class="sr-only">
-        {{'user.account.form.label.birthdate' | translate}}
-      </label>
-      {{usersController.user.birthdate | date: format: 'dd.mm.YYYY'}}
-      <input type="datetime"
-             id="inputBirthdate"
-             ng-model='usersController.user.birthdate'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.birthdate' | translate}}"
-             required>
-      <br>
-
-      <label for="inputPracticeinfo" class="sr-only">
-        {{'user.account.form.label.practiceinfo' | translate}}
-      </label>
-      <input type="text"
-             id="inputPracticeinfo"
-             ng-model='usersController.user.practiceinfo'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.practiceinfo' | translate}}"
-             required>
-      <br>
-
-      <label for="practiceName" class="sr-only">
-        {{'user.account.form.label.practicename' | translate}}
-      </label>
-      <input type="text"
-             id="practiceName"
-             ng-model='usersController.user.practicename'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.practicename' | translate}}"
-             required>
-      <br>
-
-      <label for="inputStreet" class="sr-only">
-        {{'user.account.form.label.street' | translate}}
-      </label>
-      <input type="text"
-             id="inputStreet"
-             ng-model='usersController.user.street'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.street' | translate}}"
-             required>
-      <br>
-
-      <label for="inputStreetNo" class="sr-only">
-        {{'user.account.form.label.streetno' | translate}}
-      </label>
-      <input type="text"
-             id="inputStreetNo"
-             ng-model='usersController.user.streetno'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.streetno' | translate}}"
-             required>
-      <br>
-
-      <label for="inputCity" class="sr-only">
-        {{'user.account.form.label.city' | translate}}
-      </label>
-      <input type="text"
-             id="inputCity"
-             ng-model='usersController.user.city'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.city' | translate}}"
-             required>
-      <br>
-
-      <label for="inputPostal" class="sr-only">
-        {{'user.account.form.label.postal' | translate}}
-      </label>
-      <input type="text"
-             id="inputPostal"
-             ng-model='usersController.user.postal'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.postal' | translate}}"
-             required>
-      <br>
-
-      <label for="inputPhone" class="sr-only">
-        {{'user.account.form.label.phone' | translate}}
-      </label>
-      <input type="text"
-             id="inputPhone"
-             ng-model='usersController.user.phone'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.phone' | translate}}"
-             required>
-      <br>
-
-      <label for="inputMobile" class="sr-only">
-        {{'user.account.form.label.mobile' | translate}}
-      </label>
-      <input type="text"
-             id="inputMobile"
-             ng-model='usersController.user.mobile'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.mobile' | translate}}"
-             required>
-      <br>
-
-      <label for="inputMail" class="sr-only">
-        {{'user.account.form.label.mail' | translate}}
-      </label>
-      <input type="text"
-             id="inputMail"
-             ng-model='usersController.user.mail'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.mail' | translate}}"
-             required>
-      <br>
-
-      <label for="inputFunction" class="sr-only">
-        {{'user.account.form.label.function' | translate}}
-      </label>
-      <input type="text"
-             id="inputFunction"
-             ng-model='usersController.user.function'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.function' | translate}}"
-             required>
-      <br>
-      <label for="inputPassword" class="sr-only">
-        {{'user.account.form.label.password' | translate}}
-      </label>
-      <input type="password"
-             id="inputPassword"
-             ng-model='usersController.user.password'
-             class="form-control"
-             placeholder="{{'user.account.form.placeholder.password' | translate}}"
-             required>
-      <br>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         {{'user.account.form.button.save' | translate}}
       </button>
     </form>
-
   </div>
 </div>
