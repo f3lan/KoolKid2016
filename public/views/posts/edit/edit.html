@@ -8,32 +8,29 @@
       <br>
 
       <md-input-container class="md-block">
-        <label>{{'posts.form.content' | translate}}</label>
+        <label>{{'posts.form.label.title' | translate}}</label>
         <input type="text"
              id="inputTitle"
              ng-model='postsController.post.title'
              class="form-control"
-             placeholder="{{'posts.form.placeholders.title' | translate}}"
              required autofocus>
       </md-input-container>
       <br>
 
       <md-input-container class="md-block">
-        <label>{{'posts.form.content' | translate}}</label>
+        <label>{{'posts.form.label.content' | translate}}</label>
         <textarea name="content" ng-model="postsController.post.content"
-                  placeholder="{{'posts.form.placeholders.content' | translate}}"
                   type="text" md-maxlength="500" rows="8" md-select-on-focus></textarea>
       </md-input-container>
 
       <br>
 
       <md-input-container class="md-block">
-        <label>{{'posts.form.category' | translate}}</label>
+        <label>{{'posts.form.label.category' | translate}}</label>
         <input type="text"
              id="inputCategory"
              ng-model='postsController.post.category'
-             class="form-control"
-             placeholder="{{'posts.form.placeholders.category' | translate}}">
+             class="form-control">
       </md-input-container>
 
       <br>

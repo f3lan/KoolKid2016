@@ -14,10 +14,10 @@
           <h4>{{post.author}} - {{post.date | date: format: 'dd.MM.yyyy'}}</h4>
           <p ng-if="postsController.canEdit(post)">
             <a ng-click="postsController.edit(post)" href="">
-              Edit
+              {{'posts.index.edit' | translate}}
             </a>|
             <a ng-click="postsController.del(post)" href="">
-              Delete
+              {{'posts.index.delete' | translate}}
             </a>
           </p>
           <p ng-if="!postsController.canEdit(post)"><br></p>
@@ -29,12 +29,12 @@
         </div>
         <div class="md-list-item-text" layout="column">
           <br>
-          <span>Rating: {{post.rating}}</span>
+          <span>{{'posts.rating' | translate}}: {{post.rating}}</span>
           <br>
         </div>
         <div class="md-list-item-text" layout="column">
           <br>
-          <span ng-if="post.solved"  style="margin-left: 10px;" class="label label-success">Solved</span>
+          <span ng-if="post.solved"  style="margin-left: 10px;" class="label label-success">{{'posts.solved' | translate}}</span>
           <br>
         </div>
       </md-list-item>

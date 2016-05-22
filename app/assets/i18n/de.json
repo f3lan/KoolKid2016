@@ -4,43 +4,126 @@
       "login": "Login",
       "logout": "Logout",
       "register": "Register"
-    }
+    },
+    "posts":"Questions",
+    "reports": "REPORTS"
   },
+  "index": {
+    "title" : "MedEx",
+    "subtitle": "Questions and Answers for Doctors of Medicine",
+    "introduction": "Welcome to the MedEx. MedEx Switzerlands first questions and answers application for doctors of medicine. If you have a difficulte medical case or if you want to discuse some specific phenomena MedEx is the right place.",
+    "introduction2":"MedEx is only for experts and is not public for anyone else. Register today to discuss and share."
+  },
+  "imprint": "Legal Notice",
   "posts": {
+    "comments": {
+      "titleCreate" : "Comment this Question",
+      "titleEdit": "Edit this Comment",
+      "form": {
+        "label": {
+          "content" : "Content"
+        },
+        "button": {
+          "save": "Save"
+        }
+      }
+    },
+    "answers": {
+      "title" : "Give an Answer to this Question",
+      "form": {
+        "label": {
+          "content" : "Content"
+        },
+        "button": {
+          "save": "Save"
+        }
+      }
+    },
+    "form": {
+      "label": {
+        "title": "Title",
+        "content": "Content",
+        "category": "Category",
+        "accept": "Accept Terms and Conditions"
+      },
+      "button" : {
+        "save": "Save"
+      }
+    },
     "index": {
-      "title": "Alle Posts"
+      "title": "All Posts",
+      "none": "none",
+      "edit": "Edit",
+      "delete": "Delete",
+      "button": {
+        "new": "New Post"
+      }
     },
     "show" : {
-      "title": "Post Details",
+      "createcomment": "Create Comment",
+      "createanswer": "Create Answer",
+      "listcomments": "Comments",
+      "listanswers": "Answers",
+      "description": "Description",
       "button" : {
-        "new": "New comment"
+        "newcomment": "New Comment",
+        "newanswer": "New Answer",
+        "editPost": "Edit Post",
+        "editComment": "Edit Comment",
+        "editAnswer": "Edit Answer",
+        "marksolved": "Mark as solved"
       }
-    }
+    },
+    "create": {
+      "title": "Ask a Question"
+    },
+    "edit": {
+      "title": "Edit Post"
+    },
+    "category": "Categories",
+    "solved": "Solved",
+    "rating": "Rating"
   },
   "user": {
     "account" : {
       "settings": "Account Settings",
-      "signIn": "Bitte einloggen",
+      "changeSettings": "Change Account Settings",
+      "profile": "Profile",
+      "signIn": "Please Sign in",
       "logout": "Do you really want to log out?",
       "registration": "Registration",
       "button" : {
         "logout": "Logout",
+        "edit": "Edit Profile",
         "cancel": "Cancel"
       },
       "form" : {
         "label" : {
-          "username": "Name",
           "username": "Username",
+          "title": "Title",
+          "name": "Name",
+          "middlename": "Middlename",
+          "surname": "Surname",
+          "birthdate": "Date of Birth",
+          "practiceinfo": "Practice Information",
+          "practicename": "Practice Name",
+          "street": "Street",
+          "streetno": "Street Number",
+          "city": "City",
+          "postal": "Postal Code",
+          "phone": "Phone",
+          "mobile": "Mobile Phone",
+          "mail": "E-Mail",
+          "function": "Function",
+          "expertices": "Expertices",
           "password": "Password"
         },
         "placeholder" : {
-          "name": "Name",
-          "username": "Username",
-          "password": "Password"
         },
         "button" : {
           "login": "Login",
-          "register": "Register"
+          "register": "Register",
+          "save": "Save"
         }
       }
     }

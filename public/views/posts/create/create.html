@@ -5,23 +5,20 @@
     <hr/>
     <br>
     <md-input-container class="md-block">
-        <label>{{'posts.form.title' | translate}}</label>
+        <label>{{'posts.form.label.title' | translate}}</label>
         <input name="title" ng-model="postsController.post.title"
-               placeholder="{{'posts.form.placeholders.title' | translate}}"
                type="text">
     </md-input-container>
 
     <md-input-container class="md-block">
-        <label>{{'posts.form.content' | translate}}</label>
+        <label>{{'posts.form.label.content' | translate}}</label>
         <textarea name="content" ng-model="postsController.post.content"
-               placeholder="{{'posts.form.placeholders.content' | translate}}"
                type="text" md-maxlength="500" rows="8" md-select-on-focus></textarea>
     </md-input-container>
 
     <md-input-container class="md-block">
-        <label>{{'posts.form.category' | translate}}</label>
+        <label>{{'posts.form.label.category' | translate}}</label>
         <input name="category" ng-model="postsController.post.category"
-               placeholder="{{'posts.form.placeholders.category' | translate}}"
                type="text">
     </md-input-container>
 
@@ -38,7 +35,7 @@
     <br><br>
 
     <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" class="checkbox">
-        {{'posts.form.accept' | translate}}
+        {{'posts.form.label.accept' | translate}}
     </md-checkbox>
     <br><br>
     <md-button class="btn btn-lg btn-block"

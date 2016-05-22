@@ -1,19 +1,19 @@
 <div class="row" data-ng-init="postsController.show()">
   <h2 class="">
-      {{'posts.show.comment' | translate}}
+      {{'posts.show.createcomment' | translate}}
   </h2>
   <hr/>
     <a ui-sref="app.comments#create({id: postsController.post._id})" href="" 
       type="button" class="btn btn-block">
-        {{'posts.show.button.newComment' | translate}}
+        {{'posts.show.button.newcomment' | translate}}
     </a>
 
     <h2 class="">
-        {{'posts.show.answer' | translate}}
+        {{'posts.show.createanswer' | translate}}
     </h2>
     <hr/>
     <a ui-sref="app.answers#create({id: postsController.post._id})" href="" 
       type="button" class="btn btn-block">
-        {{'posts.show.button.newAnswer' | translate}}
+        {{'posts.show.button.newanswer' | translate}}
     </a>
 </div>
