@@ -28,14 +28,14 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center">
-            <md-button class="btn btn-xs" ng-click="postsController.edit(postsController.post)">Edit Post</md-button>
+            <md-button class="btn btn-xs" ng-click="postsController.edit(postsController.post)">{{'posts.show.button.editPost' | translate}}</md-button>
             <md-button class="btn btn-xs" ng-if="!postsController.post.solved"
-                       ng-click="postsController.solve(true)">{{'posts.show.button.markSolved' | translate}}</md-button>
+                       ng-click="postsController.solve(true)">{{'posts.show.button.marksolved' | translate}}</md-button>
             <md-button class="btn btn-xs" ng-if="postsController.post.solved"
                        ng-click="postsController.solve(false)">{{'posts.show.button.markNotSolved' | translate}}</md-button>
             <md-card-icon-actions>
             <span>
-                Rating: {{postsController.post.rating}}
+                {{'posts.rating' | translate}}: {{postsController.post.rating}}
             <a ng-click="postsController.rate(1)" href="">
               <span class="glyphicon glyphicon-thumbs-up"></span></a> | <a ng-click="postsController.rate(-1)" href="">
               <span class="glyphicon glyphicon-thumbs-down"></span>
@@ -44,14 +44,14 @@
             </md-card-icon-actions>
         </md-card-actions>
         <md-card-content>
-            <span class="md-subhead">Description</span>
+            <span class="md-subhead">{{'posts.show.description' | translate}}</span>
             <p>{{postsController.post.content}}</p>
         </md-card-content>
     </md-card>
 </div>
 <div class="row">
     <h4>
-        {{'posts.comments' | translate}}
+        {{'posts.show.listcomments' | translate}}
     </h4>
     <hr/>
     <md-card ng-repeat="comment in postsController.post.comments">
@@ -71,14 +71,14 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center" ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})">
-            <md-button class="btn btn-xs">Edit Comment</md-button>
+            <md-button class="btn btn-xs">{{'posts.show.button.editComment' | translate}}</md-button>
         </md-card-actions>
     </md-card>
 </div>
 
 <div class="row">
     <h3>
-        {{'posts.answers' | translate}}
+        {{'posts.show.listanswers' | translate}}
     </h3>
     <hr/>
     <md-card ng-repeat="answer in postsController.post.answers">
@@ -98,7 +98,7 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center" ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})">
-            <md-button class="btn btn-xs">Edit Answer</md-button>
+            <md-button class="btn btn-xs">{{'posts.show.button.editAnswer' | translate}}</md-button>
         </md-card-actions>
     </md-card>
 </div>

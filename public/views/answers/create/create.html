@@ -3,7 +3,7 @@
 
     <form data-ng-submit="answersController.create()">
       <h2 class="form-signin-heading">
-        Give an answer to this question
+        {{'posts.answers.title' | translate}}
       </h2>
 
       <br>
@@ -11,7 +11,6 @@
       <md-input-container class="md-block">
         <label>{{'posts.answers.form.content' | translate}}</label>
         <textarea name="content" ng-model="answersController.answer.text"
-                  placeholder="{{'posts.answers.form.placeholders.content' | translate}}"
                   type="text" md-maxlength="500" rows="5" md-select-on-focus required>
                   required
         </textarea>
@@ -19,7 +18,7 @@
 
       <button class="btn btn-lg btn-block"
               type="submit">
-        Save
+        {{'posts.answers.form.button.save' | translate}}
       </button>
     </form>
   </div>

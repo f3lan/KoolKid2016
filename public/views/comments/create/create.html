@@ -1,15 +1,14 @@
 <div class="row">
     <form data-ng-submit="commentsController.create()">
       <h2 class="form-signin-heading">
-        Comment this question
+          {{'posts.comments.titleCreate' | translate}}
       </h2>
 
       <br>
 
       <md-input-container class="md-block">
-        <label>{{'posts.form.content' | translate}}</label>
+        <label>{{'posts.form.label.content' | translate}}</label>
         <textarea name="content" ng-model="commentsController.comment.text"
-                  placeholder="{{'posts.form.placeholders.content' | translate}}"
                   type="text" md-maxlength="500" rows="5" md-select-on-focus required>
                   required
         </textarea>
@@ -17,7 +16,7 @@
 
       <button class="btn btn-lg btn-block"
               type="submit">
-        {{'posts.form.button.save' | translate}}
+        {{'posts.comments.form.button.save' | translate}}
       </button>
     </form>
 </div>
