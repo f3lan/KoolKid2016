@@ -9,7 +9,7 @@ var Answer = new Schema({
   date: Date,
   rating: {
     type: Number,
-    default:5
+    default:0
   },
   post : {
     type: Schema.ObjectId,

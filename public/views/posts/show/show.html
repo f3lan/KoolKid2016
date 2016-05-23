@@ -99,8 +99,7 @@
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center">
             <md-button class="btn btn-xs" ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})">{{'posts.show.button.editAnswer' | translate}}</md-button>
-            &nbsp;
-            &nbsp;
+            <md-card-icon-actions>
             <div ng-controller="AnswersController as answersCtrl">
 
                 {{'posts.rating' | translate}}: {{answer.rating}}
@@ -116,6 +115,7 @@
                 </a>
 
             </div>
+            </md-card-icon-actions>
         </md-card-actions>
     </md-card>
 </div>
