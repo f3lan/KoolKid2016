@@ -78,7 +78,6 @@ class UsersController {
     const password = req.body.password;
     User.register(user, password, function(error) {
       if(error) {
-        debugger;
         const message = {status: false, message: error};
         res.status(500).json(message);
       } else {

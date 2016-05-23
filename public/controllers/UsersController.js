@@ -20,7 +20,7 @@
                              Expertises) {
 
         var expertises = Expertises.all();
-        
+
         this.login = function (user) {
             const that = this;
             AuthService.login(user).then(function (data) {
@@ -62,11 +62,11 @@
                 }
             });
         };
-        
+
         this.querySearch = function() {
             return expertises;
         };
-        
+
         this.transformChip = function(chip) {
             // If it is an object, it's already a known chip
             if (angular.isObject(chip)) {
