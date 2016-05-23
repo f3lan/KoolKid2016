@@ -97,6 +97,11 @@
             this.update();
         };
 
+        var rateAnswer = function (answer,value) {
+            answer.rating += value;
+            answer.update();
+        };
+
         var solve = function (value) {
             this.post.solved = value;
             this.update();
@@ -139,7 +144,8 @@
             del: del,
             solve: solve,
             rate: rate,
-            canEdit: canEdit
+            canEdit: canEdit,
+            rateAnswer: rateAnswer
         }
     }
 

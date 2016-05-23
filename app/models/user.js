@@ -21,11 +21,7 @@ var User = new Schema({
   mobile: String,
   mail: String,
   function: String,
-  expertises: [
-  {
-    type: Schema.ObjectId,
-    ref: 'Expertise'
-  }]
+  expertises: [String]
 });
 
 User.plugin(passportLocalMongoose);
