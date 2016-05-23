@@ -73,7 +73,8 @@
         "editPost": "Frage bearbeiten",
         "editComment": "Kommentar bearbeiten",
         "editAnswer": "Antwort bearbeiten",
-        "marksolved": "Fall als gelöst markieren"
+        "marksolved": "Fall als gelöst markieren",
+        "marknotsolved": "Fall als ungelöst markieren"
       }
     },
     "create": {

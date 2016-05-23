@@ -73,7 +73,8 @@
         "editPost": "Editer la question",
         "editComment": "Editer le commentaire",
         "editAnswer": "Editer la réponse",
-        "marksolved": "Marquer comme résolu"
+        "marksolved": "Marquer comme résolu",
+        "marknotsolved": "Mark as not solved"
       }
     },
     "create": {
