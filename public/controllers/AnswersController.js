@@ -25,7 +25,7 @@
       ApiService.get(url).then(function(data) {
         that.answer = data;
       });
-    }
+    };
 
     var create = function() {
       var id = $stateParams.id;
@@ -36,23 +36,30 @@
           $state.go('app.posts#show', {id: id});
         }
       });
-    }
+    };
 
-    var update = function() {
+    var update = function(answer) {
       var id = $stateParams.id;
-      var answerId = $stateParams.answerId;
+      var answer = answer || this.answer;
+      var answerId = $stateParams.answerId || answer._id;
       var url = 'posts/' + id + '/answers/' + answerId;
-      ApiService.put(url, this.answer).then(function(data) {
+      ApiService.put(url, answer).then(function(data) {
         if(data.status) {
           $state.go('app.posts#show', {id: id});
         }
       });
-    }
-
+    };
+    
+    var rate = function(answer, value) {
+      answer.rating += value;
+      this.update(answer);
+    };
+    
     return {
       show,
       create,
-      update
+      update,
+      rate
     }
 
   }

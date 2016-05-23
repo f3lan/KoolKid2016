@@ -53,7 +53,6 @@
         };
 
         var update = function () {
-            debugger;
             var id = $stateParams.id;
             var url = 'posts/' + id;
             var post = this.post;
@@ -101,7 +100,6 @@
         var rateAnswer = function (answer, value) {
             answer.rating += value;
             this.update();
-
         };
 
         var solve = function (value) {
