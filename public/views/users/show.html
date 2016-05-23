@@ -1,8 +1,13 @@
 <div data-ng-init="usersController.show()">
   <h2>
-      {{'user.account.profile' | translate}}
+      {{'user.account.profile' | translate}}<br>
+
   </h2>
   <hr>
+  <span class="label label-success">
+    {{'user.account.yourrating' | translate}}: {{usersController.rating}}
+  </span>
+  <br>
   <table>
     <tbody>
     <col width="300">
@@ -24,7 +29,7 @@
       </tr>
       <tr>
         <td>{{'user.account.form.label.birthdate' | translate}}:</td>
-        <td>{{usersController.user.birthdate}}</td>
+        <td>{{usersController.user.birthdate | date: format: 'dd.mm.yyyy'}}</td>
       </tr>
       <tr>
         <td>{{'user.account.form.label.practiceinfo' | translate}}:</td>
