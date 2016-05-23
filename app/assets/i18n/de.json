@@ -3,127 +3,127 @@
     "account": {
       "login": "Login",
       "logout": "Logout",
-      "register": "Register"
+      "register": "Registrierung"
     },
-    "posts":"Questions",
-    "reports": "REPORTS"
+    "posts":"Fragen",
+    "reports": "REPORTE"
   },
   "index": {
     "title" : "MedEx",
-    "subtitle": "Questions and Answers for Doctors of Medicine",
-    "introduction": "Welcome to the MedEx. MedEx Switzerlands first questions and answers application for doctors of medicine. If you have a difficulte medical case or if you want to discuse some specific phenomena MedEx is the right place.",
-    "introduction2":"MedEx is only for experts and is not public for anyone else. Register today to discuss and share."
+    "subtitle": "Fragen und Antworten für Ärzte",
+    "introduction": "Willkommen bei MedEx, der ersten Schweizer Fragen- und Antworten Plattform für Ärzte. Wenn Sie Fragen betreffend schwierigen medizinischen Fällen oder speziellen Phänomenen haben ist MedEx der richtige Ort für Sie.",
+    "introduction2":"MedEx ist nur für Experten und nicht für die allgemeine Öffentlichkeit gedacht. Registrieren Sie sich noch heute um Ihre Fragen und Ihr Know-How zu teilen."
   },
-  "imprint": "Legal Notice",
+  "imprint": "Rechtliche Bestimmungen",
   "posts": {
     "comments": {
-      "titleCreate" : "Comment this Question",
-      "titleEdit": "Edit this Comment",
+      "titleCreate" : "Kommentieren Sie diese Frage",
+      "titleEdit": "Bearbeiten Sie Ihren Kommmentar",
       "form": {
         "label": {
-          "content" : "Content"
+          "content" : "Inhalt"
         },
         "button": {
-          "save": "Save"
+          "save": "Speichern"
         }
       }
     },
     "answers": {
-      "title" : "Give an Answer to this Question",
+      "title" : "Geben Sie eine Antwort zu dieser Frage",
       "form": {
         "label": {
-          "content" : "Content"
+          "content" : "Inhalt"
         },
         "button": {
-          "save": "Save"
+          "save": "Speichern"
         }
       }
     },
     "form": {
       "label": {
-        "title": "Title",
-        "content": "Content",
-        "category": "Category",
-        "accept": "Accept Terms and Conditions"
+        "title": "Titel",
+        "content": "Inhalt",
+        "category": "Kategorie",
+        "accept": "Ich akzeptiere die allgemeinen Geschäftsbedingungen"
       },
       "button" : {
-        "save": "Save"
+        "save": "Speichern"
       }
     },
     "index": {
-      "title": "All Posts",
-      "none": "none",
-      "edit": "Edit",
-      "delete": "Delete",
+      "title": "Alle Fragen",
+      "none": "keine",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
       "button": {
-        "new": "New Post"
+        "new": "Neue Frage"
       }
     },
     "show" : {
-      "createcomment": "Create Comment",
-      "createanswer": "Create Answer",
-      "listcomments": "Comments",
-      "listanswers": "Answers",
-      "description": "Description",
+      "createcomment": "Kommentieren",
+      "createanswer": "Antworten",
+      "listcomments": "Kommentare zu dieser Frage",
+      "listanswers": "Antworten zu dieser Frage",
+      "description": "Beschreibung",
       "button" : {
-        "newcomment": "New Comment",
-        "newanswer": "New Answer",
-        "editPost": "Edit Post",
-        "editComment": "Edit Comment",
-        "editAnswer": "Edit Answer",
-        "marksolved": "Mark as solved"
+        "newcomment": "Neuer Kommentar",
+        "newanswer": "Neue Antwort",
+        "editPost": "Frage bearbeiten",
+        "editComment": "Kommentar bearbeiten",
+        "editAnswer": "Antwort bearbeiten",
+        "marksolved": "Fall als gelöst markieren"
       }
     },
     "create": {
-      "title": "Ask a Question"
+      "title": "Eine Frage stellen"
     },
     "edit": {
-      "title": "Edit Post"
+      "title": "Frage bearbeiten"
     },
-    "category": "Categories",
-    "solved": "Solved",
-    "rating": "Rating"
+    "category": "Kategorien",
+    "solved": "Gelöst",
+    "rating": "Bewertung"
   },
   "user": {
     "account" : {
-      "settings": "Account Settings",
-      "changeSettings": "Change Account Settings",
-      "profile": "Profile",
-      "signIn": "Please Sign in",
-      "logout": "Do you really want to log out?",
-      "registration": "Registration",
+      "settings": "Accounteinstellungen",
+      "changeSettings": "Accounteinstellungen ändern",
+      "profile": "Profil",
+      "signIn": "Bitte loggen Sie sich ein",
+      "logout": "Wollen Sie sich wirklich ausloggen?",
+      "registration": "Registrierung",
       "button" : {
         "logout": "Logout",
-        "edit": "Edit Profile",
-        "cancel": "Cancel"
+        "edit": "Profil bearbeiten",
+        "cancel": "Abbrechen"
       },
       "form" : {
         "label" : {
-          "username": "Username",
-          "title": "Title",
+          "username": "Benutzername",
+          "title": "Titel",
           "name": "Name",
-          "middlename": "Middlename",
-          "surname": "Surname",
-          "birthdate": "Date of Birth",
-          "practiceinfo": "Practice Information",
-          "practicename": "Practice Name",
-          "street": "Street",
-          "streetno": "Street Number",
-          "city": "City",
-          "postal": "Postal Code",
-          "phone": "Phone",
-          "mobile": "Mobile Phone",
+          "middlename": "Mittlerer Name",
+          "surname": "Nachname",
+          "birthdate": "Geburtsdatum",
+          "practiceinfo": "Informationen über Ihre Praxis",
+          "practicename": "Name Ihrer Praxis",
+          "street": "Strasse",
+          "streetno": "Strassennummer",
+          "city": "Ort",
+          "postal": "Postleitzahl",
+          "phone": "Telefon",
+          "mobile": "Mobiltelefon",
           "mail": "E-Mail",
-          "function": "Function",
-          "expertices": "Expertices",
-          "password": "Password"
+          "function": "Funktion",
+          "expertices": "Erfahrungen",
+          "password": "Passwort"
         },
         "placeholder" : {
         },
         "button" : {
           "login": "Login",
-          "register": "Register",
-          "save": "Save"
+          "register": "Registrieren",
+          "save": "Speichern"
         }
       }
     }
