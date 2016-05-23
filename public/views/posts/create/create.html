@@ -7,24 +7,24 @@
     <md-input-container class="md-block">
         <label>{{'posts.form.label.title' | translate}}</label>
         <input name="title" ng-model="postsController.post.title"
-               type="text">
+               type="text" required>
     </md-input-container>
 
     <md-input-container class="md-block">
         <label>{{'posts.form.label.content' | translate}}</label>
         <textarea name="content" ng-model="postsController.post.content"
-               type="text" md-maxlength="500" rows="8" md-select-on-focus></textarea>
+               type="text" md-maxlength="500" rows="8" md-select-on-focus required></textarea>
     </md-input-container>
 
     <md-input-container class="md-block">
         <label>{{'posts.form.label.category' | translate}}</label>
         <input name="category" ng-model="postsController.post.category"
-               type="text">
+               type="text" required>
     </md-input-container>
 
     <md-input-container class="md-block">
     <input type="file" ngf-select ng-model="postsController.post.file" name="file"
-           accept="image/png" ngf-max-size="2MB" required
+           accept="image/png" ngf-max-size="2MB"
            ngf-model-invalid="errorFile">
     </md-input-container>
     <br>
@@ -34,11 +34,22 @@
     </md-button>
     <br><br>
 
-    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" class="checkbox">
+    <md-checkbox ng-model="data.cb2"
+                 aria-label="Checkbox 1"
+                 ng-required="!data.cb1"
+                 class="checkbox">
         {{'posts.form.label.accept' | translate}}
     </md-checkbox>
     <br><br>
+    <md-checkbox ng-model="data.cb2"
+                 aria-label="Checkbox 2"
+                 class="checkbox"
+                 ng-required="!data.cb2">
+        {{'posts.form.label.accept2' | translate}}
+    </md-checkbox>
+    <br><br>
     <md-button class="btn btn-lg btn-block"
+               ng-disabled="newPost.$invalid"
                type="submit">
         {{'posts.form.button.save' | translate}}
     </md-button>

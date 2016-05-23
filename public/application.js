@@ -33,7 +33,6 @@
           }
         );
 
-
         $translateProvider.fallbackLanguage('en');
         $translateProvider.useSanitizeValueStrategy('escape');
         $translateProvider.determinePreferredLanguage();

@@ -2,9 +2,9 @@
   <md-button md-menu-origin ng-click="$mdOpenMenu()">{{applicationController.language()}}</md-button>
   <md-menu-content width="2">
     <md-menu-item data-ng-repeat="lang in applicationController.languages">
-      <md-button><a href="#" data-ng-click="applicationController.setLanguage(lang)">
+      <md-button ng-click="applicationController.setLanguage(lang)">
         {{lang}}
-      </a></md-button>
+      </md-button>
     </md-menu-item>
   </md-menu-content>
 </md-menu>

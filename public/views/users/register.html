@@ -112,32 +112,33 @@
                 </div>
             </md-input-container>
 
-
             <div layout="column" ng-cloak>
-                <md-content class="md-padding" layout="column">
-                    <md-chips ng-model="usersController.expertise" md-autocomplete-snap
-                              md-transform-chip="ctrl.transformChip($chip)"
-                              md-require-match="true">
-                        <md-autocomplete
-                                md-selected-item="null"
-                                md-search-text="test"
-                                md-items="item in usersController.querySearch()"
-                                md-item-text="item"
-                                placeholder="Expertises">
-                        </md-autocomplete>
-                        <span>
-                          <strong>{{$chip.name}}</strong>
-                          <em>({{$chip.type}})</em>
-                        </span>
+                <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+                          md-transform-chip="ctrl.transformChip($chip)"
+                          md-require-match="ctrl.autocompleteDemoRequireMatch">
+                    <md-autocomplete
+                            md-selected-item="null"
+                            md-search-text="null"
+                            md-items="item in usersController.items"
+                            md-item-text="item"
+                            placeholder="{{'user.account.form.placeholder.expertises' | translate}}">
+                        <span md-highlight-text="ctrl.searchText">{{item}}</span>
+                    </md-autocomplete>
+                    <md-chip-template>
+                    <span>
+                      <strong>{{$chip.name}}</strong>
+                      <em>({{$chip.type}})</em>
+                    </span>
                     </md-chip-template>
                 </md-chips>
-            </md-content>
-            </md-chip-template>
             </div>
+
 
             <br>
 
-            <md-button class="btn btn-lg btn-block" type="submit">
+            <md-button class="btn btn-lg btn-block"
+                       ng-disabled="registerForm.$invalid"
+                       type="submit">
                 {{'user.account.form.button.register' | translate}}
             </md-button>
             <br>

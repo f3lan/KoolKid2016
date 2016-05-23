@@ -13,27 +13,25 @@
     LanguageService
   ) {
 
-    var that = this;
-
     var getUser = function() {
       if(AuthService.isLoggedIn()) {
         return AuthService.getUser();
       } else {
         return false;
       }
-    }
+    };
 
     var isLoggedIn = function() {
       return AuthService.isLoggedIn();
-    }
+    };
 
     var setLanguage = function(lang) {
       LanguageService.setLanguage(lang)
-    }
+    };
 
     var currentLanguage = function() {
       return LanguageService.currentLanguage();
-    }
+    };
 
     return {
       getUser: getUser,

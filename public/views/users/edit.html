@@ -1,140 +1,139 @@
 <div ng-cloak>
     <h2 class="">
-      {{'user.account.settings' | translate}}
+        {{'user.account.settings' | translate}}
     </h2>
     <form name="editForm" data-ng-submit="usersController.update()">
-      <br>
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.username' | translate}}</label>
-        <input required name="username" ng-model="usersController.user.username"
-               type="text">
-        <div ng-messages="editForm.username.$error">
-          <div ng-message="required">This is required.</div>
+        <br>
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.username' | translate}}</label>
+            <input required name="username" ng-model="usersController.user.username"
+                   type="text">
+            <div ng-messages="editForm.username.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.title' | translate}}</label>
+            <input name="title" ng-model="usersController.user.title"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.name' | translate}}</label>
+            <input name="name" ng-model="usersController.user.name"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.middlename' | translate}}</label>
+            <input name="middlename" ng-model="usersController.user.middlename"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.surname' | translate}}</label>
+            <input name="surname" ng-model="usersController.user.surname"
+                   type="text">
+        </md-input-container>
+
+        <label>{{'user.account.form.label.birthdate' | translate}}</label>
+        <input type="date" class="datepicker" ng-model="usersController.user.birthdate">
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.practiceinfo' | translate}}</label>
+            <input name="practiceinfo" ng-model="usersController.user.practiceinfo"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.practicename' | translate}}</label>
+            <input name="practicename" ng-model="usersController.user.practicename"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.street' | translate}}</label>
+            <input name="street" ng-model="usersController.user.street"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.streetno' | translate}}</label>
+            <input name="streetno" ng-model="usersController.user.streetno"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.city' | translate}}</label>
+            <input name="city" ng-model="usersController.user.city"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.postal' | translate}}</label>
+            <input name="postal" ng-model="usersController.user.postal"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.phone' | translate}}</label>
+            <input name="phone" ng-model="usersController.user.phone"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.mobile' | translate}}</label>
+            <input name="mobile" ng-model="usersController.user.mobile"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.mail' | translate}}</label>
+            <input name="mail" ng-model="usersController.user.mail"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.function' | translate}}</label>
+            <input name="function" ng-model="usersController.user.function"
+                   type="text">
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>{{'user.account.form.label.password' | translate}}</label>
+            <input required name="password" ng-model="usersController.user.password"
+                   type="password">
+            <div ng-messages="editForm.password.$error">
+                <div ng-message="required">This is required.</div>
+            </div>
+        </md-input-container>
+
+        <div layout="column" ng-cloak>
+            <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+                      md-transform-chip="ctrl.transformChip($chip)"
+                      md-require-match="ctrl.autocompleteDemoRequireMatch">
+                <md-autocomplete
+                        md-selected-item="null"
+                        md-search-text="null"
+                        md-items="item in usersController.items"
+                        md-item-text="item"
+                        placeholder="{{'user.account.form.placeholder.expertises' | translate}}">
+                    <span md-highlight-text="ctrl.searchText">{{item}}</span>
+                </md-autocomplete>
+                <md-chip-template>
+                    <span>
+                      <strong>{{$chip.name}}</strong>
+                      <em>({{$chip.type}})</em>
+                    </span>
+                </md-chip-template>
+            </md-chips>
         </div>
-      </md-input-container>
 
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.title' | translate}}</label>
-        <input name="title" ng-model="usersController.user.title"
-               type="text">
-      </md-input-container>
+        <br>
 
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.name' | translate}}</label>
-        <input name="name" ng-model="usersController.user.name"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.middlename' | translate}}</label>
-        <input name="middlename" ng-model="usersController.user.middlename"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.surname' | translate}}</label>
-        <input name="surname" ng-model="usersController.user.surname"
-               type="text">
-      </md-input-container>
-
-      <label>{{'user.account.form.label.birthdate' | translate}}</label>
-      <input type="date" class="datepicker" ng-model="usersController.user.birthdate">
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.practiceinfo' | translate}}</label>
-        <input name="practiceinfo" ng-model="usersController.user.practiceinfo"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.practicename' | translate}}</label>
-        <input name="practicename" ng-model="usersController.user.practicename"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.street' | translate}}</label>
-        <input name="street" ng-model="usersController.user.street"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.streetno' | translate}}</label>
-        <input name="streetno" ng-model="usersController.user.streetno"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.city' | translate}}</label>
-        <input name="city" ng-model="usersController.user.city"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.postal' | translate}}</label>
-        <input name="postal" ng-model="usersController.user.postal"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.phone' | translate}}</label>
-        <input name="phone" ng-model="usersController.user.phone"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.mobile' | translate}}</label>
-        <input name="mobile" ng-model="usersController.user.mobile"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.mail' | translate}}</label>
-        <input name="mail" ng-model="usersController.user.mail"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.function' | translate}}</label>
-        <input name="function" ng-model="usersController.user.function"
-               type="text">
-      </md-input-container>
-
-      <md-input-container class="md-block">
-        <label>{{'user.account.form.label.password' | translate}}</label>
-        <input required name="password" ng-model="usersController.user.password"
-               type="password">
-        <div ng-messages="editForm.password.$error">
-          <div ng-message="required">This is required.</div>
-        </div>
-      </md-input-container>
-
-      <div layout="column" ng-cloak>
-        <md-content class="md-padding" layout="column">
-          <md-chips ng-model="usersController.expertise" md-autocomplete-snap
-                    md-transform-chip="ctrl.transformChip($chip)"
-                    md-require-match="true">
-            <md-autocomplete
-                    md-selected-item="null"
-                    md-search-text="test"
-                    md-items="item in usersController.querySearch()"
-                    md-item-text="item"
-                    placeholder="Expertises">
-            </md-autocomplete>
-                      <span>
-                        <strong>{{$chip.name}}</strong>
-                        <em>({{$chip.type}})</em>
-                      </span>
-            </md-chip-template>
-          </md-chips>
-        </md-content>
-        </md-chip-template>
-      </div>
-
-      <br>
-
-      <md-button class="btn btn-lg btn-block" type="submit">
-        {{'user.account.form.button.save' | translate}}
-      </md-button>
+        <md-button class="btn btn-lg btn-block" type="submit">
+            {{'user.account.form.button.save' | translate}}
+        </md-button>
     </form>
 </div>

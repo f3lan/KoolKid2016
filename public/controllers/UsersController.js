@@ -21,8 +21,13 @@
 
         var expertises = Expertises.all();
 
+        this.loginButton = true;
+        
         this.login = function (user) {
             const that = this;
+            
+            this.loginButton = false;
+            
             AuthService.login(user).then(function (data) {
                 if (data.status) {
                     AuthService.setUser(true);
@@ -31,7 +36,7 @@
                     that.result = "Login not successful";
                 }
             });
-        }
+        };
 
         this.logout = function () {
             AuthService.logout();
@@ -62,18 +67,12 @@
                 }
             });
         };
+        
+        this.items = expertises;
 
-        this.querySearch = function() {
-            return expertises;
-        };
 
         this.transformChip = function(chip) {
-            // If it is an object, it's already a known chip
-            if (angular.isObject(chip)) {
-                return chip;
-            }
-            // Otherwise, create a new one
-            return { name: chip, type: 'new' }
+            return true;
         };
 
 
