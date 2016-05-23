@@ -1,0 +1,132 @@
+{
+  "global": {
+    "account": {
+      "login": “Connexion“,
+      "logout": “Déconnexion”,
+      "register": "Registre”
+    },
+    "posts":"Questions",
+    "reports": "RAPPORTS”
+  },
+  "index": {
+    "title" : "MedEx",
+    "subtitle": “Questions et réponses pour les médecins",
+    "introduction": “Bienvenue sur MedEx. MedEx est une application qui permet aux médecins de Suisse d’échanger et de partager des informations sur le principe de Questions/Réponses. Postez les cas de patients pour lesquelles vous souhaitez obtenir de l’aide ou un deuxième avis. MedEx vous permet de communiquer rapidement avec un réseau de médecins dans toute la Suisse!”,
+    "introduction2":"MedEx n’est accessible qu’aux médecins ayant le droit de pratiquer en Suisse. Créer un compte dès maintenant et échangez vos connaissances avec les médecins de la communauté MedEx!”
+  },
+  "imprint": “Impressum”,
+  "posts": {
+    "comments": {
+      "titleCreate" : “Commenter la question”,
+      "titleEdit": “Editer ce commentaire”,
+      "form": {
+        "label": {
+          "content" : "Contenu”
+        },
+        "button": {
+          "save": “Enregistrer”
+        }
+      }
+    },
+    "answers": {
+      "title" : “Répondre à cette question",
+      "form": {
+        "label": {
+          "content" : "Contenu”
+        },
+        "button": {
+          "save": “Enregistrer”
+        }
+      }
+    },
+    "form": {
+      "label": {
+        "title": “Titre”,
+        "content": "Contenu”,
+        "category": "Catégorie”,
+        "accept": “Accepter les conditions"
+      },
+      "button" : {
+        "save": “Enregistrer”,
+	“delete”: “Supprimer”
+      }
+    },
+    "index": {
+      "title": “Toutes les questions“,
+      "none": “aucun”,
+      "edit": "Editer”,
+      "delete": “Supprimer”,
+      "button": {
+        "new": “Nouvelle question”
+      }
+    },
+    "show" : {
+      "createcomment": “Rédiger un commentaire”,
+      "createanswer": “Rédiger une réponse”,
+      "listcomments": "Commentaires”,
+      "listanswers": “Réponses”,
+      "description": "Description",
+      "button" : {
+        "newcomment": “Nouveau commentaire“,
+        "newanswer": “Nouvelle réponse“,
+        "editPost": "Editer la question",
+        "editComment": "Editer le commentaire”,
+        "editAnswer": "Editer la réponse“,
+        "marksolved": “Marquer comme résolu“
+      }
+    },
+    "create": {
+      "title": “Poser une question“
+    },
+    "edit": {
+      "title": “Editer une question“
+    },
+    "category": "Catégories",
+    "solved": “Résolu”,
+    "rating": “Evaluation”
+  },
+  "user": {
+    "account" : {
+      "settings": “Paramètres du compte“,
+      "changeSettings": “Modifier les paramètres du compte“,
+      "profile": "Profil",
+      "signIn": “Veuillez vous connecter",
+      "logout": “Voulez-vous vraiment vous connecter?",
+      "registration": “Inscription”,
+      "button" : {
+        "logout": “se déconnecter”,
+        "edit": "Editer le profil“,
+        "cancel": “Annuler”
+      },
+      "form" : {
+        "label" : {
+          "username": “Nom d’utilisateur“,
+          "title": "Titre”,
+          "name": "Nom”,
+          "middlename": “Deuxième prénom“,
+          "surname": “Nom de famille“,
+          "birthdate": “Date de naissance“,
+          "practiceinfo": “Informations professionnelle“,
+          "practicename": “Institution/Office name”,
+          "street": “Rue”,
+          "streetno": “Numéro de la rue”,
+          "city": “Localité”,
+          "postal": “Code postal“,
+          "phone": “Téléphone”,
+          "mobile": “Téléphone mobile”,
+          "mail": “E-mail",
+          "function": “Fonction”,
+          "expertices": “Spécialisations”,
+          "password": "Password"
+        },
+        "placeholder" : {
+        },
+        "button" : {
+          "login": “Connexion”,
+          "register": “S’inscrire”,
+          "save": “Enregistrer”
+        }
+      }
+    }
+  }
+}
