@@ -53,6 +53,7 @@
         this.show = function () {
             const that = this;
             that.user = AuthService.getUser();
+            this.getRating();
         };
 
         this.update = function () {
@@ -66,11 +67,24 @@
         };
         
 
-
         this.transformChip = function(chip) {
             return true;
         };
+        
+        this.rating = 0;
 
+        this.getRating = function() {
+            var id = $stateParams.id;
+            var that = this;
+            var url = 'posts/';
+            ApiService.get('posts').then(function (data) {
+                var i = 0;
+                for (i = 0; i < data.length; i++) {
+                    that.rating += data[i].rating;
+                }
+                $state.go('app.users#show');
+            });
+        }
 
     }
 

@@ -73,7 +73,8 @@
         "editPost": "Frage bearbeiten",
         "editComment": "Kommentar bearbeiten",
         "editAnswer": "Antwort bearbeiten",
-        "marksolved": "Fall als gelöst markieren"
+        "marksolved": "Fall als gelöst markieren",
+        "marknotsolved": "Fall als ungelöst markieren"
       }
     },
     "create": {
@@ -94,6 +95,7 @@
       "signIn": "Bitte loggen Sie sich ein",
       "logout": "Wollen Sie sich wirklich ausloggen?",
       "registration": "Registrierung",
+      "yourrating": "Dein Rating",
       "button" : {
         "logout": "Logout",
         "edit": "Profil bearbeiten",

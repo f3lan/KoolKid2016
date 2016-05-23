@@ -73,7 +73,8 @@
         "editPost": "Edit Post",
         "editComment": "Edit Comment",
         "editAnswer": "Edit Answer",
-        "marksolved": "Mark as solved"
+        "marksolved": "Mark as solved",
+        "marknotsolved": "Mark as not solved"
       }
     },
     "create": {
@@ -94,6 +95,7 @@
       "signIn": "Please Sign in",
       "logout": "Do you really want to log out?",
       "registration": "Registration",
+      "yourrating": "Your Rating",
       "button" : {
         "logout": "Logout",
         "edit": "Edit Profile",

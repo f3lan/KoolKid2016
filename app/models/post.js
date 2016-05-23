@@ -40,7 +40,7 @@ var Post = new Schema({
     ],
     rating: {
         type: Number,
-        default:5
+        default:0
     },
     solved: {
         type: Boolean,
