@@ -44,7 +44,7 @@
         "title": "Titre",
         "content": "Contenu",
         "category": "Catégorie",
-        "accept": "Accepter les conditions"
+        "accept": "Accepter les conditions",
         "accept2": "............Pation consent"
       },
       "button" : {
@@ -94,6 +94,7 @@
       "signIn": "Veuillez vous connecter",
       "logout": "Voulez-vous vraiment vous connecter?",
       "registration": "Inscription",
+      "yourrating": "Votre Evaluation",
       "button" : {
         "logout": "se déconnecter",
         "edit": "Editer le profil",

@@ -94,6 +94,7 @@
       "signIn": "Please Sign in",
       "logout": "Do you really want to log out?",
       "registration": "Registration",
+      "yourrating": "Your Rating",
       "button" : {
         "logout": "Logout",
         "edit": "Edit Profile",
