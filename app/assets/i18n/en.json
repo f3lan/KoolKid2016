@@ -44,7 +44,8 @@
         "title": "Title",
         "content": "Content",
         "category": "Category",
-        "accept": "Accept Terms and Conditions"
+        "accept": "Accept Terms and Conditions",
+        "accept2": "................"
       },
       "button" : {
         "save": "Save",
