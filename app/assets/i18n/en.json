@@ -47,7 +47,8 @@
         "accept": "Accept Terms and Conditions"
       },
       "button" : {
-        "save": "Save"
+        "save": "Save",
+        "deleteImage": "Delete Image"
       }
     },
     "index": {

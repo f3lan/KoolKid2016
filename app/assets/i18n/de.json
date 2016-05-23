@@ -47,7 +47,8 @@
         "accept": "Ich akzeptiere die allgemeinen Geschäftsbedingungen"
       },
       "button" : {
-        "save": "Speichern"
+        "save": "Speichern",
+        "deleteImage": "Bild löschen"
       }
     },
     "index": {
