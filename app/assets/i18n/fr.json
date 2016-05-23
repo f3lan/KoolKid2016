@@ -45,6 +45,7 @@
         "content": "Contenu",
         "category": "Catégorie",
         "accept": "Accepter les conditions"
+        "accept2": "............Pation consent"
       },
       "button" : {
         "save": "Enregistrer",
@@ -120,6 +121,7 @@
           "password": "Password"
         },
         "placeholder" : {
+          "expertises": "..........Expertises"
         },
         "button" : {
           "login": "Connexion",

@@ -10,9 +10,9 @@
   },
   "index": {
     "title" : "MedEx",
-    "subtitle": "Questions and Answers for Doctors of Medicine",
-    "introduction": "Welcome to the MedEx. MedEx Switzerlands first questions and answers application for doctors of medicine. If you have a difficulte medical case or if you want to discuse some specific phenomena MedEx is the right place.",
-    "introduction2":"MedEx is only for experts and is not public for anyone else. Register today to discuss and share."
+    "subtitle": "Questions and Answers for Physicians",
+    "introduction": "Bienvenue sur MedEx. MedEx est une application qui permet aux médecins de Suisse d’échanger et de partager des informations sur le principe de Questions/Réponses. Postez les cas de patients pour lesquelles vous souhaitez obtenir de l’aide ou un deuxième avis. MedEx vous permet de communiquer rapidement avec un réseau de médecins dans toute la Suisse!",
+    "introduction2":"MedEx n’est accessible qu’aux médecins ayant le droit de pratiquer en Suisse. Créer un compte dès maintenant et échangez vos connaissances avec les médecins de la communauté MedEx!"
   },
   "imprint": "Legal Notice",
   "posts": {
@@ -45,7 +45,7 @@
         "content": "Content",
         "category": "Category",
         "accept": "Accept Terms and Conditions",
-        "accept2": "................"
+        "accept2": "Pation consent"
       },
       "button" : {
         "save": "Save",
@@ -121,6 +121,7 @@
           "password": "Password"
         },
         "placeholder" : {
+          "expertises": "Expertises"
         },
         "button" : {
           "login": "Login",

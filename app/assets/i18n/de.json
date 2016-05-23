@@ -41,10 +41,11 @@
     },
     "form": {
       "label": {
-        "title": "Titel",
-        "content": "Inhalt",
-        "category": "Kategorie",
-        "accept": "Ich akzeptiere die allgemeinen Geschäftsbedingungen"
+        "title": "Title",
+        "content": "Content",
+        "category": "Category",
+        "accept": "Accept Terms and Conditions",
+        "accept2": "Patienteneinverständiserklärung"
       },
       "button" : {
         "save": "Speichern",
@@ -120,6 +121,7 @@
           "password": "Passwort"
         },
         "placeholder" : {
+          "expertises": "Expertise"
         },
         "button" : {
           "login": "Login",
