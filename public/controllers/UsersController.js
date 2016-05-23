@@ -8,7 +8,6 @@
         '$stateParams',
         'AuthService',
         'ApiService',
-        'Expertises',
         UsersController
     ]);
 
@@ -16,10 +15,8 @@
                              $state,
                              $stateParams,
                              AuthService,
-                             ApiService,
-                             Expertises) {
-
-        var expertises = Expertises.all();
+                             ApiService
+    ) {
 
         this.loginButton = true;
         
@@ -68,7 +65,6 @@
             });
         };
         
-        this.items = expertises;
 
 
         this.transformChip = function(chip) {

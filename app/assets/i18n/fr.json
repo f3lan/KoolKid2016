@@ -117,9 +117,10 @@
           "mobile": "Téléphone mobile",
           "mail": "E-mail",
           "function": "Fonction",
-          "expertices": "Spécialisations",
+          "expertises": "Spécialisations",
           "password": "Password"
         },
+        "nomatch": "No result",
         "placeholder" : {
           "expertises": "..........Expertises"
         },
