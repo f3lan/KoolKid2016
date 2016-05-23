@@ -99,6 +99,13 @@
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center" ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})">
             <md-button class="btn btn-xs">{{'posts.show.button.editAnswer' | translate}}</md-button>
+            <span>
+                {{'posts.rating' | translate}}: {{answer.rating}}
+            <a ng-click="postsController.rateAnswer(answer,1)" href="">
+              <span class="glyphicon glyphicon-thumbs-up"></span></a> | <a ng-click="postsController.rateAnswer(answer,-1)" href="">
+              <span class="glyphicon glyphicon-thumbs-down"></span>
+            </a>
+            </span>
         </md-card-actions>
     </md-card>
 </div>
