@@ -23,13 +23,13 @@
         });
 
         $translateProvider.registerAvailableLanguageKeys(
-          ['en', 'de', 'fr', 'it', 'rm'],{
-           'en_*': 'en',
-           'de_*': 'de',
-           'fr_*': 'fr',
-           'it_*': 'it',
-           'rm_*': 'rm',
-           '*': 'en'
+          ['EN', 'DE', 'FR', 'IT', 'RM'],{
+           'EN_*': 'EN',
+           'DE_*': 'DE',
+           'FR_*': 'FR',
+           'IT_*': 'IT',
+           'RM_*': 'RM',
+           '*': 'EN'
           }
         );
 
