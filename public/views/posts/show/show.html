@@ -28,13 +28,13 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center">
-            <md-button class="btn btn-xs" ng-click="postsController.edit(postsController.post)">{{'posts.show.button.editPost' | translate}}</md-button>
-            <md-button class="btn btn-xs" ng-if="!postsController.post.solved"
+            <md-button class="btn btn-xs" ng-if="postsController.canEdit(postsController.post)" ng-click="postsController.edit(postsController.post)">{{'posts.show.button.editPost' | translate}}</md-button>
+            <md-button class="btn btn-xs" ng-if="!postsController.post.solved && postsController.canEdit(postsController.post)"
                        ng-click="postsController.solve(true)">{{'posts.show.button.marksolved' | translate}}</md-button>
-            <md-button class="btn btn-xs" ng-if="postsController.post.solved"
+            <md-button class="btn btn-xs" ng-if="postsController.post.solved && postsController.canEdit(postsController.post)"
                        ng-click="postsController.solve(false)">{{'posts.show.button.marknotsolved' | translate}}</md-button>
             <md-card-icon-actions>
-            <span>
+            <span class="rating_post">
                 {{'posts.rating' | translate}}: {{postsController.post.rating}}
             <a ng-click="postsController.rate(1)" href="">
               <span class="glyphicon glyphicon-thumbs-up"></span></a> | <a ng-click="postsController.rate(-1)" href="">
@@ -71,7 +71,7 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center" ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})">
-            <md-button class="btn btn-xs">{{'posts.show.button.editComment' | translate}}</md-button>
+            <md-button ng-if="postsController.canEdit(comment)" class="btn btn-xs">{{'posts.show.button.editComment' | translate}}</md-button>
         </md-card-actions>
     </md-card>
 </div>
