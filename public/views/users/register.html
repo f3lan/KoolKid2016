@@ -113,26 +113,11 @@
             </md-input-container>
 
             <div layout="column" ng-cloak>
-                <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
-                          md-transform-chip="ctrl.transformChip($chip)"
-                          md-require-match="ctrl.autocompleteDemoRequireMatch">
-                    <md-autocomplete
-                            md-selected-item="null"
-                            md-search-text="null"
-                            md-items="item in usersController.items"
-                            md-item-text="item"
-                            placeholder="{{'user.account.form.placeholder.expertises' | translate}}">
-                        <span md-highlight-text="ctrl.searchText">{{item}}</span>
-                    </md-autocomplete>
-                    <md-chip-template>
-                    <span>
-                      <strong>{{$chip.name}}</strong>
-                      <em>({{$chip.type}})</em>
-                    </span>
-                    </md-chip-template>
+                <div layout="column" ng-cloak>
+                    <expertises model="usersController.user.expertises"></expertises>
+                </div>
                 </md-chips>
             </div>
-
 
             <br>
 
