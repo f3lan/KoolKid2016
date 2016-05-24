@@ -3,7 +3,7 @@ html, body {
 }
 
 .content {
-  min-height: 400px;
+  min-height: 500px;
 }
 
 .imprint {
@@ -22,7 +22,7 @@ html, body {
 }
 
 .main_container{
-  min-height: 600px;
+  min-height: 700px;
 }
 
 .glyphicon-thumbs-up{
@@ -49,6 +49,10 @@ md-checkbox.md-checked.checkbox .md-icon {
 }
 h2{
   font-size: 25px !important;
+}
+.rating_post{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .text-comment{
   margin-top: -25px;

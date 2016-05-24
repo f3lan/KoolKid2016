@@ -54,12 +54,24 @@
       answer.rating += value;
       this.update(answer);
     };
+
+    var canEdit = function (answer) {
+      var user = AuthService.getUser();
+      if (!answer) {
+        return false;
+      } else if (!user) {
+        return false;
+      } else {
+        return (user.username === answer.author);
+      }
+    };
     
     return {
       show,
       create,
       update,
-      rate
+      rate,
+      canEdit
     }
 
   }
