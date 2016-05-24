@@ -1,0 +1,137 @@
+{
+  "global": {
+    "account": {
+      "login": "Login",
+      "logout": "Logout",
+      "register": "Registrierung"
+    },
+    "posts":"Fragen",
+    "reports": "REPORTE"
+  },
+  "index": {
+    "title" : "MedEx",
+    "subtitle": "Fragen und Antworten für Ärzte",
+    "introduction": "Willkommen bei MedEx, der ersten Schweizer Fragen- und Antworten Plattform für Ärzte. Wenn Sie Fragen betreffend schwierigen medizinischen Fällen oder speziellen Phänomenen haben ist MedEx der richtige Ort für Sie.",
+    "introduction2":"MedEx ist nur für Experten und nicht für die allgemeine Öffentlichkeit gedacht. Registrieren Sie sich noch heute um Ihre Fragen und Ihr Know-How zu teilen."
+  },
+  "imprint": "Rechtliche Bestimmungen",
+  "posts": {
+    "comments": {
+      "titleCreate" : "Kommentieren Sie diese Frage",
+      "titleEdit": "Bearbeiten Sie Ihren Kommmentar",
+      "form": {
+        "label": {
+          "content" : "Inhalt"
+        },
+        "button": {
+          "save": "Speichern"
+        }
+      }
+    },
+    "answers": {
+      "title" : "Geben Sie eine Antwort zu dieser Frage",
+      "form": {
+        "label": {
+          "content" : "Inhalt"
+        },
+        "button": {
+          "save": "Speichern"
+        }
+      }
+    },
+    "form": {
+      "label": {
+        "title": "Title",
+        "content": "Content",
+        "category": "Category",
+        "accept": "Accept Terms and Conditions",
+        "accept2": "Patienteneinverständiserklärung"
+      },
+      "button" : {
+        "save": "Speichern",
+        "deleteImage": "Bild löschen"
+      }
+    },
+    "index": {
+      "title": "Alle Fragen",
+      "none": "keine",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "button": {
+        "new": "Neue Frage"
+      }
+    },
+    "show" : {
+      "createcomment": "Kommentieren",
+      "createanswer": "Antworten",
+      "listcomments": "Kommentare zu dieser Frage",
+      "listanswers": "Antworten zu dieser Frage",
+      "description": "Beschreibung",
+      "button" : {
+        "newcomment": "Neuer Kommentar",
+        "newanswer": "Neue Antwort",
+        "editPost": "Frage bearbeiten",
+        "editComment": "Kommentar bearbeiten",
+        "editAnswer": "Antwort bearbeiten",
+        "marksolved": "Fall als gelöst markieren",
+        "marknotsolved": "Fall als ungelöst markieren"
+      }
+    },
+    "create": {
+      "title": "Eine Frage stellen"
+    },
+    "edit": {
+      "title": "Frage bearbeiten"
+    },
+    "category": "Kategorien",
+    "solved": "Gelöst",
+    "rating": "Bewertung"
+  },
+  "user": {
+    "account" : {
+      "settings": "Accounteinstellungen",
+      "changeSettings": "Accounteinstellungen ändern",
+      "profile": "Profil",
+      "signIn": "Bitte loggen Sie sich ein",
+      "logout": "Wollen Sie sich wirklich ausloggen?",
+      "registration": "Registrierung",
+      "yourrating": "Dein Rating",
+      "button" : {
+        "logout": "Logout",
+        "edit": "Profil bearbeiten",
+        "cancel": "Abbrechen"
+      },
+      "form" : {
+        "label" : {
+          "username": "Benutzername",
+          "title": "Titel",
+          "name": "Name",
+          "middlename": "Mittlerer Name",
+          "surname": "Nachname",
+          "birthdate": "Geburtsdatum",
+          "practiceinfo": "Informationen über Ihre Praxis",
+          "practicename": "Name Ihrer Praxis",
+          "street": "Strasse",
+          "streetno": "Strassennummer",
+          "city": "Ort",
+          "postal": "Postleitzahl",
+          "phone": "Telefon",
+          "mobile": "Mobiltelefon",
+          "mail": "E-Mail",
+          "function": "Funktion",
+          "expertises": "Erfahrungen",
+          "password": "Passwort"
+        },
+        "nomatch": "No result",
+        "placeholder" : {
+          "expertises": "Expertise"
+        },
+        "button" : {
+          "login": "Login",
+          "register": "Registrieren",
+          "save": "Speichern"
+        }
+      }
+    }
+  }
+}
