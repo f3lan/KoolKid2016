@@ -34,7 +34,7 @@
             <md-button class="btn btn-xs" ng-if="postsController.post.solved && postsController.canEdit(postsController.post)"
                        ng-click="postsController.solve(false)">{{'posts.show.button.marknotsolved' | translate}}</md-button>
             <md-card-icon-actions>
-            <span class="rating_post">
+            <span class="rating_post" ng-if="!postsController.canEdit(postsController.post)">
                 {{'posts.rating' | translate}}: {{postsController.post.rating}}
             <a ng-click="postsController.rate(1)" href="">
               <span class="glyphicon glyphicon-thumbs-up"></span></a> | <a ng-click="postsController.rate(-1)" href="">
@@ -71,7 +71,9 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-actions layout="row" layout-align="start center" ui-sref="app.comments#edit( {id: comment.post, commentId:comment._id})">
-            <md-button ng-if="postsController.canEdit(comment)" class="btn btn-xs">{{'posts.show.button.editComment' | translate}}</md-button>
+            <div ng-controller="CommentsController as commentsCtrl">
+                <md-button ng-if="commentsCtrl.canEdit(comment)" class="btn btn-xs">{{'posts.show.button.editComment' | translate}}</md-button>
+                </div>
         </md-card-actions>
     </md-card>
 </div>
@@ -97,25 +99,26 @@
                 <span class="md-subhead text-answer">{{answer.text}}</span>
             </md-card-title-text>
         </md-card-title>
+        <div ng-controller="AnswersController as answersCtrl">
         <md-card-actions layout="row" layout-align="start center">
-            <md-button class="btn btn-xs" ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})">{{'posts.show.button.editAnswer' | translate}}</md-button>
+
+                <md-button class="btn btn-xs" ng-if="answersCtrl.canEdit(answer)" ui-sref="app.answers#edit( {id: answer.post, answerId:answer._id})">{{'posts.show.button.editAnswer' | translate}}</md-button>
+
             <md-card-icon-actions>
-            <div ng-controller="AnswersController as answersCtrl">
+                <span class="rating_post" ng-if="!answersCtrl.canEdit(answer)">
+                    {{'posts.rating' | translate}}: {{answer.rating}}
+                    <a ng-click="answersCtrl.rate(answer,1)" href="">
+                      <span class="glyphicon glyphicon-thumbs-up"></span>
+                    </a>
 
-                {{'posts.rating' | translate}}: {{answer.rating}}
+                    |
 
-                <a ng-click="answersCtrl.rate(answer,1)" href="">
-                  <span class="glyphicon glyphicon-thumbs-up"></span>
-                </a>
-
-                |
-
-                <a ng-click="answersCtrl.rate(answer,-1)" href="">
-                  <span class="glyphicon glyphicon-thumbs-down"></span>
-                </a>
-
-            </div>
-            </md-card-icon-actions>
+                    <a ng-click="answersCtrl.rate(answer,-1)" href="">
+                      <span class="glyphicon glyphicon-thumbs-down"></span>
+                    </a>
+                </span>
+        </md-card-icon-actions>
         </md-card-actions>
+        </div>
     </md-card>
 </div>

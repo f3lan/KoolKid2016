@@ -50,10 +50,22 @@
       });
     }
 
+    var canEdit = function (comment) {
+      var user = AuthService.getUser();
+      if (!comment) {
+        return false;
+      } else if (!user) {
+        return false;
+      } else {
+        return (user.username === comment.author);
+      }
+    }
+
     return {
       show,
       create,
-      update
+      update,
+      canEdit
     }
 
   }
