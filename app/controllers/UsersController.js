@@ -107,6 +107,7 @@ class UsersController {
     }
 
   update(req, res) {
+    console.log(req.body);
     User.findByIdAndUpdate(req.params.id,
         {$set: req.body},
         function (error, user) {

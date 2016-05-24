@@ -1,0 +1,23 @@
+<md-chips ng-model="model" md-autocomplete-snap
+          md-transform-chip=""
+          md-require-match=true>
+    <md-autocomplete
+            md-selected-item="selected"
+            md-items="item in items"
+            md-search-text="term"
+            md-item-text="term"
+            md-search-text-change="search(term)"
+            placeholder="{{'user.account.form.placeholder.expertises' | translate}}">
+        <md-item-template>
+            <span>{{item}}</span>
+        </md-item-template>
+        <md-not-found>
+            {{'user.account.form.nomatch' | translate}}
+        </md-not-found>
+    </md-autocomplete>
+    <md-chip-template>
+                    <span>
+                      <strong>{{$chip}}</strong>
+                    </span>
+    </md-chip-template>
+</md-chips>

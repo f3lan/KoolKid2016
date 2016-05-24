@@ -73,4 +73,83 @@
       </tr>
     </tbody>
   </table>
+    <h2>
+        {{'user.account.profile' | translate}}
+    </h2>
+    <hr>
+    <table>
+        <tbody>
+        <col width="300">
+        <tr>
+            <td>{{'user.account.form.label.username' | translate}}:</td>
+            <td>{{usersController.user.username}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.name' | translate}}:</td>
+            <td>{{usersController.user.name}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.middlename' | translate}}:</td>
+            <td>{{usersController.user.middlename}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.surname' | translate}}:</td>
+            <td>{{usersController.user.surname}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.birthdate' | translate}}:</td>
+            <td>{{usersController.user.birthdate}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.practiceinfo' | translate}}:</td>
+            <td>{{usersController.user.practiceinfo}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.practicename' | translate}}:</td>
+            <td>{{usersController.user.practicename}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.street' | translate}}:</td>
+            <td>{{usersController.user.street}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.streetno' | translate}}:</td>
+            <td>{{usersController.user.streetno}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.city' | translate}}:</td>
+            <td>{{usersController.user.city}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.postal' | translate}}:</td>
+            <td>{{usersController.user.postal}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.phone' | translate}}:</td>
+            <td>{{usersController.user.phone}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.mobile' | translate}}:</td>
+            <td>{{usersController.user.mobile}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.mail' | translate}}:</td>
+            <td>{{usersController.user.mail}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.function' | translate}}:</td>
+            <td>{{usersController.user.function}}</td>
+        </tr>
+        <tr>
+            <td>{{'user.account.form.label.expertises' | translate}}:</td>
+            <td>
+                <md-chips ng-model="usersController.user.expertises" readonly="true">
+                    <md-chip-template>
+                        {{$chip}}
+                    </md-chip-template>
+                </md-chips>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 </div>

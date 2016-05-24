@@ -119,9 +119,10 @@
           "mobile": "Mobile Phone",
           "mail": "E-Mail",
           "function": "Function",
-          "expertices": "Expertices",
+          "expertises": "Expertices",
           "password": "Password"
         },
+        "nomatch": "No result",
         "placeholder" : {
           "expertises": "Expertises"
         },
