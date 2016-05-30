@@ -1,135 +1,135 @@
 {
   "global": {
     "account": {
-      "login": "Login",
-      "logout": "Logout",
-      "register": "Registrierung"
+      "login": "S'annunziar",
+      "logout": "Sortir",
+      "register": "Registraziun"
     },
-    "posts":"Fragen",
-    "reports": "REPORTE"
+    "posts":"Damondas",
+    "reports": "RAPPORTS"
   },
   "index": {
     "title" : "MedEx",
-    "subtitle": "Fragen und Antworten für Ärzte",
-    "introduction": "Willkommen bei MedEx, der ersten Schweizer Fragen- und Antworten Plattform für Ärzte. Wenn Sie Fragen betreffend schwierigen medizinischen Fällen oder speziellen Phänomenen haben ist MedEx der richtige Ort für Sie.",
-    "introduction2":"MedEx ist nur für Experten und nicht für die allgemeine Öffentlichkeit gedacht. Registrieren Sie sich noch heute um Ihre Fragen und Ihr Know-How zu teilen."
+    "subtitle": "Damondas e rispostas per miedis",
+    "introduction": "Beinvegni sin MedEx, igl emprem forum svizzer d'informaziuns per miedis. Sche Vus veis damondas pertuccond grevs cass medicinals ni fenomens specials essas Vus tier MedEx el dretg liug.",
+    "introduction2":"MedEx ei mo per experts e buc public. Registrei aunc oz per tschentar Vossas damondas e communicar vies saver."
   },
-  "imprint": "Rechtliche Bestimmungen",
+  "imprint": "Determinaziuns Giuridicas",
   "posts": {
     "comments": {
-      "titleCreate" : "Kommentieren Sie diese Frage",
-      "titleEdit": "Bearbeiten Sie Ihren Kommmentar",
+      "titleCreate" : "Commentar quella damonda",
+      "titleEdit": "Declarar Vies commentari",
       "form": {
         "label": {
-          "content" : "Inhalt"
+          "content" : "Cuntegn"
         },
         "button": {
-          "save": "Speichern"
+          "save": "Arcunar"
         }
       }
     },
     "answers": {
-      "title" : "Geben Sie eine Antwort zu dieser Frage",
+      "title" : "Rispunder sin quella damonda",
       "form": {
         "label": {
-          "content" : "Inhalt"
+          "content" : "Cuntegn"
         },
         "button": {
-          "save": "Speichern"
+          "save": "Arcunar"
         }
       }
     },
     "form": {
       "label": {
-        "title": "Title",
-        "content": "Content",
-        "category": "Category",
-        "accept": "Accept Terms and Conditions",
-        "accept2": "Patienteneinverständiserklärung"
+        "title": "Tetel",
+        "content": "Cuntegn",
+        "category": "Categoria",
+        "accept": "Acceptar las cundiziuns",
+        "accept2": "Il pazient ei informaus e dat siu consentiment"
       },
       "button" : {
-        "save": "Speichern",
-        "deleteImage": "Bild löschen"
+        "save": "Registrar",
+        "deleteImage": "Stizzar il maletg"
       }
     },
     "index": {
-      "title": "Alle Fragen",
-      "none": "keine",
-      "edit": "Bearbeiten",
-      "delete": "Löschen",
+      "title": "Tuttas damondas",
+      "none": "vit",
+      "edit": "tractar",
+      "delete": "stizzar",
       "button": {
-        "new": "Neue Frage"
+        "new": "Nova damonda"
       }
     },
     "show" : {
-      "createcomment": "Kommentieren",
-      "createanswer": "Antworten",
-      "listcomments": "Kommentare zu dieser Frage",
-      "listanswers": "Antworten zu dieser Frage",
-      "description": "Beschreibung",
+      "createcomment": "Commentar",
+      "createanswer": "Rispunder",
+      "listcomments": "Commentaris sin quella damonda",
+      "listanswers": "Rispostas sin quella damonda",
+      "description": "Descripziun",
       "button" : {
-        "newcomment": "Neuer Kommentar",
-        "newanswer": "Neue Antwort",
-        "editPost": "Frage bearbeiten",
-        "editComment": "Kommentar bearbeiten",
-        "editAnswer": "Antwort bearbeiten",
-        "marksolved": "Fall als gelöst markieren",
-        "marknotsolved": "Fall als ungelöst markieren"
+        "newcomment": "Niev commentari",
+        "newanswer": "Nova risposta",
+        "editPost": "Tractar la damonda",
+        "editComment": "Tractar il commentari",
+        "editAnswer": "Tractar la risposta",
+        "marksolved": "Marcar il cass sco sligiaus",
+        "marknotsolved": "Marcar il cass sco buc sligiaus"
       }
     },
     "create": {
-      "title": "Eine Frage stellen"
+      "title": "Tschentar ina damonda"
     },
     "edit": {
-      "title": "Frage bearbeiten"
+      "title": "Tractar ina damonda"
     },
-    "category": "Kategorien",
-    "solved": "Gelöst",
-    "rating": "Bewertung"
+    "category": "Categorias",
+    "solved": "Sligiau",
+    "rating": "Valetaziun"
   },
   "user": {
     "account" : {
-      "settings": "Accounteinstellungen",
-      "changeSettings": "Accounteinstellungen ändern",
+      "settings": "Drizzar en il conto ",
+      "changeSettings": "Midar il conto",
       "profile": "Profil",
-      "signIn": "Bitte loggen Sie sich ein",
-      "logout": "Wollen Sie sich wirklich ausloggen?",
-      "registration": "Registrierung",
-      "yourrating": "Dein Rating",
+      "signIn": "S'annunziar",
+      "logout": "Leis Vus propi sortir?",
+      "registration": "Registraziun",
+      "yourrating": "Tia valetaziun",
       "button" : {
-        "logout": "Logout",
-        "edit": "Profil bearbeiten",
-        "cancel": "Abbrechen"
+        "logout": "Sortir",
+        "edit": "Tractar il profil",
+        "cancel": "Interrumper"
       },
       "form" : {
         "label" : {
-          "username": "Benutzername",
-          "title": "Titel",
-          "name": "Name",
-          "middlename": "Mittlerer Name",
-          "surname": "Nachname",
-          "birthdate": "Geburtsdatum",
-          "practiceinfo": "Informationen über Ihre Praxis",
-          "practicename": "Name Ihrer Praxis",
-          "street": "Strasse",
-          "streetno": "Strassennummer",
-          "city": "Ort",
-          "postal": "Postleitzahl",
+          "username": "Num d'utilisader",
+          "title": "Tetel",
+          "name": "Prenum",
+          "middlename": "Secund prenum",
+          "surname": "Schlatteina",
+          "birthdate": "Di da naschientscha",
+          "practiceinfo": "Informaziun da Vossa pratica",
+          "practicename": "Num da Vossa pratica",
+          "street": "Via",
+          "streetno": "Numera dalla via",
+          "city": "Liug",
+          "postal": "Numera postala",
           "phone": "Telefon",
-          "mobile": "Mobiltelefon",
-          "mail": "E-Mail",
-          "function": "Funktion",
-          "expertises": "Erfahrungen",
-          "password": "Passwort"
+          "mobile": "Natel",
+          "mail": "E-mail",
+          "function": "Funcziun",
+          "expertises": "Experientschas",
+          "password": "Plaid clav"
         },
-        "nomatch": "No result",
+        "nomatch": "Negin resultat",
         "placeholder" : {
-          "expertises": "Expertise"
+          "expertises": "expertisa"
         },
         "button" : {
-          "login": "Login",
-          "register": "Registrieren",
-          "save": "Speichern"
+          "login": "S'annunziar",
+          "register": "Registrar",
+          "save": "Arcunar"
         }
       }
     }
